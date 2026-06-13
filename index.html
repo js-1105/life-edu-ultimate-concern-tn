@@ -201,6 +201,9 @@ table.tbl tr.hl .lv{color:var(--color-primary-dark)}
 .eggsong .lyrics .h{color:var(--color-accent-soft)}
 .eggsong .src{color:rgba(255,255,255,.72)}
 .eggsong h2,.eggsong .lyrics,.eggsong .src,.eggsong .back-home-btn{position:relative;z-index:2}
+.eggsong .egg-deco{position:absolute;z-index:0;pointer-events:none;opacity:.62}
+.eggsong .egg-deco-tr{top:8vh;right:5vw;width:clamp(95px,9vw,150px)}
+.eggsong .egg-deco-bl{bottom:10vh;left:4.5vw;width:clamp(75px,7.5vw,120px)}
 .closing{text-align:center;background:var(--grad-royal);color:#fff;--ai:center;overflow:hidden}
 .closing::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 480px at 50% 30%,rgba(212,175,55,.18),transparent 62%);z-index:0}
 .closing .ending-line{font-family:var(--font-serif);font-weight:700;color:#fff;font-size:clamp(2.8rem,7vw,5.6rem);letter-spacing:.12em;text-shadow:0 2px 30px rgba(0,0,0,.3);position:relative;z-index:2}
@@ -788,19 +791,7 @@ body.no-clickzones .click-zones{display:none}
   </div>
 </section>
 
-<!-- ===================== 合　主題曲 ===================== -->
-<section class="slide eggsong">
-  <h2>主題曲〈門與牆〉</h2>
-  <div class="lyrics">
-    <p><span class="h">〔主歌一〕</span><br>有人說　死是一堵牆<br>走到盡頭　就只剩下黑暗一片<br>有人說　死是一扇門<br>推開以後　還有光在另一邊</p>
-    <p><span class="h">〔主歌二〕</span><br>我站在這裡　還沒走到那一天<br>卻已經開始　想像那扇門或那堵牆<br>若終點是虛無　我為何還握著手中的火<br>若終點有光　我又該怎麼　走完這一程</p>
-    <p><span class="h">〔副歌〕</span><br>是牆，還是門<br>沒有人能替我　先走一趟回來告訴我答案<br>是牆，還是門<br>但我可以選擇　用什麼樣的心　走向它<br>知道為何而活的人<br>連最黑的夜　都能走得從容<br>這一道題　要我用一生　誠實作答</p>
-    <p><span class="h">〔主歌三〕</span><br>諾貝爾讀到　自己的訃聞那一天<br>忽然明白　別人會怎麼記得他<br>於是他改寫　餘生想留下的東西——<br>不是炸藥　是和平與光</p>
-    <p><span class="h">〔尾聲｜輕聲〕</span><br>若有一天　我也走到那扇門前<br>願我能說：我沒有白活這一場<br>是牆，是門……我不再害怕</p>
-  </div>
-  <p class="src">〈門與牆〉——《生命的學問》概念專輯第二首；與序曲《一路玩到掛》的門／牆意象首尾相扣。</p>
-  <button class="back-home-btn" onclick="goToSlide(1)">↑　回到首頁</button>
-</section>
+
 
 <!-- 課後實踐作業 -->
 <section class="slide roomy" style="--ai:center;text-align:center">
@@ -816,33 +807,6 @@ body.no-clickzones .click-zones{display:none}
   </div>
 </section>
 
-<!-- 引用來源 -->
-<section class="slide" style="--jc:flex-start;padding-top:4.5vh">
-  <h2>引用來源</h2>
-  <ol class="references">
-    <li>孫效智〈終極關懷〉演講（Gamma，編號 1140322）——全天主文本，影音與圖片素材出處。</li>
-    <li>孫效智（2010）。〈未知死，焉知生？〉。《科學人》月刊，2010 年 10 月號。</li>
-    <li>王榮麟（2020）。〈終極關懷〉教學大綱（2020/02/11）。</li>
-    <li>《禮記·大學》：「大學之道……在止於至善。」</li>
-    <li>《論語·學而》：曾子「吾日三省吾身」。</li>
-    <li>Angela Williams Gorrell. <i>The Gravity of Joy</i>（耶魯喜樂神學研究；「人行道時刻」）。</li>
-    <li>Michael J. Sandel. <i>What Money Can't Buy: The Moral Limits of Markets</i>.</li>
-    <li>耶魯大學公開課「人生思辨課」（pp. 205, 238 壁爐炭火、死亡與願景）。</li>
-    <li>John Vervaeke（多倫多大學）：meaning of life vs. meaning in life，YouTube `Nug1Unr1jVo`。</li>
-    <li>Sean Kelly（哈佛大學）：荒謬與有意義的時刻，YouTube `tmKvYb54kDY`。</li>
-    <li>Viktor Frankl. <i>Man's Search for Meaning</i>（《活出意義來》）；YouTube `JX-8-IYhQKk`。</li>
-    <li>Guy Kahane (2014). "Our Cosmic Insignificance." <i>Noûs</i> 48(4). OA: pmc.ncbi.nlm.nih.gov/articles/PMC4340547/</li>
-    <li>Jordan B. Peterson：愛與真理超越痛苦荒謬。</li>
-    <li>Lev Tolstoy. <i>A Confession</i>（托爾斯泰「四出路」與信念之路五法）。</li>
-    <li>Jay Shetty，YouTube `gLLWGQqaiF0`；Neil deGrasse Tyson／Lewis Hamilton，YouTube `7uCFSkLFR4U`。</li>
-    <li>《一路玩到掛 The Bucket List》（2007），葬禮悼詞片段 YouTube `uiy-sT9JgRo`。</li>
-    <li>True Love ≠ Fish Love，YouTube `oHv6vTKD6lg`。</li>
-    <li>學員蒐集影音庫（示範）：柯文哲 `N0zhdMwD2Z8`、歐文亞隆 `ihpPYYtZxRk`、Emily Esfahani Smith TED `y9Trdafp83U`。</li>
-    <li>一行法師《無死，無懼》；奧理略《沉思錄》；斯多葛學派；海德格《存在與時間》「向死存有」；《西藏生死書》；《好青年哲學讀本》。</li>
-    <li>圖片：孫效智〈終極關懷〉演講 Gamma 既有生成圖與素材；門／牆意象圖為 AI 重繪無版權版（《科學人》原插畫不公開重製）。</li>
-  </ol>
-</section>
-
 <!-- 結語 -->
 <section class="slide closing">
   <div class="ending-ornament"></div>
@@ -852,6 +816,33 @@ body.no-clickzones .click-zones{display:none}
   <p class="signature">孫效智</p>
   <button class="back-home-btn" onclick="goToSlide(1)">↑　回到首頁</button>
 </section>
+
+<!-- 彩蛋·主題曲（末頁，比照單元一）-->
+<section class="slide eggsong">
+  <svg class="egg-deco egg-deco-tr" viewBox="0 0 140 140" aria-hidden="true">
+    <g stroke="#C9A227" stroke-width="6" fill="none" stroke-linecap="round"><path d="M46 104 V40"/><path d="M104 92 V28"/></g>
+    <path d="M44 40 L106 28" stroke="#C9A227" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <ellipse cx="38" cy="106" rx="14" ry="10" fill="#C9A227" transform="rotate(-20 38 106)"/>
+    <ellipse cx="96" cy="94" rx="14" ry="10" fill="#C9A227" transform="rotate(-20 96 94)"/>
+  </svg>
+  <svg class="egg-deco egg-deco-bl" viewBox="0 0 120 140" aria-hidden="true">
+    <path d="M56 104 V36 q0 -18 24 -24" stroke="#C9A227" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <ellipse cx="44" cy="106" rx="14" ry="10" fill="#C9A227" transform="rotate(-20 44 106)"/>
+    <circle cx="96" cy="20" r="6" fill="#D4AF37"/><circle cx="18" cy="58" r="4" fill="#D4AF37"/><circle cx="104" cy="58" r="3.5" fill="#D4AF37"/>
+  </svg>
+  <h2>彩蛋·主題曲〈門與牆〉</h2>
+  <div class="lyrics">
+    <p><span class="h">〔主歌一〕</span><br>有人說　死是一堵牆<br>走到盡頭　就只剩下黑暗一片<br>有人說　死是一扇門<br>推開以後　還有光在另一邊</p>
+    <p><span class="h">〔主歌二〕</span><br>我站在這裡　還沒走到那一天<br>卻已經開始　想像那扇門或那堵牆<br>若終點是虛無　我為何還握著手中的火<br>若終點有光　我又該怎麼　走完這一程</p>
+    <p><span class="h">〔副歌〕</span><br>是牆，還是門<br>沒有人能替我　先走一趟回來告訴我答案<br>是牆，還是門<br>但我可以選擇　用什麼樣的心　走向它<br>知道為何而活的人<br>連最黑的夜　都能走得從容<br>這一道題　要我用一生　誠實作答</p>
+    <p><span class="h">〔主歌三〕</span><br>諾貝爾讀到　自己的訃聞那一天<br>忽然明白　別人會怎麼記得他<br>於是他改寫　餘生想留下的東西——<br>不是炸藥　是和平與光</p>
+    <p><span class="h">〔尾聲｜輕聲〕</span><br>若有一天　我也走到那扇門前<br>願我能說：我沒有白活這一場<br>是牆，是門……我不再害怕</p>
+  </div>
+  <p class="src">〈門與牆〉——《生命的學問》概念專輯第二首；與序曲《一路玩到掛》的門／牆意象首尾相扣。</p>
+  <button class="back-home-btn" onclick="goToSlide(1)">↑　回到首頁</button>
+</section>
+
+
 
 </div>
 
