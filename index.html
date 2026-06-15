@@ -112,7 +112,8 @@ ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;heigh
 /* 影片 */
 .video-wrap{position:relative;z-index:60;width:100%;max-width:560px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-strong);margin:.3em 0;background:#000}
 .video-wrap iframe{width:100%;height:100%;border:0}
-.cc-overlay{position:absolute;left:3%;right:3%;bottom:7%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
+.video-wrap video{width:100%;height:100%;border:0;display:block;background:#000;object-fit:contain}
+.cc-overlay{position:absolute;left:3%;right:3%;bottom:11%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
 .cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(.95rem,1.5vw,1.4rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* 自製「影片＋字幕」全螢幕鈕（避開 YouTube 自家全螢幕會蓋掉字幕層的問題） */
 .vid-fs{position:absolute;top:8px;right:8px;z-index:70;background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:.8rem;padding:.25em .6em;cursor:pointer;font-family:"Noto Sans TC",sans-serif}
@@ -287,7 +288,7 @@ body.no-clickzones .click-zones{display:none}
   <h2>卡特遺書與愛德華悼詞</h2>
   <div class="grid2" style="align-items:center">
     <div class="video-wrap" style="width:100%;max-width:100%">
-      <iframe id="ytcc-eulogy" src="https://www.youtube-nocookie.com/embed/JZIXzxwKVyw?enablejsapi=1&rel=0&modestbranding=1&fs=0" title="《一路玩到掛》卡特的遺書與愛德華的悼詞" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe>
+      <video id="ytcc-eulogy" src="media/bucket_letter_eulogy.mp4" controls playsinline preload="metadata" controlsList="nofullscreen noremoteplayback" disablePictureInPicture></video>
       <div class="cc-overlay" id="cc-eulogy"></div>
       <button class="vid-fs" onclick="fsVid(this)" title="全螢幕">⛶ 全螢幕</button>
     </div>
@@ -1127,43 +1128,42 @@ window.U2=(function(){
 })();
 </script>
 
-<!-- S4 卡特遺書＋愛德華悼詞：自製對齊繁中字幕層（JZIXzxwKVyw 英文發音、無中字，譯文為本課自製；結尾截斷處由投影片引言補完） -->
-<script src="https://www.youtube.com/iframe_api"></script>
+<!-- S4 卡特遺書＋愛德華悼詞：本機拼接影片（新片遺書段＋舊片完整悼詞）＋自製對齊繁中字幕層（譯文為本課自製） -->
 <script>
 var CC_EULOGY_OFFSET = 0;   // 正數＝字幕提早；cue 出現時刻 = start - OFFSET
 var CC_EULOGY = [
   [0,"親愛的愛德華：這幾天我反覆掙扎，到底該不該寫這封信。"],
-  [23.5,"最後我明白，若不寫，我會後悔。"],
-  [28.9,"所以，就這樣寫了。"],
-  [30,"我知道我們上次見面，氣氛並不太好，"],
-  [37.4,"那絕不是我希望這趟旅程結束的方式。"],
-  [42.6,"我想，這得怪我；為此，我很抱歉。"],
+  [21.9,"但最後我明白，若不寫，我會後悔——所以，就這樣寫了。"],
+  [31.8,"我知道我們上次見面，氣氛並不太融洽，"],
+  [37.5,"那絕不是我希望這趟旅程結束的方式。"],
+  [42.5,"我想，這得怪我；為此，我很抱歉。"],
   [48.8,"但老實說，若再有一次機會，我還是會這麼做。"],
-  [52.1,"維吉妮亞說：我出發時是個陌生人，回來時成了真正的丈夫。"],
+  [51.9,"維吉妮亞說：我出發時是個陌生人，回來時成了真正的丈夫。"],
   [62,"這要歸功於你。"],
-  [63.4,"你為我做的一切，我無以回報。"],
-  [68.8,"所以我不試著回報，而是請你為我做另一件事——"],
-  [76.4,"去找到你生命裡的喜樂。"],
-  [78.2,"你曾說，你不是『一般人』。"],
-  [86.3,"沒錯，你確實不是；但說到底，每個人都是人。"],
-  [95.3,"我的牧師總是說：我們的生命都是涓涓川流，匯入同一條大河，奔向瀑布之外、雲霧深處的那片天堂。"],
-  [108.3,"「嗨，親愛的。」"],
-  [111.8,"去找到你生命裡的喜樂，愛德華。"],
-  [120.3,"我親愛的朋友，閉上眼睛，"],
-  [124.7,"讓江水載你而去。"],
-  [129.8,"午安，我是愛德華・柯爾。"],
-  [134.1,"我不太曉得這種場合大家都說些什麼——老實說，我這輩子總設法避開它們。"],
-  [153.7,"但最簡單的事實是：我愛他，我想念他。"],
-  [164.1,"卡特和我一起看遍了世界，那真是不可思議。"],
-  [173.1,"想想看，僅僅三個月前，我們還是全然的陌生人。"],
-  [183.8,"希望這話不算自私——他生命最後的幾個月，卻是我這一生最好的時光。"],
-  [200.7,"他救了我的生命；早在我自己明白之前，他就已經知道了。"],
-  [209.5,"這個人覺得我值得他認識——這讓我深深引以為傲。"],
-  [220.4,"到頭來我想可以這麼說：我們為彼此的生命，帶來了一些喜樂。"],
-  [228.8,"所以有一天，當我走向那最後的安息之地，"],
-  [236.7,"若我醒來時，發現自己就躺在一堵有著一扇門的牆外，"],
-  [241.3,"我盼望，卡特就在那裡……"],
-  [244,""]
+  [65.9,"你為我做的一切，我無以回報。"],
+  [70,"所以我不試著回報，而是請你為我做另一件事——"],
+  [76.5,"去找到你生命裡的喜樂。"],
+  [81,"你曾說，你不是『一般人』。"],
+  [86.2,"沒錯，你確實不是；但說到底，每個人都是人。"],
+  [95.5,"我的牧師總是說：我們的生命都是涓涓川流，匯入同一條大河，奔向瀑布之外、雲霧深處的那片天堂。"],
+  [107.1,"「嗨，親愛的。」"],
+  [111.9,"去找到你生命裡的喜樂，愛德華。"],
+  [113.8,"我親愛的朋友，閉上眼睛，"],
+  [120,"讓江水載你而去。"],
+  [131.8,"午安，我是愛德華・柯爾。"],
+  [136.2,"我不太曉得這種場合大家都說些什麼——老實說，我這輩子總設法避開它們。"],
+  [155.7,"但最簡單的事實是：我愛他，我想念他。"],
+  [167.8,"卡特和我一起看遍了世界，那真是不可思議。"],
+  [175.7,"想想看，僅僅三個月前，我們還是全然的陌生人。"],
+  [186.5,"希望這話不算自私——他生命最後的幾個月，卻是我這一生最好的時光。"],
+  [203.6,"他救了我的生命；早在我自己明白之前，他就已經知道了。"],
+  [210.2,"這個人覺得我值得他認識——這讓我深深引以為傲。"],
+  [221.2,"到頭來我想可以這麼說：我們為彼此的生命，帶來了一些喜樂。"],
+  [229.6,"所以有一天，當我走向那最後的安息之地，"],
+  [237.7,"若我醒來時，發現自己就躺在一堵有著一扇門的牆外——"],
+  [242.5,"我盼望，卡特就在那裡，"],
+  [248.4,"為我擔保，領我看門那一邊的風光。"],
+  [254,""]
 ];
 function ccEulogyShow(t){
   t += CC_EULOGY_OFFSET; var s='';
@@ -1172,11 +1172,14 @@ function ccEulogyShow(t){
   }
   var el=document.getElementById('cc-eulogy'); if(el) el.innerHTML = s ? ('<span>'+s+'</span>') : '';
 }
-function onYouTubeIframeAPIReady(){
-  try{ new YT.Player('ytcc-eulogy',{events:{onReady:function(e){
-    setInterval(function(){ try{ ccEulogyShow(e.target.getCurrentTime()); }catch(_){} },250);
-  }}}); }catch(_){}
-}
+(function(){
+  var v=document.getElementById('ytcc-eulogy');
+  if(v && v.tagName==='VIDEO'){
+    var tick=function(){ try{ ccEulogyShow(v.currentTime); }catch(_){} };
+    v.addEventListener('timeupdate',tick);
+    setInterval(tick,250);
+  }
+})();
 // 自製全螢幕：放大「影片＋字幕層」整個容器，字幕才不會被蓋掉
 function fsVid(btn){
   var w=btn.closest('.video-wrap'); if(!w) return;
