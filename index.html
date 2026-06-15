@@ -115,14 +115,17 @@ ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;heigh
 .video-wrap video{width:100%;height:100%;border:0;display:block;background:#000;object-fit:contain}
 .cc-overlay{position:absolute;left:3%;right:3%;bottom:16%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
 .cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(.95rem,1.5vw,1.4rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
-/* 自製「影片＋字幕」全螢幕鈕（避開 YouTube 自家全螢幕會蓋掉字幕層的問題） */
-.vid-fs{position:absolute;top:8px;right:8px;z-index:70;background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:6px;font-size:.8rem;padding:.25em .6em;cursor:pointer;font-family:"Noto Sans TC",sans-serif}
-.vid-fs:hover{background:rgba(0,0,0,.8)}
+/* 自製精簡控制列（取代原生 controls，跨瀏覽器只有一顆全螢幕鈕；全螢幕放大整個影片框＝字幕一起顯示） */
+.vctrl{position:absolute;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;gap:.55em;padding:.4em .7em;background:linear-gradient(transparent,rgba(0,0,0,.62));font-family:"Noto Sans TC",sans-serif}
+.vctrl .vc-btn{background:none;border:none;color:#fff;font-size:1.15rem;cursor:pointer;padding:.05em .25em;line-height:1}
+.vctrl .vc-btn:hover{color:var(--color-accent)}
+.vctrl .vc-seek{flex:1;cursor:pointer;height:4px;accent-color:#D4AF37}
+.vctrl .vc-time{color:#fff;font-size:.78rem;min-width:6em;text-align:right;font-variant-numeric:tabular-nums}
 .video-wrap:fullscreen{width:100vw;height:100vh;max-width:none;aspect-ratio:auto;border-radius:0;background:#000}
 .video-wrap:-webkit-full-screen{width:100vw;height:100vh;max-width:none;border-radius:0;background:#000}
 .video-wrap:fullscreen .cc-overlay{bottom:12%}
 .video-wrap:fullscreen .cc-overlay span,.video-wrap:-webkit-full-screen .cc-overlay span{font-size:clamp(1.5rem,3.2vw,2.7rem)}
-.video-wrap:fullscreen .vid-fs{display:none}
+.video-wrap:fullscreen .vctrl .vc-btn{font-size:1.6rem}
 .localvid{display:flex;gap:.7em;align-items:center;background:#fff;border:1px solid var(--color-line);border-left:4px solid var(--color-accent);border-radius:12px;padding:.7em .95em;box-shadow:var(--shadow-soft);margin:.35em 0;max-width:34em}
 /* 圖片大圖（Gamma 生成圖） */
 .gimg{display:block;border-radius:16px;box-shadow:var(--shadow-strong);border:1px solid rgba(212,175,55,.4);object-fit:cover}
@@ -288,9 +291,14 @@ body.no-clickzones .click-zones{display:none}
   <h2>卡特遺書與愛德華悼詞</h2>
   <div class="grid2" style="align-items:center">
     <div class="video-wrap" style="width:100%;max-width:100%">
-      <video id="ytcc-eulogy" src="media/bucket_letter_eulogy.mp4" controls playsinline preload="metadata" controlsList="nofullscreen noremoteplayback" disablePictureInPicture></video>
+      <video id="ytcc-eulogy" src="media/bucket_letter_eulogy.mp4" playsinline preload="metadata" disablePictureInPicture></video>
       <div class="cc-overlay" id="cc-eulogy"></div>
-      <button class="vid-fs" onclick="event.stopPropagation();fsVid(this)" title="全螢幕">⛶ 全螢幕</button>
+      <div class="vctrl" id="vctrl-eulogy">
+        <button class="vc-btn vc-play" title="播放／暫停">▶</button>
+        <input class="vc-seek" type="range" min="0" max="1000" value="0" title="進度">
+        <span class="vc-time">0:00 / 0:00</span>
+        <button class="vc-btn vc-fs" title="全螢幕">⛶</button>
+      </div>
     </div>
     <div>
       <blockquote>「當我長眠在有著一扇門的一堵牆外面時，<br>我希望他能擔保我，<br>讓我看見門裡面的風光。」</blockquote>
@@ -1175,19 +1183,34 @@ function ccEulogyShow(t){
   var el=document.getElementById('cc-eulogy'); if(el) el.innerHTML = s ? ('<span>'+s+'</span>') : '';
 }
 (function(){
-  var v=document.getElementById('ytcc-eulogy');
-  if(v && v.tagName==='VIDEO'){
-    var tick=function(){ try{ ccEulogyShow(v.currentTime); }catch(_){} };
-    v.addEventListener('timeupdate',tick);
-    setInterval(tick,250);
+  var v=document.getElementById('ytcc-eulogy'); if(!v||v.tagName!=='VIDEO') return;
+  var bar=document.getElementById('vctrl-eulogy');
+  var playBtn=bar.querySelector('.vc-play'), seek=bar.querySelector('.vc-seek'),
+      timeEl=bar.querySelector('.vc-time'), fsBtn=bar.querySelector('.vc-fs');
+  function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
+  function tick(){
+    try{ ccEulogyShow(v.currentTime); }catch(_){}
+    if(v.duration&&isFinite(v.duration)){ seek.value=Math.round(v.currentTime/v.duration*1000); }
+    timeEl.textContent=fmt(v.currentTime)+' / '+fmt(v.duration||0);
   }
+  v.addEventListener('timeupdate',tick);
+  v.addEventListener('loadedmetadata',tick);
+  setInterval(tick,250);
+  function toggle(){ if(v.paused){v.play();}else{v.pause();} }
+  playBtn.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('play',function(){playBtn.textContent='❚❚';});
+  v.addEventListener('pause',function(){playBtn.textContent='▶';});
+  seek.addEventListener('input',function(e){e.stopPropagation();if(v.duration&&isFinite(v.duration)){v.currentTime=seek.value/1000*v.duration;}});
+  seek.addEventListener('click',function(e){e.stopPropagation();});
+  fsBtn.addEventListener('click',function(e){e.stopPropagation();
+    var fsEl=document.fullscreenElement||document.webkitFullscreenElement;
+    if(fsEl){ (document.exitFullscreen||document.webkitExitFullscreen||function(){}).call(document); return; }
+    var w=v.closest('.video-wrap');
+    var r=w.requestFullscreen||w.webkitRequestFullscreen||w.msRequestFullscreen;
+    if(r){ try{ r.call(w); }catch(_){} }
+  });
 })();
-// 自製全螢幕：放大「影片＋字幕層」整個容器，字幕才不會被蓋掉
-function fsVid(btn){
-  var w=btn.closest('.video-wrap'); if(!w) return;
-  var r=w.requestFullscreen||w.webkitRequestFullscreen||w.mozRequestFullScreen||w.msRequestFullscreen;
-  if(r){ try{ r.call(w); }catch(_){} } else { alert('此瀏覽器不支援全螢幕'); }
-}
 </script>
 </body>
 </html>
