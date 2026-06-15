@@ -112,6 +112,8 @@ ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;heigh
 /* 影片 */
 .video-wrap{position:relative;z-index:60;width:100%;max-width:560px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-strong);margin:.3em 0;background:#000}
 .video-wrap iframe{width:100%;height:100%;border:0}
+.cc-overlay{position:absolute;left:3%;right:3%;bottom:7%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
+.cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(.95rem,1.5vw,1.4rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .localvid{display:flex;gap:.7em;align-items:center;background:#fff;border:1px solid var(--color-line);border-left:4px solid var(--color-accent);border-radius:12px;padding:.7em .95em;box-shadow:var(--shadow-soft);margin:.35em 0;max-width:34em}
 /* 圖片大圖（Gamma 生成圖） */
 .gimg{display:block;border-radius:16px;box-shadow:var(--shadow-strong);border:1px solid rgba(212,175,55,.4);object-fit:cover}
@@ -276,7 +278,10 @@ body.no-clickzones .click-zones{display:none}
 <section class="slide">
   <h2>重播關鍵片段：葬禮悼詞</h2>
   <div class="grid2" style="align-items:center">
-    <div class="video-wrap" style="width:100%;max-width:100%"><iframe src="https://www.youtube-nocookie.com/embed/uiy-sT9JgRo?rel=0&modestbranding=1" title="《一路玩到掛》葬禮悼詞片段" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe></div>
+    <div class="video-wrap" style="width:100%;max-width:100%">
+      <iframe id="ytcc-eulogy" src="https://www.youtube-nocookie.com/embed/uiy-sT9JgRo?enablejsapi=1&rel=0&modestbranding=1" title="《一路玩到掛》葬禮悼詞片段" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe>
+      <div class="cc-overlay" id="cc-eulogy"></div>
+    </div>
     <div>
       <blockquote>「當我長眠在有著一扇門的一堵牆外面時，<br>我希望他能擔保我，<br>讓我看見門裡面的風光。」</blockquote>
       <p class="muted">電影《一路玩到掛 The Bucket List》（2007）。這組「門」與「牆」的意象，正是今天要陪大家一路問到底的母題——它最後會以什麼方式收束，留到下課前揭曉。</p>
@@ -1111,6 +1116,39 @@ window.U2=(function(){
   if(document.readyState!=='loading')initAll();else document.addEventListener('DOMContentLoaded',initAll);
   return {refreshClouds};
 })();
+</script>
+
+<!-- S4 葬禮悼詞：自製對齊繁中字幕層（Movieclips uiy-sT9JgRo 英文發音、無中字，譯文為本課自製） -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var CC_EULOGY_OFFSET = 0;   // 正數＝字幕提早；cue 出現時刻 = start - OFFSET
+var CC_EULOGY = [
+  [0,"午安，我是愛德華・柯爾。"],
+  [10,"我不太曉得這種場合大家都說些什麼——老實說，我這輩子總設法避開它們。"],
+  [22.2,"但最簡單的事實是：我愛他，我想念他。"],
+  [38.8,"卡特和我一起看遍了世界，那真是不可思議。"],
+  [46,"想想看，僅僅三個月前，我們還是全然的陌生人。"],
+  [52.2,"希望這話不算自私——他生命最後的幾個月，卻是我這一生最好的時光。"],
+  [73.8,"他救了我的生命；早在我自己明白之前，他就已經知道了。"],
+  [82.2,"這個人覺得我值得他認識——這讓我深深引以為傲。"],
+  [91.6,"到頭來我想可以這麼說：我們為彼此的生命，帶來了一些喜樂。"],
+  [100.6,"所以有一天，當我走向那最後的安息之地，若我醒來時，發現自己躺在一堵有著一扇門的牆外——"],
+  [114.4,"我盼望卡特就在那裡，為我擔保，領我看看門那一邊的風光。"],
+  [123.4,"……抱歉，我有些失態了。"],
+  [128,""]
+];
+function ccEulogyShow(t){
+  t += CC_EULOGY_OFFSET; var s='';
+  for(var i=0;i<CC_EULOGY.length;i++){
+    if(t>=CC_EULOGY[i][0] && (i+1>=CC_EULOGY.length || t<CC_EULOGY[i+1][0])){ s=CC_EULOGY[i][1]; break; }
+  }
+  var el=document.getElementById('cc-eulogy'); if(el) el.innerHTML = s ? ('<span>'+s+'</span>') : '';
+}
+function onYouTubeIframeAPIReady(){
+  try{ new YT.Player('ytcc-eulogy',{events:{onReady:function(e){
+    setInterval(function(){ try{ ccEulogyShow(e.target.getCurrentTime()); }catch(_){} },250);
+  }}}); }catch(_){}
+}
 </script>
 </body>
 </html>
