@@ -77,6 +77,17 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .cover .stage,.cover h1,.cover .ornament,.cover .lead,.cover .cover-cta,.cover .meta,.cover .back-home-btn{position:relative;z-index:2}
 /* 卡片/格 */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:3vw;align-items:center;flex:1;width:100%}
+/* 建構式揭示（健康無價門）：門先置中放大、無字 → 按鍵後滑左、文字淡入 */
+.kv-title{transition:opacity .5s ease}
+.kv-text{transition:opacity .6s ease .15s}
+.kv-door{transition:transform .75s cubic-bezier(.22,.61,.36,1)}
+.kv-hint{transition:opacity .4s ease;color:var(--color-muted)}
+.kv-slide:not(.revealed) .kv-title{opacity:0}
+.kv-slide:not(.revealed) .kv-text{opacity:0}
+.kv-slide:not(.revealed) .kv-door{transform:translateX(52%) scale(1.26)}
+.kv-slide.revealed .kv-hint{opacity:0;visibility:hidden}
+.kv-slide.active:not(.revealed) .kv-door img{animation:kvDoorIn .9s ease both}
+@keyframes kvDoorIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw;width:100%}
 .card{background:#fff;padding:1.3em 1.4em;border-radius:14px;box-shadow:var(--shadow-soft);border-top:4px solid var(--color-accent)}
 .card h3{margin-top:0;color:var(--color-primary)}
@@ -337,18 +348,19 @@ body.no-clickzones .click-zones{display:none}
 </section>
 
 <!-- 人生風暴 -->
-<section class="slide" style="--jc:flex-start;padding-top:5vh">
-  <h2>人生風暴（一）：健康無價，卻終將失去</h2>
-  <div class="grid2" style="margin-top:.7em;align-items:center;gap:2vw">
-    <figure style="margin:0;text-align:center">
-      <img src="images/health_priceless_door.jpg" alt="健康無價門聯" style="max-width:100%;max-height:62vh;border-radius:10px;box-shadow:var(--shadow-soft)">
+<section class="slide kv-slide" style="--jc:center">
+  <h2 class="kv-title">健康無價！？</h2>
+  <div class="grid2 kv-grid" style="margin-top:.7em;align-items:center;gap:2vw">
+    <figure class="kv-door" style="margin:0;text-align:center">
+      <img src="images/health_priceless_door.jpg" alt="健康無價門聯" style="max-width:100%;max-height:54vh;border-radius:10px;box-shadow:var(--shadow-soft)">
     </figure>
-    <div>
+    <div class="kv-text">
       <p class="lead" style="max-width:none">大病後，人常驚覺「健康無價」。</p>
       <p class="muted" style="margin-top:.7em;font-size:1.15em"><b>但健康本身也必然失去，它能是人生的終極目標嗎？</b></p>
       <p class="muted" style="margin-top:.7em;font-size:1.15em">有些痛苦是無法解決的，只能承受……</p>
     </div>
   </div>
+  <p class="src kv-hint" style="text-align:center;max-width:none;margin-top:.9em">按 <b>空白鍵</b> 或 <b>→</b> 繼續</p>
 </section>
 
 <section class="slide" style="--jc:flex-start;padding-top:5vh">
@@ -949,12 +961,13 @@ fitAll();
   });
 })();
 const noClickZoneSlides=[];
-slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.querySelector('iframe,video,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
+slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('kv-slide')||s.querySelector('iframe,video,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
 const CLOUD_SLIDES=[];
 slides.forEach((s,i)=>{if(s.querySelector('.cloud-canvas-wrap canvas'))CLOUD_SLIDES.push(i+1);});
 function showSlide(n){
   if(n<1)n=1;if(n>total)n=total;
   slides.forEach((s,i)=>{s.classList.remove('active','prev');if(i+1===n)s.classList.add('active');else if(i+1<n)s.classList.add('prev');});
+  slides.forEach(s=>{if(s.classList.contains('kv-slide'))s.classList.remove('revealed');});
   current=n;
   document.getElementById('curr').textContent=current;
   document.getElementById('progress').style.width=(current/total*100)+'%';
@@ -972,7 +985,10 @@ function startPresentation(){enterFs(document.documentElement).catch(()=>{showTo
 function showToast(m,ms=2500){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),ms)}
 document.addEventListener('keydown',e=>{
   if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName))return;
-  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();nextSlide()}
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();
+    var act=slides[current-1];
+    if(act&&act.classList.contains('kv-slide')&&!act.classList.contains('revealed')){act.classList.add('revealed');setTimeout(()=>fitSlide(act),80);return;}
+    nextSlide();}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prevSlide()}
   if(e.key==='f'||e.key==='F'){e.preventDefault();toggleFullscreen()}
   if(e.key==='Escape'&&isFs())(getFsExit()||(()=>{})).call(document);
