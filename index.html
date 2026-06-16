@@ -101,6 +101,9 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .statchips{display:flex;flex-wrap:wrap;gap:.6em}
 .statchip{display:inline-flex;align-items:baseline;gap:.4em;background:#fff;border:1px solid var(--color-line);border-radius:999px;padding:.34em .95em;font-size:clamp(1.02rem,1.4vw,1.38rem);font-weight:500}
 .statchip b{color:var(--color-primary);font-weight:900}
+.qcap{display:flex;gap:.5em;margin-top:.6em;text-align:left;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.20);border-left:5px solid var(--color-primary);border-radius:8px;padding:.55em .8em;font-size:clamp(1.18rem,1.7vw,1.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
+.qcap .qn{color:var(--color-accent);flex:none}
+.qcap .qt{flex:1}
 .taglines{display:flex;flex-direction:column;gap:.42em;font-size:clamp(1.05rem,1.5vw,1.42rem)}
 .taglines .row{display:flex;align-items:baseline;gap:.7em}
 .taglines .tg{background:var(--color-primary);color:#fff;border-radius:6px;padding:.12em .7em;font-weight:700;white-space:nowrap;min-width:6.5em;text-align:center}
@@ -590,17 +593,17 @@ body.no-clickzones .click-zones{display:none}
 </section>
 
 <!-- 與終極關懷的距離（一）Q1 Q2 -->
-<section class="slide" style="--jc:flex-start;padding-top:4.5vh">
+<section class="slide" style="--jc:flex-start;padding-top:3.5vh;padding-bottom:11vh">
   <h2>這些想像，是「終極關懷」嗎？</h2>
   <p class="lead" style="max-width:none">先別急著答——用四個問題，量一量我們與「終極關懷」的距離。</p>
   <div class="grid2" style="margin-top:.5em;align-items:start;gap:2.6vw">
     <figure style="margin:0;text-align:center">
-      <img src="images/gap_phones.jpg" alt="日常瑣事" style="width:100%;height:34vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.55em;font-size:clamp(1.1rem,1.55vw,1.46rem);line-height:1.5"><b style="color:var(--color-accent)">❶</b> 我們投入時間、心力去做的各種事，<b>真的讓我們更趨近夢想與目標</b>嗎？</figcaption>
+      <img src="images/gap_phones.jpg" alt="日常瑣事" style="width:100%;height:46vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)">
+      <figcaption class="qcap"><span class="qn">❶</span><span class="qt">我們投入時間、心力去做的各種事，真的讓我們<u>更趨近夢想與目標</u>嗎？</span></figcaption>
     </figure>
     <figure style="margin:0;text-align:center">
-      <img src="images/gap_stairs.jpg" alt="拾級而上" style="width:100%;height:34vh;object-fit:contain;border-radius:10px">
-      <figcaption style="margin-top:.55em;font-size:clamp(1.1rem,1.55vw,1.46rem);line-height:1.5"><b style="color:var(--color-accent)">❷</b> 這些夢想或目標，是<b>階段性</b>的，還是<b>從整體人生來看值得追求</b>的？</figcaption>
+      <img src="images/gap_stairs.jpg" alt="拾級而上" style="width:100%;height:46vh;object-fit:contain;border-radius:10px">
+      <figcaption class="qcap"><span class="qn">❷</span><span class="qt">這些夢想或目標，是<u>階段性</u>的，還是<u>整體人生</u>都值得追求的？</span></figcaption>
     </figure>
   </div>
 </section>
@@ -608,14 +611,14 @@ body.no-clickzones .click-zones{display:none}
 <!-- 與終極關懷的距離（二）Q3 Q4 -->
 <section class="slide" style="--jc:flex-start;padding-top:3.5vh;padding-bottom:11vh">
   <h2>這些想像，是「終極關懷」嗎？（續）</h2>
-  <div class="grid2" style="margin-top:.5em;align-items:end;gap:2.6vw">
+  <div class="grid2" style="margin-top:.5em;align-items:start;gap:2.6vw">
     <figure style="margin:0;text-align:center">
       <img src="images/gap_ivanilyich.jpg" alt="托爾斯泰《伊凡·伊里奇之死》" style="height:46vh;max-width:100%;object-fit:contain;border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.6em;background:rgba(134,38,51,.10);border-left:5px solid var(--color-primary);border-radius:8px;padding:.5em .75em;text-align:left;font-size:clamp(1.2rem,1.75vw,1.66rem);font-weight:700;color:var(--color-primary);line-height:1.5"><b style="color:var(--color-accent)">❸</b>　我們追求的一切，經得起<u>無常與死亡</u>的考驗嗎？</figcaption>
+      <figcaption class="qcap"><span class="qn">❸</span><span class="qt">我們追求的一切，經得起<u>無常與死亡</u>的考驗嗎？</span></figcaption>
     </figure>
     <figure style="margin:0;text-align:center">
       <img src="images/gap_void.jpg" alt="對抗虛無" style="width:100%;height:46vh;object-fit:contain;border-radius:10px">
-      <figcaption style="margin-top:.6em;background:rgba(134,38,51,.10);border-left:5px solid var(--color-primary);border-radius:8px;padding:.5em .75em;text-align:left;font-size:clamp(1.2rem,1.75vw,1.66rem);font-weight:700;color:var(--color-primary);line-height:1.5"><b style="color:var(--color-accent)">❹</b>　我們現在的一切努力與追求，能答覆<u>生命意義</u>的問題嗎？</figcaption>
+      <figcaption class="qcap"><span class="qn">❹</span><span class="qt">我們現在的一切努力與追求，能答覆<u>生命意義</u>的問題嗎？</span></figcaption>
     </figure>
   </div>
 </section>
