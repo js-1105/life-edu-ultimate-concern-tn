@@ -54,9 +54,10 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .slide.sec-2{--sec-a:#FCF5F3;--sec-b:#EFDCD9} /* 貳 樂章一·暖玫瑰 */
 .slide.sec-3{--sec-a:#FCF7EA;--sec-b:#F0E2C5} /* 參 互動A·暖金 */
 .slide.sec-4{--sec-a:#F6F1F8;--sec-b:#E2D6EA} /* 肆 樂章二·雅紫 */
-.slide.sec-5{--sec-a:#EFF6F1;--sec-b:#D6E6DC} /* 伍 樂章三·沉靜綠 */
-.slide.sec-6{--sec-a:#EAF2F4;--sec-b:#CFE0E4} /* 陸 樂章四·生命之河青 */
-.slide.sec-7{--sec-a:#EFF3F8;--sec-b:#D8E2EE} /* 柒 樂章五·霧藍 */
+.slide.sec-5{--sec-a:#EFF6F1;--sec-b:#D6E6DC} /* 伍 什麼是值得活的人生·沉靜綠 */
+.slide.sec-6{--sec-a:#EAF2F4;--sec-b:#CFE0E4} /* 陸 值得活的人生·四面向·生命之河青 */
+.slide.sec-7{--sec-a:#EFF3F8;--sec-b:#D8E2EE} /* 柒 生命意義的探索·霧藍 */
+.slide.sec-8{--sec-a:#FCF3E6;--sec-b:#EFE0C2} /* 捌 總結·暖金 */
 .slide.sec-tint::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--grad-accent);opacity:.6;z-index:0}
 .slide.sec-tint::after{content:attr(data-chap);position:absolute;top:-.14em;right:.06em;font-family:var(--font-serif);font-weight:900;line-height:1;font-size:46vh;color:var(--color-primary);opacity:.05;z-index:0;pointer-events:none;user-select:none}
 /* 章節頁 */
@@ -314,16 +315,17 @@ body.no-clickzones .click-zones{display:none}
 
 <!-- 各主題標題頁：本日七站總覽 -->
 <section class="slide roomy" style="--jc:flex-start;padding-top:4.5vh">
-  <h2>今天，我們會走過這七站</h2>
+  <h2>今天，我們會走過這八站</h2>
   <p class="lead" style="max-width:none">一條從「人為何而活」走向「人生無常，唯愛永恆」的路。</p>
   <ul class="toc-themes">
     <li><span class="tn">壹</span><span><b>序曲：一路玩到掛</b>——用一部電影，叩問「門」與「牆」</span></li>
     <li><span class="tn">貳</span><span><b>終極關懷為何如此重要？</b>——人生風暴與終極願景</span></li>
     <li><span class="tn">參</span><span><b>「終極關懷」關懷什麼？</b>——從人們對美好人生的想像說起</span></li>
     <li><span class="tn">肆</span><span><b>究竟什麼是終極關懷？</b>——四層次反思與人生第一問</span></li>
-    <li><span class="tn">伍</span><span><b>什麼是值得活的人生？</b>——值得活的四大面向</span></li>
-    <li><span class="tn">陸</span><span><b>生命意義的探索</b>——死亡，是牆，還是門？</span></li>
-    <li><span class="tn">柒</span><span><b>總結</b>——人生無常，唯愛永恆</span></li>
+    <li><span class="tn">伍</span><span><b>什麼是值得活的人生？</b>——對人性渴望的肯定與反思</span></li>
+    <li><span class="tn">陸</span><span><b>值得活的人生</b>——終極理想的四個面向</span></li>
+    <li><span class="tn">柒</span><span><b>生命意義的探索</b>——死亡，是牆，還是門？</span></li>
+    <li><span class="tn">捌</span><span><b>總結</b>——人生無常，唯愛永恆</span></li>
   </ul>
 </section>
 
@@ -775,7 +777,7 @@ body.no-clickzones .click-zones{display:none}
 <section class="slide section-divider">
   <div class="num">伍</div>
   <h1>什麼是值得活的人生？</h1>
-  <p class="when">有關人生終極理想的探索</p>
+  <p class="when">對人性渴望的肯定與反思</p>
 </section>
 
 <!-- 主流價值 -->
@@ -999,15 +1001,22 @@ body.no-clickzones .click-zones{display:none}
   </div>
 </section>
 
-<!-- 值得活的人生四大面向 -->
-<section class="slide" style="--jc:flex-start;padding-top:4.5vh">
+<!-- ===================== 陸　值得活的人生·四面向 ===================== -->
+<section class="slide section-divider">
+  <div class="num">陸</div>
+  <h1>值得活的人生</h1>
+  <p class="when">終極理想的四個面向</p>
+</section>
+
+<!-- 值得活的人生四大面向（總覽） -->
+<section class="slide" style="--jc:center">
   <h2>值得活的人生：四大面向</h2>
-  <p class="lead" style="max-width:none;margin-bottom:.4em">這是上半場的脊椎。其中第 ③④ 面向，正是通往下午的橋——下午不是換題，而是深化。</p>
+  <p class="lead" style="max-width:none;margin-bottom:.4em;text-align:center">人性的渴望需要肯定，也需要超越——真正值得活的人生，包含這四個彼此相連的面向。</p>
   <div class="four-col">
     <div class="card" style="border-top-color:#862633"><div class="num-badge">1</div><h3>自我超越</h3><p>在可能範圍內，自我覺察、自我實現，並進一步<b>自我超越</b>（呼應四層次最高層）。</p></div>
     <div class="card" style="border-top-color:#A8782E"><div class="num-badge">2</div><h3>非自我中心的愛</h3><p>不把「我」無限膨脹；核心是美好關係、付出、慈悲與愛。<span class="en">True Love ≠ Fish Love</span>——「愛賦予意義，愛就是天堂」。</p></div>
     <div class="card" style="border-top-color:#1E5F74"><div class="num-badge">3</div><h3>經得起無常與死亡</h3><p>忽略「人生會以死亡終結」的願景，就不算完整。<br>反問 Musk：多星球物種讓生活值得，但<b>觸及了死亡之限與終極意義嗎？</b></p></div>
-    <div class="card" style="border-top-color:#5C1A23"><div class="num-badge">4</div><h3>能答覆人生意義</h3><p><span class="en">means to live ≠ meaning to live for</span><br>活著的手段，不等於值得為之而活的意義——由此過渡到下午。</p></div>
+    <div class="card" style="border-top-color:#5C1A23"><div class="num-badge">4</div><h3>能答覆人生意義</h3><p><span class="en">means to live ≠ meaning to live for</span><br>活著的手段，不等於值得為之而活的意義——這正是人生意義的核心追問。</p></div>
   </div>
 </section>
 
@@ -1038,7 +1047,7 @@ body.no-clickzones .click-zones{display:none}
 
 <!-- 互動B（下午開場，併入樂章四章節色） -->
 <section class="slide section-divider">
-  <div class="num">陸</div>
+  <div class="num">柒</div>
   <h1>生命意義的探索</h1>
   <p class="when">上午問「值得活」，下午問「有意義」——meaning in life 走向 meaning of life。</p>
 </section>
@@ -1217,7 +1226,7 @@ body.no-clickzones .click-zones{display:none}
 
 <!-- ===================== 柒　樂章五 ===================== -->
 <section class="slide section-divider">
-  <div class="num">柒</div>
+  <div class="num">捌</div>
   <h1>總結</h1>
   <p class="when">確立終極信念有路可走（托爾斯泰五法）；最後，把今天收束成一句——人生無常，唯愛永恆。</p>
 </section>
@@ -1355,13 +1364,13 @@ window.addEventListener('load',()=>setTimeout(fitAll,60));
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
 fitAll();
 (function assignSectionTints(){
-  const numerals=['壹','貳','參','肆','伍','陸','柒'];
+  const numerals=['壹','貳','參','肆','伍','陸','柒','捌'];
   let chap=0;
   slides.forEach(s=>{
     if(s.classList.contains('section-divider')){chap++;return;}
     if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('eggsong'))return;
     if(chap<1)return;
-    const sec=Math.min(chap,7);
+    const sec=Math.min(chap,8);
     s.classList.add('sec-tint','sec-'+sec);
     s.dataset.chap=numerals[sec-1];
   });
