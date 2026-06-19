@@ -1102,11 +1102,20 @@ body.no-clickzones .click-zones{display:none}
 <section class="slide" style="--jc:center">
   <h2>感恩，讓關係與幸福增長</h2>
   <div class="grid2" style="align-items:center;gap:2.4vw">
-    <div class="video-wrap" style="width:100%;max-width:100%"><iframe src="https://www.youtube-nocookie.com/embed/oHv6vTKD6lg?rel=0&modestbranding=1" title="An Experiment in Gratitude" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe></div>
+    <div class="video-wrap" style="width:100%;max-width:100%">
+      <video id="ytcc-grat" src="media/gratitude_experiment.mp4" playsinline preload="metadata" disablePictureInPicture></video>
+      <div class="cc-overlay" id="cc-grat"></div>
+      <div class="vctrl" id="vctrl-grat">
+        <button class="vc-btn vc-play" title="播放／暫停">▶</button>
+        <input class="vc-seek" type="range" min="0" max="1000" value="0" title="進度">
+        <span class="vc-time">0:00 / 0:00</span>
+        <button class="vc-btn vc-fs" title="全螢幕">⛶</button>
+      </div>
+    </div>
     <div>
       <p class="lead" style="max-width:none;margin-bottom:.3em">寫下對你影響最深的人，打一通電話向他道謝——幸福感隨之上升。</p>
       <p>感恩是美好關係的核心質素之一：它把注意力從「我」轉向「成就了我的那些人」，正是<b>非自我中心之愛</b>的日常練習。</p>
-      <p class="src">影片：SoulPancake〈An Experiment in Gratitude · The Science of Happiness〉。</p>
+      <p class="src">影片：SoulPancake〈An Experiment in Gratitude · The Science of Happiness〉（繁中字幕為本課自製）。</p>
     </div>
   </div>
 </section>
@@ -1778,6 +1787,148 @@ function ccEulogyShow(t){
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
   function tick(){
     try{ ccEulogyShow(v.currentTime); }catch(_){}
+    if(v.duration&&isFinite(v.duration)){ seek.value=Math.round(v.currentTime/v.duration*1000); }
+    timeEl.textContent=fmt(v.currentTime)+' / '+fmt(v.duration||0);
+  }
+  v.addEventListener('timeupdate',tick);
+  v.addEventListener('loadedmetadata',tick);
+  setInterval(tick,250);
+  function toggle(){ if(v.paused){v.play();}else{v.pause();} }
+  playBtn.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('play',function(){playBtn.textContent='❚❚';});
+  v.addEventListener('pause',function(){playBtn.textContent='▶';});
+  seek.addEventListener('input',function(e){e.stopPropagation();if(v.duration&&isFinite(v.duration)){v.currentTime=seek.value/1000*v.duration;}});
+  seek.addEventListener('click',function(e){e.stopPropagation();});
+  fsBtn.addEventListener('click',function(e){e.stopPropagation();
+    var fsEl=document.fullscreenElement||document.webkitFullscreenElement;
+    if(fsEl){ (document.exitFullscreen||document.webkitExitFullscreen||function(){}).call(document); return; }
+    var w=v.closest('.video-wrap');
+    var r=w.requestFullscreen||w.webkitRequestFullscreen||w.msRequestFullscreen;
+    if(r){ try{ r.call(w); }catch(_){} }
+  });
+})();
+</script>
+<!-- S58 感恩實驗 SoulPancake：本機影片＋自製對齊繁中字幕層（譯文為本課自製） -->
+<script>
+var CC_GRAT_OFFSET = 0;
+var CC_GRAT = [
+  [0,"「不會吧！」"],
+  [1,"「什麼？等等、等等。」"],
+  [4,"「哦，他一定會超不好意思。」"],
+  [7,""],
+  [19,"什麼會讓你快樂？"],
+  [20,"玩樂？和朋友相聚？"],
+  [23,"美食？賺錢？"],
+  [26,"不妨想想看——"],
+  [27,"心理學家已用科學證實："],
+  [31,"影響人生整體幸福感最關鍵的因素之一，就是你願意表達多少感恩。"],
+  [35,"是的，好好想想。"],
+  [38,"讓這個想法沉澱一下。"],
+  [40,"你之後再謝我也行——這項研究說，感恩會讓你更快樂。"],
+  [44,"或者繼續看下去：我們讀了這份研究，決定親自實測一下。"],
+  [50,"我們找來一群志願者，當我們的受試者。"],
+  [54,"首先，請他們做一份測驗——"],
+  [57,"他們不知道我們在測什麼，但我們已大致掌握他們當下的幸福程度。"],
+  [61,"我們請他們閉上眼，想一個對人生影響深遠的人——"],
+  [64,"一個曾為他們做過了不起或重要之事的人。"],
+  [67,"再請他們盡量寫下：這個人為何如此重要。"],
+  [71,"很多人以為實驗到此結束——"],
+  [73,"直到我們當場出招：打電話給那個人，把寫的念出來。"],
+  [79,"「謝謝你，Jessica；接下來要請你打給媽媽。」"],
+  [82,"「那個人，對你來說是誰？」"],
+  [84,"「我妹妹 Erica。」「我們來打給她。」"],
+  [88,"「你最後選了誰？」「我的朋友 Craig。」"],
+  [92,"「她叫 Dora。」「我大學的會計老師。」"],
+  [95,"「你現在還跟他有聯絡嗎？」"],
+  [98,"「沒有，我想他已經過世了。」「真遺憾。」"],
+  [102,"「你願意試試嗎？」「嗯……好。」"],
+  [104,"「如果現在打給 Dora 呢？」"],
+  [107,"「可以試，但她住在英國。」"],
+  [111,"「在英國？」「糟，我沒把號碼背起來。」"],
+  [115,"「若逝去的人真在天上看顧我們……"],
+  [119,"也許他正讀著我這潦草的字跡。」"],
+  [123,""],
+  [124,"「嘿，親愛的。」「嘿，你好嗎？」"],
+  [126,"「你有空嗎？你在哪，在飯店？」"],
+  [130,"「對，我在飯店。」"],
+  [131,"「你問我有沒有空，嚇到我了，以為出事。」「沒有啦。」"],
+  [134,"「我在錄一個小節目，他們要我談『對我影響最深的人』——"],
+  [139,"我選了你，現在他們要我打給你。」"],
+  [146,"「哦，太好了！」"],
+  [150,"「嗨，這裡是 Craig，我不在，嗶聲後請留言。」"],
+  [157,"「哦，不會吧。」（語音信箱）"],
+  [162,"「喂？」「嗨。」"],
+  [166,"「Erica，是我。」"],
+  [168,"「我得念一段給你聽，聽得到嗎？」"],
+  [172,"「聽得到，念吧，親愛的。」"],
+  [174,"「對我影響最深的，是我母親 Marlo Dawson。"],
+  [179,"她獨自撫養兩個孩子，工作勤奮，全心為家。」"],
+  [184,"「嘿 Craig，我是 Loie。這會是一則有趣的留言，希望你喜歡。"],
+  [190,"很抱歉凌晨四點打給你。我得念這段給你聽，好嗎？」"],
+  [197,"「你先別說話……其實你可以回，但我大概會一直念下去。」"],
+  [203,"「還好嗎？」「沒事，我要把這段念給你聽。」"],
+  [208,"「除了耶穌基督之外，對我人生影響最大的人——"],
+  [211,"也是讓我得以成為現在的我的人——"],
+  [215,"是我大學的會計老師。」"],
+  [218,"「他對工作的喜悅與熱情，是我認識的老師中無人能及的。」"],
+  [224,"「我愛她愛得要命，她總用正向的話推著我前進。"],
+  [228,"她清楚知道自己要什麼，不達目的絕不放棄。」"],
+  [233,"「哦，過來抱一下。」"],
+  [236,"「我說不出話……一點都不意外，因為這太美了。」"],
+  [240,"「我無話可說，這真是太美好了。」"],
+  [244,"「我和 Craig 初識，是在蒙大拿一部獨立電影的片場。"],
+  [248,"最近他健康狀況連連，我一直在心裡為他祝福。」"],
+  [253,"「即使病痛纏身，他仍持續工作，並在小事裡尋得喜悅——"],
+  [256,"比如和妻子 Janine 靜靜坐在門廊上。」"],
+  [261,"「Erica 是我姊姊，也是我最好的朋友，有時感覺像雙胞胎。」"],
+  [268,"「她是我頭號粉絲、最堅定的支持者。"],
+  [271,"無論我犯過多少錯，她始終愛我如一——這讓我快樂。」"],
+  [277,"「你的友誼是我的一切，你是我生命中最重要的人之一。」"],
+  [284,"「就算她將來有了孩子，我也會比孩子更愛她……好吧，也許不會。」"],
+  [290,"「我永遠忘不了，她接到一通電話就飛了三千哩，陪我走出分手低潮。」"],
+  [295,"「能有你這樣的兒子，是我的福氣。我愛你，再見。」"],
+  [304,"「你為什麼要這樣（害我哭）？」"],
+  [308,"「我也沒辦法，是他們要我做的。」"],
+  [312,"「謝謝你接電話，再見親愛的。」"],
+  [314,"「他們說：來，寫封信。"],
+  [316,"我就寫了一封超長的信——我平常根本不寫信的。」"],
+  [320,"「結果他們突然說：現在要打給她，你要把信念出來。"],
+  [324,"我心想：這搞什麼啊？！」"],
+  [328,""],
+  [340,"在讓他們離開前，我們又做了一次幸福測驗，"],
+  [343,"並打亂、改寫題目，讓他們不知道是同一份測驗。"],
+  [347,"那些有寫下內容、卻因故沒能打電話的人，"],
+  [351,"幸福感上升了 2% 到 4%。"],
+  [356,"而真正拿起電話、親口表達感恩的人，"],
+  [359,"幸福感上升了 4% 到 19%。"],
+  [365,"所以無論如何，表達感恩都會讓你更快樂。"],
+  [369,"但想知道一件更有意思的事嗎？"],
+  [373,"幸福感躍升最大的，正是進門時最不快樂的那個人。"],
+  [377,"這代表什麼？"],
+  [381,"如果你正處在特別艱難的時刻，這麼做，對你的影響很可能更大。"],
+  [386,"相信我，我可是穿著實驗袍的呢。"],
+  [389,"做的時候不妨錄下來，上傳給我們，"],
+  [393,"我們會用它做點很棒的事。我是 Julian，這就是《幸福的科學》。"],
+  [400,""],
+  [420,"謝謝。"],
+  [424,""]
+];
+function ccGratShow(t){
+  t += CC_GRAT_OFFSET; var s='';
+  for(var i=0;i<CC_GRAT.length;i++){
+    if(t>=CC_GRAT[i][0] && (i+1>=CC_GRAT.length || t<CC_GRAT[i+1][0])){ s=CC_GRAT[i][1]; break; }
+  }
+  var el=document.getElementById('cc-grat'); if(el) el.innerHTML = s ? ('<span>'+s+'</span>') : '';
+}
+(function(){
+  var v=document.getElementById('ytcc-grat'); if(!v||v.tagName!=='VIDEO') return;
+  var bar=document.getElementById('vctrl-grat');
+  var playBtn=bar.querySelector('.vc-play'), seek=bar.querySelector('.vc-seek'),
+      timeEl=bar.querySelector('.vc-time'), fsBtn=bar.querySelector('.vc-fs');
+  function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
+  function tick(){
+    try{ ccGratShow(v.currentTime); }catch(_){}
     if(v.duration&&isFinite(v.duration)){ seek.value=Math.round(v.currentTime/v.duration*1000); }
     timeEl.textContent=fmt(v.currentTime)+' / '+fmt(v.duration||0);
   }
