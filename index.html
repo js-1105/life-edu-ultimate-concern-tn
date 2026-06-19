@@ -90,11 +90,26 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .kv-slide.revealed .kv-hint{opacity:0;visibility:hidden}
 .kv-slide.active:not(.revealed) .kv-door img{animation:kvDoorIn .9s ease both}
 @keyframes kvDoorIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
-/* 通用建構式揭示：reveal-step 內的 .reveal-after 先隱藏，按鍵／點擊後淡入；.reveal-hint 揭曉後消失 */
-.reveal-after{transition:opacity .55s ease,transform .55s ease}
+/* 通用建構式揭示：reveal-after 用 grid 0fr→1fr 平滑展開（未揭曉時不占空間）；reveal-hint 揭曉後消失 */
+.reveal-after{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .55s ease,opacity .55s ease}
+.reveal-after>.ra-inner{overflow:hidden;min-height:0}
 .reveal-hint{transition:opacity .4s ease}
-.reveal-step:not(.revealed) .reveal-after{opacity:0;transform:translateY(10px);pointer-events:none}
+.reveal-step.revealed .reveal-after{grid-template-rows:1fr;opacity:1}
 .reveal-step.revealed .reveal-hint{opacity:0;visibility:hidden}
+/* S60 人生畢業禮：花俏兩段式（標題固定大氣；文字框先大、按下一步後縮小，收束緊貼框下） */
+.grad-finale h2{display:block;text-align:center;border-bottom:none;font-size:clamp(2.7rem,5.2vw,4.2rem);margin-bottom:.4em}
+.grad-finale h2 .cap{margin-right:.12em}
+.grad-finale h2 .ul{display:block;width:min(44rem,80%);height:5px;margin:.3em auto 0;border-radius:5px;background:linear-gradient(90deg,transparent,var(--color-accent),#c8902a,var(--color-accent),transparent)}
+.grad-finale .practice{position:relative;overflow:hidden;border:none;border-radius:24px;background:linear-gradient(150deg,#ffffff,rgba(212,175,55,.12));box-shadow:0 16px 44px rgba(160,120,30,.20);border-top:8px solid var(--color-accent);transition:font-size .5s ease,padding .5s ease,box-shadow .5s ease;text-align:left}
+.grad-finale .practice::after{content:"🎓";position:absolute;right:.3em;bottom:.0em;font-size:5.2em;opacity:.08;line-height:1;pointer-events:none}
+.grad-finale .practice p,.grad-finale .practice .tmpl{font-size:1em;line-height:1.6;position:relative;z-index:1}
+.grad-finale .practice .label{font-size:.5em}
+.grad-finale:not(.revealed) .practice{font-size:clamp(1.4rem,2vw,1.95rem);padding:1.05em 1.6em}
+.grad-finale.revealed .practice{font-size:clamp(1.08rem,1.5vw,1.42rem);padding:.78em 1.3em;box-shadow:0 8px 22px rgba(160,120,30,.13)}
+.grad-finale .tmpl{margin:.25em 0;letter-spacing:.05em;color:var(--color-primary)}
+.grad-finale .reveal-hint{font-size:1.2rem;color:#9a7b1e;font-weight:600}
+.grad-finale.revealed .reveal-hint{display:none}
+.grad-finale .reveal-after{margin-top:.1em}
 /* 各主題標題頁（本日章節總覽） */
 .toc-themes{list-style:none;max-width:none;width:100%;margin:.5em 0 0;padding:0}
 .toc-themes li{display:flex;align-items:baseline;gap:.8em;padding:.46em .2em;border-bottom:1px dashed var(--color-line);font-size:clamp(1.15rem,1.75vw,1.6rem);line-height:1.4}
@@ -1141,24 +1156,19 @@ body.no-clickzones .click-zones{display:none}
 </section>
 
 <!-- 人生畢業禮（建構式：先討論，按鍵後揭曉收束） -->
-<section class="slide roomy reveal-step">
-  <h2>體驗活動：人生畢業禮</h2>
-  <div class="practice" style="max-width:62rem">
+<section class="slide roomy reveal-step grad-finale">
+  <h2><span class="cap">🎓</span>體驗活動：人生畢業禮<span class="ul"></span></h2>
+  <div class="practice" style="max-width:64rem;margin-left:auto;margin-right:auto">
     <span class="label">書寫＋互讀</span>
     <p>想像自己 90 歲安詳離世——希望最親近的人，怎麼描述你是什麼樣的人？<b>你最希望被記得的三件事</b>是什麼？</p>
-    <div style="margin:.15em 0 .25em;font-size:clamp(1.08rem,1.5vw,1.46rem);line-height:1.95;color:var(--color-primary)">
-      我最希望被記得的三件事——<br>
-      ①　　________________________<br>
-      ②　　________________________<br>
-      ③　　________________________
-    </div>
+    <div class="tmpl">我最希望被記得的三件事——<br>①　　________________________<br>②　　________________________<br>③　　________________________</div>
     <p>4 人一組互讀（只讀「希望被記得的三件事」）。然後以終為始反推：<b>既然希望被這樣記得，現在的人生該怎麼走？</b></p>
   </div>
   <p class="reveal-hint muted" style="margin-top:.5em">（小組討論後，按 → 下一步）</p>
-  <div class="reveal-after">
+  <div class="reveal-after"><div class="ra-inner">
     <p class="big-q" style="margin-top:.3em">你會發現——被記得的幾乎都是<b>愛與關係</b>，而不是財富與享樂。</p>
     <p class="muted">被記得的，幾乎都是面向 ①② 的內容；而「想像自己的離世」也已悄悄把我們帶進下一個面向——<b>當人生以死亡為參照，什麼才真正值得？</b></p>
-  </div>
+  </div></div>
 </section>
 
 <!-- 面向三：經得起無常與死亡（破題） -->
