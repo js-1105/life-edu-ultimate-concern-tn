@@ -96,20 +96,20 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .reveal-hint{transition:opacity .4s ease}
 .reveal-step.revealed .reveal-after{grid-template-rows:1fr;opacity:1}
 .reveal-step.revealed .reveal-hint{opacity:0;visibility:hidden}
-/* S60 人生畢業禮：花俏兩段式（標題固定大氣；文字框先大、按下一步後縮小，收束緊貼框下） */
-.grad-finale h2{display:block;text-align:center;border-bottom:none;font-size:clamp(2.7rem,5.2vw,4.2rem);margin-bottom:.4em}
-.grad-finale h2 .cap{margin-right:.12em}
-.grad-finale h2 .ul{display:block;width:min(44rem,80%);height:5px;margin:.3em auto 0;border-radius:5px;background:linear-gradient(90deg,transparent,var(--color-accent),#c8902a,var(--color-accent),transparent)}
-.grad-finale .practice{position:relative;flex-shrink:0;border:none;border-radius:24px;background:linear-gradient(150deg,#ffffff,rgba(212,175,55,.12));box-shadow:0 16px 44px rgba(160,120,30,.20);border-top:8px solid var(--color-accent);transition:font-size .5s ease,padding .5s ease,box-shadow .5s ease;text-align:left}
-.grad-finale .practice::after{content:"🎓";position:absolute;right:.32em;bottom:.14em;font-size:4.6em;opacity:.08;line-height:1;pointer-events:none}
-.grad-finale .practice p,.grad-finale .practice .tmpl{font-size:1em;line-height:1.5;position:relative;z-index:1}
-.grad-finale .practice .label{font-size:.5em}
-.grad-finale:not(.revealed) .practice{font-size:clamp(1.32rem,1.85vw,1.78rem);padding:.95em 1.5em}
-.grad-finale.revealed .practice{font-size:clamp(1.06rem,1.48vw,1.4rem);padding:.72em 1.25em;box-shadow:0 8px 22px rgba(160,120,30,.13)}
-.grad-finale .tmpl{margin:.25em 0;letter-spacing:.05em;color:var(--color-primary)}
-.grad-finale .reveal-hint{font-size:1.2rem;color:#9a7b1e;font-weight:600}
-.grad-finale.revealed .reveal-hint{display:none}
-.grad-finale .reveal-after{margin-top:.1em}
+/* 通用「討論頁」花俏兩段式版型：標題固定大氣；文字框先大、按下一步後縮小，收束緊貼框下。卡片圖示用 --card-icon 設定（如 '🎓'、'✍️'） */
+.discuss-step h2{display:block;text-align:center;border-bottom:none;font-size:clamp(2.5rem,4.9vw,4rem);margin-bottom:.4em}
+.discuss-step h2 .cap{margin-right:.12em}
+.discuss-step h2 .ul{display:block;width:min(44rem,80%);height:5px;margin:.3em auto 0;border-radius:5px;background:linear-gradient(90deg,transparent,var(--color-accent),#c8902a,var(--color-accent),transparent)}
+.discuss-step .practice{position:relative;flex-shrink:0;border:none;border-radius:24px;background:linear-gradient(150deg,#ffffff,rgba(212,175,55,.12));box-shadow:0 16px 44px rgba(160,120,30,.20);border-top:8px solid var(--color-accent);transition:font-size .5s ease,padding .5s ease,box-shadow .5s ease;text-align:left}
+.discuss-step .practice::after{content:var(--card-icon," ");position:absolute;right:.32em;bottom:.14em;font-size:4.6em;opacity:.08;line-height:1;pointer-events:none}
+.discuss-step .practice p,.discuss-step .practice .tmpl,.discuss-step .practice li{font-size:1em;line-height:1.5;position:relative;z-index:1}
+.discuss-step .practice .label{font-size:.5em}
+.discuss-step:not(.revealed) .practice{font-size:clamp(1.3rem,1.82vw,1.74rem);padding:.95em 1.5em}
+.discuss-step.revealed .practice{font-size:clamp(1.05rem,1.46vw,1.4rem);padding:.72em 1.25em;box-shadow:0 8px 22px rgba(160,120,30,.13)}
+.discuss-step .tmpl{margin:.25em 0;letter-spacing:.05em;color:var(--color-primary)}
+.discuss-step .reveal-hint{font-size:1.2rem;color:#9a7b1e;font-weight:600}
+.discuss-step.revealed .reveal-hint{display:none}
+.discuss-step .reveal-after{margin-top:.1em}
 /* 各主題標題頁（本日章節總覽） */
 .toc-themes{list-style:none;max-width:none;width:100%;margin:.5em 0 0;padding:0}
 .toc-themes li{display:flex;align-items:baseline;gap:.8em;padding:.46em .2em;border-bottom:1px dashed var(--color-line);font-size:clamp(1.15rem,1.75vw,1.6rem);line-height:1.4}
@@ -1156,7 +1156,7 @@ body.no-clickzones .click-zones{display:none}
 </section>
 
 <!-- 人生畢業禮（建構式：先討論，按鍵後揭曉收束） -->
-<section class="slide roomy reveal-step grad-finale">
+<section class="slide roomy reveal-step discuss-step" style="--card-icon:'🎓'">
   <h2><span class="cap">🎓</span>體驗活動：人生畢業禮<span class="ul"></span></h2>
   <div class="practice" style="max-width:64rem;margin-left:auto;margin-right:auto">
     <span class="label">書寫＋互讀</span>
@@ -1167,7 +1167,7 @@ body.no-clickzones .click-zones{display:none}
   <p class="reveal-hint muted" style="margin-top:.5em">（小組討論後，按 → 下一步）</p>
   <div class="reveal-after"><div class="ra-inner">
     <p class="big-q" style="margin-top:.3em">你會發現——被記得的幾乎都是<b>愛與關係</b>，而不是財富與享樂。</p>
-    <p class="muted">被記得的，幾乎都是面向 ①② 的內容；而「想像自己的離世」也已悄悄把我們帶進下一個面向——<b>當人生以死亡為參照，什麼才真正值得？</b></p>
+    <p class="muted">這正說明——被記得的，幾乎都是<b>面向二</b>的內容：<b>你與他者的關係、你曾給出的愛</b>，而不是財富與成就。而「想像自己的離世」也已把我們帶進下一個面向——<b>當人生以死亡為參照，什麼才真正值得？</b></p>
   </div></div>
 </section>
 
@@ -1382,16 +1382,20 @@ body.no-clickzones .click-zones{display:none}
   </div>
 </section>
 
-<!-- 收束個人書寫 -->
-<section class="slide roomy">
-  <h2>對終極信念的衝擊：個人書寫</h2>
-  <div class="practice" style="max-width:62rem">
+<!-- 收束個人書寫（建構式：先書寫，按下一步後揭曉收束） -->
+<section class="slide roomy reveal-step discuss-step" style="--card-icon:'✍️'">
+  <h2><span class="cap">✍️</span>對終極信念的衝擊：個人書寫<span class="ul"></span></h2>
+  <div class="practice" style="max-width:62rem;margin-left:auto;margin-right:auto">
     <span class="label">寫在《人生三問日誌》</span>
     <p>回到開頭那一票——聽完之後：</p>
     <p>(1) 我此刻傾向<b>牆還是門</b>？與開場投的票相比，有沒有<b>鬆動，或更堅定</b>？</p>
     <p>(2) 這個答案，會怎麼改變我現在<b>怎麼活</b>？對我的<b>終極信念</b>有什麼衝擊？</p>
   </div>
-  <p class="muted" style="margin-top:.4em">要能真誠站進虛無主義，需要相當的哲學解析度；多數人從沒有意識地選過。從開場投票、討論到此刻書寫，正是在提升解析度、體驗「<b>為自己的終極信念負責</b>」。</p>
+  <p class="reveal-hint muted" style="margin-top:.5em">（個人書寫後，按 → 下一步）</p>
+  <div class="reveal-after"><div class="ra-inner">
+    <p class="big-q" style="margin-top:.3em">這場書寫，本身就是一次「為自己的終極信念負責」。</p>
+    <p class="muted">要能真誠站進虛無主義，需要相當的哲學解析度；多數人從沒有意識地選過。從開場投票、討論到此刻書寫，正是在<b>提升解析度</b>，把信念從「不假思索」帶向「自我覺察」。</p>
+  </div></div>
 </section>
 
 <!-- 學員影音庫示範 -->
