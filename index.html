@@ -1250,24 +1250,19 @@ body.no-clickzones .click-zones{display:none}
   </div>
 </section>
 
-<!-- 牆門投票（重整：意象圖＋QR＋即時長條；原「先讓學員討論」頁已刪） -->
+<!-- 牆門投票（重整：大 QR 左＋即時長條右；意象圖移除，後段門/牆思辨頁會出現） -->
 <section class="slide">
   <h2>死，對你而言比較像牆，還是門？</h2>
-  <div class="grid2" style="grid-template-columns:.82fr 1.18fr;align-items:stretch;gap:2.8vw;flex:1;min-height:0;margin-top:.3em">
-    <figure style="margin:0;display:flex;flex-direction:column;justify-content:center">
-      <img src="images/death_door_or_wall.jpg" alt="死亡：一堵牆與一扇門的意象" style="max-width:100%;max-height:60vh;object-fit:contain;border-radius:14px;box-shadow:var(--shadow-strong);margin:0 auto">
-      <figcaption class="src" style="text-align:center;max-width:none;margin-top:.5em">同一道界限——左半是實牆的幽暗，右半是微啟之門的暖光。</figcaption>
-    </figure>
-    <div style="display:flex;flex-direction:column;min-height:0">
-      <div style="display:flex;align-items:center;gap:1.3em;margin-bottom:1.6vh">
-        <div class="cloud-qr" style="padding:.55em .6em .45em;flex:none"><div class="qr-box" data-cloud="vote" style="width:clamp(118px,9.2vw,148px);height:clamp(118px,9.2vw,148px)"></div><div class="qr-cap" style="font-size:clamp(.95rem,1.1vw,1.15rem)">掃我，投票</div></div>
-        <div><p class="lead" style="max-width:none;margin:0;text-align:left;font-size:clamp(1.08rem,1.4vw,1.42rem)">先<b>每人投一票</b>，<br>理由留到小組討論。</p><p class="src" style="margin:.5em 0 0">已投 <b><span id="vote-total">0</span></b> 票</p></div>
-      </div>
-      <div class="vote-bars" id="voteBars" style="flex:1;padding-top:0">
+  <div class="grid2" style="grid-template-columns:.85fr 1.15fr;align-items:stretch;gap:3vw;flex:1;min-height:0;margin-top:.4em">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8vh;text-align:center">
+      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-cloud="vote" style="width:clamp(250px,24vw,360px);height:clamp(250px,24vw,360px)"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投票</div></div>
+      <p class="lead" style="max-width:20em;margin:0;font-size:clamp(1.12rem,1.45vw,1.46rem)">先<b>每人投一票</b>，理由留到小組討論。</p>
+      <p class="src" style="margin:0;font-size:clamp(1rem,1.2vw,1.2rem)">已投 <b><span id="vote-total">0</span></b> 票</p>
+    </div>
+    <div class="vote-bars" id="voteBars" style="height:100%;padding-top:0">
         <div class="vbar" style="--c:#6B6B6B"><div class="vcount" id="vc-wall">0</div><div class="vpct" id="vp-wall">0%</div><div class="vfill" id="vf-wall"></div><div class="vlabel">牆</div><div class="vsub">走到盡頭即虛無</div></div>
         <div class="vbar" style="--c:#A8782E"><div class="vcount" id="vc-door">0</div><div class="vpct" id="vp-door">0%</div><div class="vfill" id="vf-door"></div><div class="vlabel">門</div><div class="vsub">推開另有風光</div></div>
         <div class="vbar" style="--c:#5C1A23"><div class="vcount" id="vc-unsure">0</div><div class="vpct" id="vp-unsure">0%</div><div class="vfill" id="vf-unsure"></div><div class="vlabel">不能確定</div><div class="vsub">兩者皆有可能</div></div>
-      </div>
     </div>
   </div>
 </section>
