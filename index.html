@@ -110,6 +110,8 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .discuss-step .reveal-hint{font-size:1.2rem;color:#9a7b1e;font-weight:600}
 .discuss-step.revealed .reveal-hint{display:none}
 .discuss-step .reveal-after{margin-top:.1em}
+/* tall-card：內容較多的討論頁，僅「未揭曉」時加頂部留白讓標題下移；揭曉後還原(收束句才不會被擠到底部裁掉) */
+.discuss-step.tall-card:not(.revealed){padding-top:9vh}
 .discuss-step .reveal-after .big-q{font-size:clamp(1.5rem,2.4vw,2.15rem);line-height:1.4;margin-top:.15em}
 .discuss-step .reveal-after .muted{font-size:clamp(1.02rem,1.36vw,1.32rem)}
 /* 各主題標題頁（本日章節總覽） */
@@ -1158,7 +1160,7 @@ body.no-clickzones .click-zones{display:none}
 </section>
 
 <!-- 人生畢業禮（建構式：先討論，按鍵後揭曉收束） -->
-<section class="slide roomy reveal-step discuss-step" style="--card-icon:'🎓'">
+<section class="slide roomy reveal-step discuss-step tall-card" style="--card-icon:'🎓'">
   <h2><span class="cap">🎓</span>體驗活動：人生畢業禮<span class="ul"></span></h2>
   <div class="practice" style="max-width:64rem;margin-left:auto;margin-right:auto">
     <span class="label">書寫＋互讀</span>
