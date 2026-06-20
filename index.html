@@ -212,7 +212,7 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 .cloud-side .lead{text-align:center;max-width:none;margin:0;font-size:clamp(1.1rem,1.4vw,1.4rem)}
 .cloud-side .src{text-align:center;max-width:none;margin:0}
 .cloud-qr{background:#fff;border-radius:16px;border-top:7px solid var(--color-accent-deep);box-shadow:var(--shadow-strong);padding:.8em .8em .6em;display:flex;flex-direction:column;align-items:center;gap:.4em}
-.cloud-qr .qr-box{width:clamp(130px,11vw,180px);height:clamp(130px,11vw,180px)}
+.cloud-qr .qr-box{width:clamp(130px,11vw,180px)}/* QR 一律正方形：只設 width，高度交給 .qr-box 的 aspect-ratio:1，切勿設 height */
 .cloud-qr .qr-box img,.cloud-qr .qr-box canvas{width:100%!important;height:100%!important;display:block}
 .cloud-qr .qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.1rem,1.3vw,1.35rem)}
 .cloud-canvas-wrap{flex:1 1 auto;position:relative;min-height:60vh;height:100%;border-radius:16px;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.9),transparent 55%),linear-gradient(145deg,#f8f2e8,#efe5d4);box-shadow:var(--shadow-strong);overflow:hidden}
@@ -1255,7 +1255,7 @@ body.no-clickzones .click-zones{display:none}
   <h2>死，對你而言比較像牆，還是門？</h2>
   <div class="grid2" style="grid-template-columns:.85fr 1.15fr;align-items:stretch;gap:3vw;flex:1;min-height:0;margin-top:.4em">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8vh;text-align:center">
-      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-cloud="vote" style="width:clamp(250px,24vw,360px);height:clamp(250px,24vw,360px)"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投票</div></div>
+      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-cloud="vote" style="width:clamp(250px,24vw,360px);max-width:360px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投票</div></div>
       <p class="lead" style="max-width:20em;margin:0;font-size:clamp(1.12rem,1.45vw,1.46rem)">先<b>每人投一票</b>，理由留到小組討論。</p>
       <p class="src" style="margin:0;font-size:clamp(1rem,1.2vw,1.2rem)">已投 <b><span id="vote-total">0</span></b> 票</p>
     </div>
