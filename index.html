@@ -1315,11 +1315,11 @@ body.no-clickzones .click-zones{display:none}
   <h2>否定面之辯：能否取消「生命本身的意義」？<span style="font-size:.5em;font-weight:400;color:#8a7a6a">（附孫老師的回應）</span></h2>
   <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:start;gap:2.2vw">
     <div>
-      <div class="video-wrap" style="width:100%;max-width:100%;margin-bottom:.5em"><iframe id="yt-verv" src="https://www.youtube-nocookie.com/embed/qRU0up6uBzc?enablejsapi=1&rel=0&modestbranding=1" title="John Vervaeke" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe><div class="cc-overlay" id="cc-verv"></div></div>
+      <div class="video-wrap" style="width:100%;max-width:100%;margin-bottom:.5em"><div id="yt-verv"></div><div class="cc-overlay" id="cc-verv"></div></div>
       <div class="co-card"><div class="who">John Vervaeke（多倫多大學）</div><div class="claim">問 meaning <i>of</i> life 是「搞錯問題」，該問的是 meaning <i>in</i> life ＝與人、與世界的<b>連結感</b>。</div><div class="co"><b>孫老師的回應：</b>把問題轉向 meaning <i>in</i> life，正是<b>規避了卡繆所承認的虛無與荒謬</b>。「生命本身的意義」未必是假問題——它可指生命對人、乃至在超越者眼中的意義；Vervaeke 因不信超越，才將它取消。</div></div>
     </div>
     <div>
-      <div class="video-wrap" style="width:100%;max-width:100%;margin-bottom:.5em"><iframe id="yt-kelly" src="https://www.youtube-nocookie.com/embed/uk8cENmTttA?enablejsapi=1&rel=0&modestbranding=1" title="Sean Kelly" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe><div class="cc-overlay" id="cc-kelly"></div></div>
+      <div class="video-wrap" style="width:100%;max-width:100%;margin-bottom:.5em"><div id="yt-kelly"></div><div class="cc-overlay" id="cc-kelly"></div></div>
       <div class="co-card"><div class="who">Sean Kelly（哈佛）</div><div class="claim">認同卡繆「人生整體荒謬」，但補上一個個「有意義的時刻」。</div><div class="co"><b>孫老師的回應：</b>他把「<b>有意義的時刻</b>」（meanings <i>in</i> life）與「<b>生命整體有無意義</b>」（meaning <i>of</i> life）<b>混為一談</b>了。這些時刻正是托爾斯泰「品嚐蜂蜜」的經驗——蜂蜜再甜，不改變危如累卵的處境，發光的瞬間反而更突顯荒謬。</div></div>
     </div>
   </div>
@@ -1329,7 +1329,7 @@ body.no-clickzones .click-zones{display:none}
 <section class="slide">
   <h2>連最清醒的理性，也難肯定生命本身的意義</h2>
   <div class="grid2" style="grid-template-columns:1fr 1.05fr;align-items:center;gap:2.6vw">
-    <div class="video-wrap" style="width:100%;max-width:100%"><iframe id="yt-fing" src="https://www.youtube-nocookie.com/embed/qX6NztnPU-4?enablejsapi=1&rel=0&modestbranding=1" title="Herbert Fingarette" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" allowfullscreen></iframe><div class="cc-overlay" id="cc-fing"></div></div>
+    <div class="video-wrap" style="width:100%;max-width:100%"><div id="yt-fing"></div><div class="cc-overlay" id="cc-fing"></div></div>
     <div>
       <p class="lead" style="max-width:none">哲學家 <b>Herbert Fingarette</b>，97 歲。他一生著書論證「<b>怕死並不理性</b>」；可當死亡真的逼近，他在鏡頭前坦承：自己也想不通——「我為什麼活過，又為什麼非走不可？」</p>
       <p style="max-width:none">理性能拆穿種種對死亡的逃避，卻仍<b>無法肯定「生命本身究竟有沒有意義」</b>。科學與哲學走到這裡，一同沉默。</p>
@@ -2019,11 +2019,12 @@ function ccGratShow(t){
   });
 })();
 </script>
+
 <!-- ===== YouTube 嵌入影片自製繁中字幕（Vervaeke／Sean Kelly／Fingarette；譯文為本課自製，與語音對齊） ===== -->
 <script>
 (function(){
   var YT_SUBS={
-    'yt-verv':{off:0,el:'cc-verv',cues:[
+    'yt-verv':{vid:'qRU0up6uBzc',off:0,el:'cc-verv',cues:[
 [4,"你在「生命中的意義」與「生命本身的意義」之間劃了一條界線。"],
 [6.5,"你認為這是個有用的問題嗎？"],
 [7.4,"不，我覺得這就像在問：北極的北邊是什麼？"],
@@ -2194,7 +2195,7 @@ function ccGratShow(t){
 [575.3,"所以對我而言，我並不需要那個問題，"],
 [581,"來把我激發進那樣的姿態。"],
     ]},
-    'yt-kelly':{off:0,el:'cc-kelly',cues:[
+    'yt-kelly':{vid:'uk8cENmTttA',off:0,el:'cc-kelly',cues:[
 [3,"我們來談談卡繆，"],
 [8.4,"比起謀殺，他更關注的是自殺，"],
 [11,"他把自殺當作探究人性的一種方式。"],
@@ -2319,7 +2320,7 @@ function ccGratShow(t){
 [439.1,"並不像卡繆所描述的那個樣子，"],
 [440.7,"而且正因如此，它更美好。"],
     ]},
-    'yt-fing':{off:0,el:'cc-fing',cues:[
+    'yt-fing':{vid:'qX6NztnPU-4',off:0,el:'cc-fing',cues:[
 [122,"對於還沒走到老年的人來說，"],
 [129.8,"很難理解箇中的心理狀態，"],
 [138.5,"很難明白一個人內心正經歷著什麼。"],
@@ -2444,6 +2445,7 @@ function ccGratShow(t){
 [1023.3,"等待著，直到我不得不說再見。"],
     ]}
   };
+  window._ytsubs=YT_SUBS;
   function show(id){
     var cfg=YT_SUBS[id],p=cfg._p; if(!p||!p.getCurrentTime) return;
     var t; try{t=p.getCurrentTime();}catch(e){return;}
@@ -2457,7 +2459,11 @@ function ccGratShow(t){
   window.onYouTubeIframeAPIReady=function(){
     Object.keys(YT_SUBS).forEach(function(id){
       if(!document.getElementById(id))return;
-      YT_SUBS[id]._p=new YT.Player(id,{events:{onReady:function(){setInterval(function(){show(id);},250);}}});
+      var cfg=YT_SUBS[id];
+      cfg._p=new YT.Player(id,{videoId:cfg.vid,width:'100%',height:'100%',
+        host:'https://www.youtube-nocookie.com',
+        playerVars:{rel:0,modestbranding:1,playsinline:1},
+        events:{onReady:function(){setInterval(function(){show(id);},250);}}});
     });
   };
   var sc=document.createElement('script');sc.src='https://www.youtube.com/iframe_api';document.head.appendChild(sc);
