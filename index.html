@@ -1587,7 +1587,7 @@ fitAll();
   });
 })();
 const noClickZoneSlides=[];
-slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('kv-slide')||s.querySelector('iframe,video,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
+slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('kv-slide')||s.querySelector('iframe,video,.video-wrap,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
 const CLOUD_SLIDES=[];
 slides.forEach((s,i)=>{if(s.querySelector('.cloud-canvas-wrap canvas'))CLOUD_SLIDES.push(i+1);});
 function showSlide(n){
