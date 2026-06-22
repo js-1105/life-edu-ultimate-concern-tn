@@ -2793,6 +2793,18 @@ function ccGratShow(t){
         }}});
     });
   };
+  // 按 Esc 會強制退出瀏覽器全螢幕（無法攔截、Chrome 又不支援巢狀全螢幕）：
+  // 若退出當下還有影片 CSS 覆蓋（vfs-cover），就清掉覆蓋，並盡力重回簡報全螢幕（瀏覽器允許才成）。
+  function onFsExit(){
+    if(document.fullscreenElement||document.webkitFullscreenElement)return;
+    var covers=document.querySelectorAll('.video-wrap.vfs-cover');
+    if(!covers.length)return;
+    covers.forEach(function(c){c.classList.remove('vfs-cover');});
+    var de=document.documentElement;
+    try{var p=(de.requestFullscreen||de.webkitRequestFullscreen||function(){}).call(de);if(p&&p.catch)p.catch(function(){});}catch(e){}
+  }
+  document.addEventListener('fullscreenchange',onFsExit);
+  document.addEventListener('webkitfullscreenchange',onFsExit);
   var sc=document.createElement('script');sc.src='https://www.youtube.com/iframe_api';document.head.appendChild(sc);
 })();
 </script>
