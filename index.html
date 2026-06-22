@@ -1244,14 +1244,14 @@ body.no-clickzones .click-zones{display:none}
 #s67intro .s67-h-after{display:none}
 #s67intro.revealed .s67-h-before{display:none}
 #s67intro.revealed .s67-h-after{display:block}
-#s67intro .s67-stage{display:grid;grid-template-columns:1fr 0fr;gap:0;align-items:center;margin-top:.4em;transition:grid-template-columns .6s ease,gap .6s ease}
-#s67intro .s67-vid{justify-self:center;min-width:0}
+#s67intro .s67-stage{display:grid;grid-template-columns:1fr 0fr;gap:0;align-items:center;margin-top:.4em}
+#s67intro .s67-vid{min-width:0}
 #s67intro .s67-vid .video-wrap{width:100%;max-width:min(76vw,122vh);margin:0 auto}
-#s67intro .s67-txt{overflow:hidden;opacity:0;transition:opacity .55s ease .15s}
+#s67intro .s67-txt{display:none}
 #s67intro.revealed .s67-stage{grid-template-columns:1fr 1.3fr;gap:2.8vw}
-#s67intro.revealed .s67-vid{justify-self:start}
 #s67intro.revealed .s67-vid .video-wrap{max-width:100%;margin:0}
-#s67intro.revealed .s67-txt{opacity:1}
+#s67intro.revealed .s67-txt{display:block;animation:s67txt .45s ease both}
+@keyframes s67txt{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 </style>
 <section class="slide reveal-step" id="s67intro">
   <h2 class="s67-h-before">安鈞璨參與《康熙來了》</h2>
