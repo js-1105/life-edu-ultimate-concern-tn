@@ -1833,7 +1833,7 @@ window.U2=(function(){
   const ROOM=window.FB_ROOM||'default';
   const esc=s=>String(s||'').replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
   const BASE=location.origin+location.pathname.replace(/[^/]*$/,'');
-  const SUBMIT=BASE+'submit.html', ASK=BASE+'ask.html';
+  const SUBMIT=BASE+'submit.html?cb=20260713b', ASK=BASE+'ask.html?cb=20260713b';
   const configured=()=>window.FB_CONFIG&&FB_CONFIG.apiKey&&FB_CONFIG.apiKey.indexOf('PASTE')<0;
   const listify=o=>o?Object.keys(o).sort((a,b)=>(o[a].t||0)-(o[b].t||0)).map(k=>o[k].txt):[];
   let root=null, online=false;
@@ -1942,9 +1942,9 @@ window.U2=(function(){
   /* ---- QR ---- */
   function makeQRs(){
     if(typeof QRCode==='undefined')return;
-    document.querySelectorAll('.qr-box[data-pg]').forEach(b=>{const g=b.getAttribute('data-pg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'?r=prologue&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
-    document.querySelectorAll('.qr-box[data-wg]').forEach(b=>{const g=b.getAttribute('data-wg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'?r=walldoor&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
-    document.querySelectorAll('.qr-box[data-cloud]').forEach(b=>{const p=b.getAttribute('data-cloud');b.innerHTML='';try{new QRCode(b,{text:ASK+'?p='+p,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
+    document.querySelectorAll('.qr-box[data-pg]').forEach(b=>{const g=b.getAttribute('data-pg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'&r=prologue&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
+    document.querySelectorAll('.qr-box[data-wg]').forEach(b=>{const g=b.getAttribute('data-wg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'&r=walldoor&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
+    document.querySelectorAll('.qr-box[data-cloud]').forEach(b=>{const p=b.getAttribute('data-cloud');b.innerHTML='';try{new QRCode(b,{text:ASK+'&p='+p,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
   }
   function setStatus(){const el=document.getElementById('fbStatus');if(!el)return;el.textContent=root?(online?'● 線上（手機投稿即時更新）':'● 連線中…'):'○ 單機代打模式（未連網）';}
 
