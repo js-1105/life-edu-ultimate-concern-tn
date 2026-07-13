@@ -231,11 +231,11 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 .cloud-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--color-muted);font-style:italic;font-size:clamp(1.1rem,1.4vw,1.4rem);text-align:center;padding:0 1em}
 /* 八組 QR 頁 */
 .qr-intro{text-align:center;max-width:none;margin:.25em auto .55em;font-size:clamp(1.4rem,2vw,1.95rem);line-height:1.5;color:var(--color-text)}
-.qr-stage{display:flex;justify-content:center;align-items:center;gap:1.6vw;flex:1;min-height:0;width:100%}
-.qr-card{flex:1 1 0;max-width:230px;background:#fff;border-radius:20px;border-top:9px solid var(--c,#862633);box-shadow:var(--shadow-strong);padding:1.2em 1em 1.3em;display:flex;flex-direction:column;align-items:center;gap:.7em}
-.qr-box{width:100%;max-width:235px;aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center}
+.qr-stage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:.5vh 1.3vw;align-content:center;justify-items:center;flex:1;min-height:0;width:100%}
+.qr-card{width:100%;max-width:255px;background:#fff;border-radius:14px;border-top:6px solid var(--c,#862633);box-shadow:var(--shadow-strong);padding:.3em .55em .35em;display:flex;flex-direction:column;align-items:center;gap:.2em}
+.qr-box{width:100%;max-width:min(18.5vw,19.5vh);aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center}
 .qr-box img,.qr-box canvas{width:100%!important;height:100%!important;display:block}
-.qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--c,#862633);font-size:clamp(1.5rem,2.05vw,2.05rem);text-align:center;line-height:1.12}
+.qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--c,#862633);font-size:clamp(1rem,1.35vw,1.3rem);text-align:center;line-height:1.0}
 .qr-cap small{display:block;font-family:var(--font-sans);font-weight:700;color:var(--color-text);font-size:.7em;letter-spacing:.02em;margin-top:.15em}
 /* 八組即時頁（gpage，單欄） */
 .gpage h2 .g-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--c);margin-right:.45em;vertical-align:middle}
