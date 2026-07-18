@@ -229,7 +229,7 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 .cloud-canvas-wrap{flex:1 1 auto;position:relative;min-height:60vh;height:100%;border-radius:16px;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.9),transparent 55%),linear-gradient(145deg,#f8f2e8,#efe5d4);box-shadow:var(--shadow-strong);overflow:hidden}
 .cloud-canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%}
 .cloud-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--color-muted);font-style:italic;font-size:clamp(1.1rem,1.4vw,1.4rem);text-align:center;padding:0 1em}
-/* 八組 QR 頁 */
+/* 六組 QR 頁 */
 .qr-intro{text-align:center;max-width:none;margin:.25em auto .55em;font-size:clamp(1.4rem,2vw,1.95rem);line-height:1.5;color:var(--color-text)}
 .qr-stage{display:grid;grid-template-columns:repeat(4,auto);grid-auto-rows:1fr;justify-content:center;align-content:center;column-gap:2.2vw;row-gap:.5vh;flex:1;min-height:0;width:100%}
 .qr-card{width:255px;max-width:255px;background:#fff;border-radius:14px;border-top:6px solid var(--c,#862633);box-shadow:var(--shadow-strong);padding:.3em .55em .35em;display:flex;flex-direction:column;align-items:center;gap:.2em}
@@ -237,7 +237,7 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 .qr-box img,.qr-box canvas{width:100%!important;height:100%!important;display:block}
 .qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--c,#862633);font-size:clamp(1rem,1.35vw,1.3rem);text-align:center;line-height:1.0}
 .qr-cap small{display:block;font-family:var(--font-sans);font-weight:700;color:var(--color-text);font-size:.7em;letter-spacing:.02em;margin-top:.15em}
-/* 八組即時頁（gpage，單欄） */
+/* 六組即時頁（gpage，單欄） */
 .gpage h2 .g-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--c);margin-right:.45em;vertical-align:middle}
 .gpage .gbox{flex:1;min-height:0;overflow:auto;background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.8em .9em;display:flex;flex-direction:column;gap:.6em;width:100%;margin-top:.3em}
 .gitem{background:#fff;border-left:5px solid var(--c,#862633);border-radius:8px;box-shadow:var(--shadow-soft);padding:.6em .9em;font-size:clamp(1.1rem,1.45vw,1.45rem);line-height:1.55;white-space:pre-wrap;animation:u2pop .3s ease}
@@ -373,7 +373,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="ornament"></div>
   <p class="lead">什麼是值得活、且有意義的人生？</p>
   <button class="cover-cta" onclick="startPresentation()">進入全螢幕．開始上課</button>
-  <div class="meta">孫效智　|　臺大生命教育研發育成中心　第十期師資培育學分班　|　台北班　Day 2</div>
+  <div class="meta">孫效智　|　臺大生命教育研發育成中心　第十期師資培育學分班　|　台南班　Day 2</div>
   <button class="back-home-btn" style="margin-top:.6em;font-size:.72em;opacity:.55;background:none;border:none;text-decoration:underline;cursor:pointer;padding:0" onclick="goToSlide(document.querySelectorAll('.slide').length)">跳到最後一頁</button>
 </section>
 
@@ -712,11 +712,11 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <p class="src" style="text-align:center;max-width:none">這部電影，直面了死亡與虛無這兩道人生最難的課題。</p>
 </section>
 
-<!-- 序曲八組 QR -->
+<!-- 序曲六組 QR -->
 <section class="slide">
   <h2>掃你那一組的 QR，把全組精華打上來</h2>
   <p class="lead qr-intro">請各組派<b>一位同學</b>，掃描你們那一組的碼，<br>寫下「<b>全組最有啟發的地方</b>」（＋為什麼），投影幕即時更新。</p>
-  <p class="src" style="text-align:center;max-width:none;font-size:clamp(1.3rem,1.8vw,1.6rem);font-style:normal">分組：現場隨機分成八組。</p>
+  <p class="src" style="text-align:center;max-width:none;font-size:clamp(1.3rem,1.8vw,1.6rem);font-style:normal">分組：現場隨機分成六組。</p>
   <div class="qr-stage">
     <div class="qr-card" style="--c:#862633"><div class="qr-box" data-pg="1"></div><div class="qr-cap">第1組</div></div>
     <div class="qr-card" style="--c:#A8782E"><div class="qr-box" data-pg="2"></div><div class="qr-cap">第2組</div></div>
@@ -724,21 +724,17 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div class="qr-card" style="--c:#6B5635"><div class="qr-box" data-pg="4"></div><div class="qr-cap">第4組</div></div>
     <div class="qr-card" style="--c:#5C1A23"><div class="qr-box" data-pg="5"></div><div class="qr-cap">第5組</div></div>
     <div class="qr-card" style="--c:#C47830"><div class="qr-box" data-pg="6"></div><div class="qr-cap">第6組</div></div>
-    <div class="qr-card" style="--c:#2F6B4A"><div class="qr-box" data-pg="7"></div><div class="qr-cap">第7組</div></div>
-    <div class="qr-card" style="--c:#5B4570"><div class="qr-box" data-pg="8"></div><div class="qr-cap">第8組</div></div>
 
   </div>
 </section>
 
-<!-- 序曲八組即時頁 -->
+<!-- 序曲六組即時頁 -->
 <section class="slide gpage" style="--c:#862633"><h2><span class="g-dot"></span>第1組 · 最有啟發的地方</h2><div class="gbox" id="pg1"></div><div class="daiuda" data-pg="1"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#A8782E"><h2><span class="g-dot"></span>第2組 · 最有啟發的地方</h2><div class="gbox" id="pg2"></div><div class="daiuda" data-pg="2"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#1E5F74"><h2><span class="g-dot"></span>第3組 · 最有啟發的地方</h2><div class="gbox" id="pg3"></div><div class="daiuda" data-pg="3"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#6B5635"><h2><span class="g-dot"></span>第4組 · 最有啟發的地方</h2><div class="gbox" id="pg4"></div><div class="daiuda" data-pg="4"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#5C1A23"><h2><span class="g-dot"></span>第5組 · 最有啟發的地方</h2><div class="gbox" id="pg5"></div><div class="daiuda" data-pg="5"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#C47830"><h2><span class="g-dot"></span>第6組 · 最有啟發的地方</h2><div class="gbox" id="pg6"></div><div class="daiuda" data-pg="6"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
-<section class="slide gpage" style="--c:#2F6B4A"><h2><span class="g-dot"></span>第7組 · 最有啟發的地方</h2><div class="gbox" id="pg7"></div><div class="daiuda" data-pg="7"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
-<section class="slide gpage" style="--c:#5B4570"><h2><span class="g-dot"></span>第8組 · 最有啟發的地方</h2><div class="gbox" id="pg8"></div><div class="daiuda" data-pg="8"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2dai(this.closest('.daiuda'))">送出</button></div></section>
 
 <!-- ===================== 肆　究竟什麼是終極關懷 ===================== -->
 <section class="slide section-divider">
@@ -1387,10 +1383,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   </div>
 </section>
 
-<!-- 牆門八組 QR -->
+<!-- 牆門六組 QR -->
 <section class="slide">
   <h2>各組掃 QR，上傳「組立場＋理由」</h2>
-  <p class="lead qr-intro">每組討論彙整<b>一句組立場</b>（牆／門／不能確定，加上為什麼），<br>派一位掃自組的碼上傳，投影幕即時呈現八組頁。</p>
+  <p class="lead qr-intro">每組討論彙整<b>一句組立場</b>（牆／門／不能確定，加上為什麼），<br>派一位掃自組的碼上傳，投影幕即時呈現六組頁。</p>
   <div class="qr-stage">
     <div class="qr-card" style="--c:#862633"><div class="qr-box" data-wg="1"></div><div class="qr-cap">第1組</div></div>
     <div class="qr-card" style="--c:#A8782E"><div class="qr-box" data-wg="2"></div><div class="qr-cap">第2組</div></div>
@@ -1398,20 +1394,16 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div class="qr-card" style="--c:#6B5635"><div class="qr-box" data-wg="4"></div><div class="qr-cap">第4組</div></div>
     <div class="qr-card" style="--c:#5C1A23"><div class="qr-box" data-wg="5"></div><div class="qr-cap">第5組</div></div>
     <div class="qr-card" style="--c:#C47830"><div class="qr-box" data-wg="6"></div><div class="qr-cap">第6組</div></div>
-    <div class="qr-card" style="--c:#2F6B4A"><div class="qr-box" data-wg="7"></div><div class="qr-cap">第7組</div></div>
-    <div class="qr-card" style="--c:#5B4570"><div class="qr-box" data-wg="8"></div><div class="qr-cap">第8組</div></div>
   </div>
 </section>
 
-<!-- 牆門八組即時頁 -->
+<!-- 牆門六組即時頁 -->
 <section class="slide gpage" style="--c:#862633"><h2><span class="g-dot"></span>第1組 · 組立場與理由</h2><div class="gbox" id="wg1"></div><div class="daiuda" data-wg="1"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#A8782E"><h2><span class="g-dot"></span>第2組 · 組立場與理由</h2><div class="gbox" id="wg2"></div><div class="daiuda" data-wg="2"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#1E5F74"><h2><span class="g-dot"></span>第3組 · 組立場與理由</h2><div class="gbox" id="wg3"></div><div class="daiuda" data-wg="3"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#6B5635"><h2><span class="g-dot"></span>第4組 · 組立場與理由</h2><div class="gbox" id="wg4"></div><div class="daiuda" data-wg="4"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#5C1A23"><h2><span class="g-dot"></span>第5組 · 組立場與理由</h2><div class="gbox" id="wg5"></div><div class="daiuda" data-wg="5"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 <section class="slide gpage" style="--c:#C47830"><h2><span class="g-dot"></span>第6組 · 組立場與理由</h2><div class="gbox" id="wg6"></div><div class="daiuda" data-wg="6"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
-<section class="slide gpage" style="--c:#2F6B4A"><h2><span class="g-dot"></span>第7組 · 組立場與理由</h2><div class="gbox" id="wg7"></div><div class="daiuda" data-wg="7"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
-<section class="slide gpage" style="--c:#5B4570"><h2><span class="g-dot"></span>第8組 · 組立場與理由</h2><div class="gbox" id="wg8"></div><div class="daiuda" data-wg="8"><span class="tag">無網路時·老師代打</span><input type="text" placeholder="代打一句，Enter 送出"><button class="btn" onclick="U2daiW(this.closest('.daiuda'))">送出</button></div></section>
 
 <!-- 柒·區分兩種「意義」（投票/小組討論之後，進入哲學討論前的定義頁） -->
 <section class="slide">
@@ -1929,8 +1921,8 @@ window.U2=(function(){
   const listify=o=>o?Object.keys(o).sort((a,b)=>(o[a].t||0)-(o[b].t||0)).map(k=>o[k].txt):[];
   let root=null, online=false;
   // 資料容器
-  let PRO={1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};    // 序曲八組
-  let WG={1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};     // 牆門八組
+  let PRO={1:[],2:[],3:[],4:[],5:[],6:[]};    // 序曲六組
+  let WG={1:[],2:[],3:[],4:[],5:[],6:[]};     // 牆門六組
   let CLOUDS={question:[],dream:[]};          // 兩個文字雲
   let VOTE={wall:0,door:0,unsure:0,total:0};  // 牆門投票
   const LK='u2_'+ROOM;
@@ -1943,10 +1935,10 @@ window.U2=(function(){
     try{
       firebase.initializeApp(window.FB_CONFIG);
       root=firebase.database().ref('rooms/'+ROOM);
-      // 序曲八組
-      [1,2,3,4,5,6,7,8].forEach(g=>root.child('prologue/g'+g).on('value',s=>{PRO[g]=listify(s.val()||{});renderPro(g);}));
-      // 牆門八組
-      [1,2,3,4,5,6,7,8].forEach(g=>root.child('walldoor/g'+g).on('value',s=>{WG[g]=listify(s.val()||{});renderWG(g);}));
+      // 序曲六組
+      [1,2,3,4,5,6].forEach(g=>root.child('prologue/g'+g).on('value',s=>{PRO[g]=listify(s.val()||{});renderPro(g);}));
+      // 牆門六組
+      [1,2,3,4,5,6].forEach(g=>root.child('walldoor/g'+g).on('value',s=>{WG[g]=listify(s.val()||{});renderWG(g);}));
       // 文字雲
       ['question','dream'].forEach(p=>root.child('clouds/'+p).on('value',s=>{CLOUDS[p]=listify(s.val()||{});renderCloud(p);}));
       // 投票
@@ -1961,14 +1953,14 @@ window.U2=(function(){
     v.total=v.wall+v.door+v.unsure; VOTE=v;
   }
 
-  /* ---- 渲染：序曲八組 ---- */
+  /* ---- 渲染：序曲六組 ---- */
   function renderPro(g){
     const box=document.getElementById('pg'+g); if(!box)return;
     const a=PRO[g]||[];
     box.innerHTML=a.length?a.map(t=>`<div class="gitem">${esc(t)}</div>`).join('')
       :'<div class="empty-hint">掃 QR 在手機寫下「全組最有啟發的地方」，這裡會即時出現。</div>';
   }
-  /* ---- 渲染：牆門八組 ---- */
+  /* ---- 渲染：牆門六組 ---- */
   function renderWG(g){
     const box=document.getElementById('wg'+g); if(!box)return;
     const a=WG[g]||[];
@@ -2082,13 +2074,13 @@ window.U2=(function(){
   function csvCell(s){return '"'+String(s==null?'':s).replace(/"/g,'""')+'"';}
   function downloadCSV(stamp){
     var rows=[['房號','區段','組別/選項','內容']];
-    [1,2,3,4,5,6,7,8].forEach(g=>(PRO[g]||[]).forEach(t=>rows.push([ROOM,'序曲精華','第'+g+'組',t])));
+    [1,2,3,4,5,6].forEach(g=>(PRO[g]||[]).forEach(t=>rows.push([ROOM,'序曲精華','第'+g+'組',t])));
     (CLOUDS.question||[]).forEach(t=>rows.push([ROOM,'人生問題雲','全班',t]));
     (CLOUDS.dream||[]).forEach(t=>rows.push([ROOM,'美好人生想像雲','全班',t]));
     rows.push([ROOM,'牆門投票','牆','人數 '+VOTE.wall]);
     rows.push([ROOM,'牆門投票','門','人數 '+VOTE.door]);
     rows.push([ROOM,'牆門投票','不能確定','人數 '+VOTE.unsure]);
-    [1,2,3,4,5,6,7,8].forEach(g=>(WG[g]||[]).forEach(t=>rows.push([ROOM,'牆門組立場','第'+g+'組',t])));
+    [1,2,3,4,5,6].forEach(g=>(WG[g]||[]).forEach(t=>rows.push([ROOM,'牆門組立場','第'+g+'組',t])));
     var csv=rows.map(r=>r.map(csvCell).join(',')).join('\r\n');
     var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download='單元二終極關懷_'+ROOM+'_'+stamp+'.csv';document.body.appendChild(a);a.click();a.remove();
@@ -2103,14 +2095,14 @@ window.U2=(function(){
         var val=snap.val(),fin=()=>{root.remove();showToast('已下載 CSV＋雲端封存，並清空本場',3000);};
         if(val){firebase.database().ref('rooms/_archives/'+ROOM+'__'+stamp).set(val).then(fin,fin);}else fin();
       });
-    }else{PRO={1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};WG={1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};CLOUDS={question:[],dream:[]};saveLocal();[1,2,3,4,5,6,7,8].forEach(g=>{renderPro(g);renderWG(g);});refreshClouds();showToast('已下載 CSV 並清空本場（本機）',3000);}
+    }else{PRO={1:[],2:[],3:[],4:[],5:[],6:[]};WG={1:[],2:[],3:[],4:[],5:[],6:[]};CLOUDS={question:[],dream:[]};saveLocal();[1,2,3,4,5,6].forEach(g=>{renderPro(g);renderWG(g);});refreshClouds();showToast('已下載 CSV 並清空本場（本機）',3000);}
   }
 
   function initAll(){
     document.querySelectorAll('.daiuda input').forEach(inp=>inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter'){const row=inp.closest('.daiuda');row.hasAttribute('data-pg')?dai(row):daiW(row);}}));
     document.addEventListener('keydown',e=>{if(!e.shiftKey)return;if(e.key==='C'||e.key==='c'){e.preventDefault();clearCurrent();}else if(e.key==='E'||e.key==='e'){e.preventDefault();exportAndClear();}});
     if(!initFB())loadLocal();
-    [1,2,3,4,5,6,7,8].forEach(g=>{renderPro(g);renderWG(g);});
+    [1,2,3,4,5,6].forEach(g=>{renderPro(g);renderWG(g);});
     refreshClouds(); renderVote(); makeQRs(); setStatus();
     requestAnimationFrame(fitQrStages);
   }
