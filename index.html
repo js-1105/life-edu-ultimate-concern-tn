@@ -157,8 +157,6 @@ ul.fl{list-style:none} ul.fl li{position:relative;padding:.5em 0 .5em 1.6em;font
 ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;height:.7em;background:var(--color-accent);border-radius:50%}
 .slide.dense ul.fl li{font-size:clamp(1.06rem,1.5vw,1.4rem);padding-top:.36em;padding-bottom:.36em;line-height:1.4}
 .slide.dense ul.fl li::before{top:.9em}
-.practice{background:linear-gradient(135deg,rgba(212,175,55,.13),rgba(212,175,55,.03));border:2px dashed var(--color-accent);padding:1.2em 1.5em;border-radius:16px;margin-top:.5em}
-.practice .label{display:inline-block;background:var(--color-primary);color:#fff;padding:.25em .9em;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:.5em;letter-spacing:.1em}
 .big-q{font-family:var(--font-serif);font-size:clamp(1.5rem,3.2vw,2.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
 .references{font-size:.9rem;line-height:1.5;color:var(--color-text);max-width:64em;columns:2;column-gap:3em}
 .references li{margin-bottom:.5em;margin-left:1.2em;break-inside:avoid}
@@ -425,7 +423,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <ul class="toc-themes">
     <li><span class="tn">壹</span><span><b>序曲：從人們對美好人生的想像談起</b>——從事業、感情、財富、健康，到意義與生命安頓</span></li>
     <li><span class="tn">貳</span><span><b>一路玩到掛</b>——死亡與人生夢想清單的轉化</span></li>
-    <li><span class="tn">參</span><span><b>究竟什麼是終極關懷？</b>——四層次反思與人生第一問</span></li>
+    <li><span class="tn">參</span><span><b>究竟什麼是終極關懷？</b>——從「我想要什麼」，提升到「什麼是值得追求的人生」</span></li>
     <li><span class="tn">肆</span><span><b>對美好人生想像的肯定與批判</b>——科學、宗教與文化的觀點</span></li>
     <li><span class="tn">伍</span><span><b>值得活的人生</b>——終極理想四面向</span></li>
     <li><span class="tn">陸</span><span><b>生命意義的探索</b>——牆或門的終極信念</span></li>
@@ -569,7 +567,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   </div>
 </section>
 
-<!-- ===================== 貳　樂章一 ===================== -->
+<!-- ===================== 貳 ===================== -->
 <section class="slide" style="--jc:flex-start;padding-top:4vh">
   <h2>臺大學生的夢想清單　<span style="font-size:.62em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
   <figure style="margin:.25em 0 0;text-align:center">
@@ -995,7 +993,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <li><b>關係是核心，卻不是終極答案</b>——科學能指出關係是幸福、健康、有意義的人生的樞紐，但<b>無法回答「生命本身有無意義」的終極提問</b>。</li>
     </ul>
   </div>
-  <p class="src" style="max-width:none">Harvard Study of Adult Development（Robert Waldinger）；《Taipei Times》2026-02-26、02-27「社交適能」與「7 天快樂挑戰」報導。</p>
+  <p class="src" style="max-width:none">Harvard Study of Adult Development（Robert Waldinger）；《Taipei Times》2026-02-26、02-27「社交適能」報導；7 天挑戰逐日內容依 roomie.tw 中文報導。</p>
 </section>
 
 <section class="slide dense" style="--jc:center">
@@ -1305,7 +1303,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   </div>
 </section>
 
-<!-- 互動B（下午開場，併入樂章四章節色） -->
+<!-- 下午開場互動 -->
 <section class="slide section-divider">
   <svg class="sec-art" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 176 H180" stroke-width="8"/><g stroke-width="6" opacity=".9"><line x1="20" y1="146" x2="180" y2="146"/><line x1="20" y1="116" x2="180" y2="116"/><line x1="20" y1="86" x2="180" y2="86"/><line x1="56" y1="86" x2="56" y2="116"/><line x1="120" y1="116" x2="120" y2="146"/></g><g class="sec-door"><path d="M64 176 V56 H136 V176" stroke-width="8"/><circle cx="122" cy="118" r="6" fill="currentColor" stroke="none"/></g></svg>
   <div class="num">陸</div>
@@ -1648,7 +1646,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   </div>
 </section>
 
-<!-- 意義的四大支柱：Emily Esfahani Smith -->
+
 <section class="slide" id="s96">
   <h2>確立終極信念的途徑（托爾斯泰五法）</h2>
   <div class="grid2" style="grid-template-columns:1fr 1.12fr;align-items:center;gap:2.8vw">
@@ -1815,7 +1813,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div class="video-wrap" style="width:100%;max-width:100%"><div id="yt-kelly"></div><div class="cc-overlay" id="cc-kelly"></div></div>
     <div>
       <p class="lead" style="max-width:none">哈佛 <b>Sean Kelly</b>：同意卡繆——人生作為<b>整體</b>是荒謬的（萬事看似別具意義，其實沒有；如卡繆的「默劇」與薛西弗斯）。但他認為卡繆漏看了一面：人生仍有一個個<b>「真正活著」的有意義時刻</b>（初次伸手牽起對方、忘我的演奏或運動巔峰），而且正因有這些時刻，人生更顯美好。</p>
-      <div class="co-card"><div class="co"><b>孫老師的回應：</b>他把「<b>有意義的時刻</b>」（meanings <i>in</i> life）與「<b>生命整體有無意義</b>」（meaning <i>of</i> life）<b>混為一談</b>了。這些時刻正是<b>托爾斯泰「品嚐蜂蜜」</b>的經驗——蜂蜜再甜，不改變危如累卵的處境，發光的瞬間反而更突顯荒謬。（「品嚐蜂蜜」的寓言，後面〈確立終極信念的途徑·托爾斯泰〉一節會再詳述。）</div></div>
+      <div class="co-card"><div class="co"><b>孫老師的回應：</b>他把「<b>有意義的時刻</b>」（meanings <i>in</i> life）與「<b>生命整體有無意義</b>」（meaning <i>of</i> life）<b>混為一談</b>了。這些時刻正是<b>托爾斯泰「品嚐蜂蜜」</b>的經驗——蜂蜜再甜，不改變危如累卵的處境，發光的瞬間反而更突顯荒謬。</div></div>
     </div>
   </div>
 </section>
@@ -1929,8 +1927,11 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
 fitAll();updateFsIcon();
 (function assignSectionTints(){
   const numerals=['壹','貳','參','肆','伍','陸','柒','捌'];
-  let chap=0;
+  let chap=0, spare=false;
   slides.forEach(s=>{
+    // 備片區（「以下為備用資料」標示頁起）不屬於任何一章，不套章節底色與序數浮水印
+    if(s.id==='s-spare')spare=true;
+    if(spare)return;
     if(s.classList.contains('section-divider')){chap++;return;}
     if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('eggsong'))return;
     if(chap<1)return;
