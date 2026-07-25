@@ -915,6 +915,12 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 #s-sci2 .sci-row.yes .mk{color:#2F6B4A}
 #s-sci2 .sci-note{margin-top:.55em;padding-top:.45em;border-top:1px dashed var(--color-line);font-size:clamp(1.5rem,1.72vw,1.62rem);color:var(--color-muted)}
 #s-sci1 .lead,#s-sci2 .lead{font-size:clamp(1.6rem,1.85vw,1.75rem)}
+/* S45：新增第四段「關係」後版面吃緊（2026-07-25 教授加段）。
+   量測閘視窗實高僅 806px（--window-size 1512x893 有約 87px 被瀏覽器佔用），可用高只有 725px。
+   對策＝清單字級維持 38px 不縮（大器優先），改收標題字級與列距換取空間。 */
+#s53 ul.fl li{padding-top:.28em;padding-bottom:.28em}
+#s53 ul.fl li::before{top:.82em}
+#s53 h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin-bottom:.25em}
 </style>
 <section class="slide" id="s-sci1" style="--jc:center">
   <h2>科學的肯定：素樸的渴望，確實與幸福相關</h2>
@@ -989,20 +995,20 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>科學的批判：這些渴望，承載得了「終極」嗎？</h2>
   <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;gap:2.6vw;margin-top:.2em">
     <div class="sci-card">
-      <div class="sci-q">什麼最能預測晚年的幸福與健康？</div>
-      <div class="sci-row no"><span class="mk">✗</span><span>存款數字</span></div>
-      <div class="sci-row no"><span class="mk">✗</span><span>名聲與事業成就</span></div>
-      <div class="sci-row no"><span class="mk">✗</span><span>膽固醇數值</span></div>
-      <div class="sci-row yes"><span class="mk">✓</span><span><b>關係的品質</b></span></div>
-      <div class="sci-note">哈佛成人發展研究　追蹤逾 <b>85 年</b></div>
+      <div class="sci-q">7 天快樂挑戰</div>
+      <div class="sci-row yes"><span class="mk">✓</span><span>撥一通電話給想念的人</span></div>
+      <div class="sci-row yes"><span class="mk">✓</span><span>與陌生人短暫交流</span></div>
+      <div class="sci-row yes"><span class="mk">✓</span><span>寫一封感謝信</span></div>
+      <div class="sci-row yes"><span class="mk">✓</span><span>在職場建立支持性夥伴關係</span></div>
+      <div class="sci-note">關係，是可以刻意鍛鍊的</div>
     </div>
     <ul class="fl">
       <li><b>不是財富與成就，而是關係</b>——哈佛成人發展研究追蹤逾 85 年，直接反駁「有錢、有成就就會幸福」；<b>孤獨對健康的傷害，相當於吸菸或酗酒</b>。</li>
-      <li><b>關係需要像體能一樣鍛鍊</b>——主持人 Waldinger 提出「<b>社交體能</b>」：「我們的社交生活是一個活的系統，它也需要維護。」並與《紐約時報》推出「<b>7 天快樂挑戰</b>」——撥一通電話給想念的人、與陌生人短暫交流、寫一封感謝信、在職場建立支持性夥伴關係。</li>
-      <li><b>但快樂 ≠ 幸福</b>——PERMA 裡正向情緒只是五元素之一，<b>意義</b>是獨立而不可化約的一項。科學可以指出關係與快樂之路，卻<b>回答不了「生命本身有無意義」的終極提問</b>。</li>
+      <li><b>關係需要像體能一樣鍛鍊</b>——主持人 Waldinger 提出「<b>社交適能（social fitness）</b>」：「我們的社交生活是一個活的系統，它也需要維護。」左側「7 天快樂挑戰」即由此而來，與《紐約時報》合作推出。</li>
+      <li><b>關係是核心，卻不是終極答案</b>——關係確實是健康、快樂與幸福的核心；但關係本身——無論深化帶來的滿足，或失落留下的空虛——都指向更深的追問。<b>科學指出</b>關係與快樂之路，卻<b>回答不了「生命本身有無意義」的終極提問</b>。</li>
     </ul>
   </div>
-  <p class="src" style="max-width:none">Harvard Study of Adult Development（Robert Waldinger）；《Taipei Times》2026-02-26、02-27「社交體能」與「7 天快樂挑戰」報導；Seligman, <i>Flourish</i> (2011)。</p>
+  <p class="src" style="max-width:none">Harvard Study of Adult Development（Robert Waldinger）；《Taipei Times》2026-02-26、02-27「社交適能」與「7 天快樂挑戰」報導。</p>
 </section>
 
 <section class="slide dense" style="--jc:center">
@@ -1067,13 +1073,14 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 #s53 blockquote{font-size:clamp(2.1rem,2.9vw,2.7rem);line-height:1.36}
 </style>
 <section class="slide" id="s53" style="--jc:center">
-  <h2>小結：主流價值的限度</h2>
-  <div class="grid2" style="align-items:center">
+  <h2>美好人生與主流價值的限度</h2>
+  <div class="grid2" style="grid-template-columns:1.42fr 1fr;gap:2.4vw;align-items:center">
     <div>
       <ul class="fl">
         <li>健康、長壽、財富、快樂都是<b>人性自然的渴望</b>，三大傳統也都誠實肯定其正面意義。</li>
         <li>但它們<b>都不是終極</b>：長壽不究竟、財富非善非惡、快樂須有意義與慈悲、健康也非生命的全部，而且終將失去。</li>
         <li>它們最大的共同限度，是容易停在<b>自我中心</b>——把「我」無限膨脹，缺乏與他者、與真理的連結。</li>
+        <li><b>關係讓人超越自我中心</b>，但關係終將隨生命隕落而<b>在時間洪流中消逝</b>。</li>
       </ul>
     </div>
     <div>
