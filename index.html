@@ -792,7 +792,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 小組討論：意義的意義（QR＋即時投稿） -->
 <style>
-#s-mq .mqbox{background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.7em .9em;display:flex;flex-direction:column;gap:.55em;overflow:auto;flex:1;min-height:0;margin-top:.55em}
+#s-mq .mqbox{background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.7em .9em;display:flex;flex-direction:column;gap:.55em;overflow:auto;height:60vh}
 #s-mq .mqbox .gitem{background:#fff;border-left:5px solid var(--color-primary);border-radius:8px;box-shadow:var(--shadow-soft);padding:.55em .85em;font-size:clamp(1.35rem,1.7vw,1.6rem);line-height:1.45}
 #s-mq .mqbox .empty-hint{margin:auto;font-size:clamp(1.5rem,2vw,1.8rem);color:var(--color-muted);font-style:italic;text-align:center}
 #s-mq .fl li{font-size:clamp(1.9rem,2.5vw,2.35rem);line-height:1.5;padding:.4em 0 .4em 1.5em}
@@ -800,18 +800,15 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </style>
 <section class="slide" id="s-mq" style="--jc:flex-start;padding-top:4vh">
   <h2>小組討論：「意義」的意義</h2>
-  <div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:stretch;gap:2.6vw;margin-top:.3em;flex:1;min-height:0">
-    <div style="display:flex;flex-direction:column;min-height:0">
-      <ul class="fl">
+  <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:start;gap:2.4vw;margin-top:.3em;flex:1;min-height:0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:.8vh">
+      <ul class="fl" style="width:100%">
         <li>「<b>意義</b>」一詞有些什麼意義？</li>
         <li><b>值得活的人生</b>與<b>有意義的人生</b>有何關係？</li>
       </ul>
-      <div class="mqbox" id="mq1"></div>
+      <div class="cloud-qr" style="padding:.9em 1em .7em"><div class="qr-box" data-mq="1" style="width:clamp(190px,16vw,250px);max-width:250px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">小組討論後，掃碼投稿</div></div>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2vh">
-      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-mq="1" style="width:clamp(240px,21vw,330px);max-width:330px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投稿</div></div>
-      <p class="muted" style="max-width:16em;margin:0;text-align:center;font-size:clamp(1.85rem,2.45vw,2.3rem)">小組簡短討論後，掃碼把你們的想法投上來，投影幕即時更新。</p>
-    </div>
+    <div class="mqbox" id="mq1"></div>
   </div>
 </section>
 
@@ -836,12 +833,13 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <p class="q1">終極理想即用以界定「值得活的人生」內涵的概念。</p>
     </div>
     <div class="card" style="border-top-color:var(--color-primary)">
-      <h3>人生是否有意義的兩個層次</h3>
-      <p class="sub">Meanings in Life</p>
-      <p class="q1">在人生「之中」活出有意義的目標與價值，便是 meanings in life——它與<b>終極理想</b>互為一體的兩面：終極理想界定「值得活的人生」的內涵，活出這內涵，即是人生之中的意義。</p>
+      <h3>什麼是有意義的人生？</h3>
+      <p class="sub">人生中的各種意義（meanings in life）</p>
+      <p class="q1">在人生中所能體驗、創造與活出的各種意義，值得活的人生就是活出意義的人生。</p>
       <p class="en2">Life of flourishing shall be a life of meaningfulness</p>
-      <p class="sub">Meaning of Life</p>
-      <p class="q1">生命本身究竟是怎麼一回事？其終極實相究竟如何？生命本身有無意義？要如何建立有意義的人生的終極信念？人生無常，唯愛永恆？</p>
+      <p class="sub">人生本身的意義（meaning of life）</p>
+      <p class="q1">生命本身究竟是怎麼一回事？其終極實相究竟如何？生命本身有無意義？</p>
+      <p class="q1">生命最後是歸於虛無還是永恆？對人生本身的意義能有怎樣的終極信念？人生無常，唯愛永恆？</p>
     </div>
   </div>
 </section>
