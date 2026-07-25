@@ -904,16 +904,16 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <style>
 #s-sci1 .fl li{font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.52;padding:.42em 0 .42em 1.5em}
 #s-sci2 .fl li{font-size:clamp(1.52rem,1.8vw,1.7rem);line-height:1.48;padding:.34em 0 .34em 1.45em}
-#s-sci2 .sci-card{background:rgba(255,255,255,.9);border:2px solid var(--color-line);border-left:8px solid var(--color-primary);border-radius:14px;padding:.95em 1.15em;box-shadow:var(--shadow-soft)}
+#s-sci2 .sci-card{background:rgba(255,255,255,.9);border:2px solid var(--color-line);border-left:8px solid var(--color-primary);border-radius:14px;padding:.8em 1.05em;box-shadow:var(--shadow-soft)}
 #s-sci2 .sci-q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.38;margin-bottom:.5em}
-#s-sci2 .sci-row{display:flex;align-items:center;gap:.6em;font-size:clamp(1.5rem,1.8vw,1.7rem);padding:.24em 0;line-height:1.35}
+#s-sci2 .sci-row{display:flex;align-items:center;gap:.55em;font-size:clamp(1.5rem,1.72vw,1.62rem);padding:.16em 0;line-height:1.3}
 #s-sci2 .sci-row .mk{font-weight:900;font-size:1.15em;width:1.2em;text-align:center;flex:none}
 #s-sci2 .sci-row.no{color:var(--color-muted)}
 #s-sci2 .sci-row.no .mk{color:#B4453C}
 #s-sci2 .sci-row.no span:last-child{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(180,69,60,.55)}
 #s-sci2 .sci-row.yes{color:var(--color-text)}
 #s-sci2 .sci-row.yes .mk{color:#2F6B4A}
-#s-sci2 .sci-note{margin-top:.55em;padding-top:.45em;border-top:1px dashed var(--color-line);font-size:clamp(1.5rem,1.72vw,1.62rem);color:var(--color-muted)}
+#s-sci2 .sci-note{margin-top:.4em;padding-top:.35em;border-top:1px dashed var(--color-line);font-size:clamp(1.5rem,1.68vw,1.56rem);color:var(--color-muted)}
 #s-sci1 .lead,#s-sci2 .lead{font-size:clamp(1.6rem,1.85vw,1.75rem)}
 /* S45：新增第四段「關係」後版面吃緊（2026-07-25 教授加段）。
    量測閘視窗實高僅 806px（--window-size 1512x893 有約 87px 被瀏覽器佔用），可用高只有 725px。
@@ -996,16 +996,19 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;gap:2.6vw;margin-top:.2em">
     <div class="sci-card">
       <div class="sci-q">7 天快樂挑戰</div>
-      <div class="sci-row yes"><span class="mk">✓</span><span>撥一通電話給想念的人</span></div>
-      <div class="sci-row yes"><span class="mk">✓</span><span>與陌生人短暫交流</span></div>
-      <div class="sci-row yes"><span class="mk">✓</span><span>寫一封感謝信</span></div>
-      <div class="sci-row yes"><span class="mk">✓</span><span>在職場建立支持性夥伴關係</span></div>
+      <div class="sci-row yes"><span class="mk">1</span><span>盤點自己的人際關係</span></div>
+      <div class="sci-row yes"><span class="mk">2</span><span>撥一通 8 分鐘的電話</span></div>
+      <div class="sci-row yes"><span class="mk">3</span><span>與陌生人寒暄</span></div>
+      <div class="sci-row yes"><span class="mk">4</span><span>寫「生前頌詞」讚美他人</span></div>
+      <div class="sci-row yes"><span class="mk">5</span><span>與同事做朋友</span></div>
+      <div class="sci-row yes"><span class="mk">6</span><span>社交計畫不失約</span></div>
+      <div class="sci-row yes"><span class="mk">7</span><span>讓快樂延續一整年</span></div>
       <div class="sci-note">關係，是可以刻意鍛鍊的</div>
     </div>
     <ul class="fl">
       <li><b>不是財富與成就，而是關係</b>——哈佛成人發展研究追蹤逾 85 年，直接反駁「有錢、有成就就會幸福」；<b>孤獨對健康的傷害，相當於吸菸或酗酒</b>。</li>
       <li><b>關係需要像體能一樣鍛鍊</b>——主持人 Waldinger 提出「<b>社交適能（social fitness）</b>」：「我們的社交生活是一個活的系統，它也需要維護。」左側「7 天快樂挑戰」即由此而來，與《紐約時報》合作推出。</li>
-      <li><b>關係是核心，卻不是終極答案</b>——關係確實是健康、快樂與幸福的核心；但關係本身——無論深化帶來的滿足，或失落留下的空虛——都指向更深的追問。<b>科學指出</b>關係與快樂之路，卻<b>回答不了「生命本身有無意義」的終極提問</b>。</li>
+      <li><b>關係是核心，卻不是終極答案</b>——科學能指出關係是幸福、健康、有意義的人生的樞紐，但<b>無法回答「生命本身有無意義」的終極提問</b>。</li>
     </ul>
   </div>
   <p class="src" style="max-width:none">Harvard Study of Adult Development（Robert Waldinger）；《Taipei Times》2026-02-26、02-27「社交適能」與「7 天快樂挑戰」報導。</p>
