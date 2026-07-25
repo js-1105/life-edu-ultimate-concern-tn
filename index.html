@@ -878,14 +878,24 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 科學的觀點（一）肯定 -->
 <style>
 #s-sci1 .fl li{font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.52;padding:.42em 0 .42em 1.5em}
-#s-sci2 .fl li{font-size:clamp(1.68rem,2.05vw,1.95rem);line-height:1.62;padding:.55em 0 .55em 1.5em}
+#s-sci2 .fl li{font-size:clamp(1.52rem,1.8vw,1.7rem);line-height:1.48;padding:.34em 0 .34em 1.45em}
+#s-sci2 .sci-card{background:rgba(255,255,255,.9);border:2px solid var(--color-line);border-left:8px solid var(--color-primary);border-radius:14px;padding:.95em 1.15em;box-shadow:var(--shadow-soft)}
+#s-sci2 .sci-q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.38;margin-bottom:.5em}
+#s-sci2 .sci-row{display:flex;align-items:center;gap:.6em;font-size:clamp(1.5rem,1.8vw,1.7rem);padding:.24em 0;line-height:1.35}
+#s-sci2 .sci-row .mk{font-weight:900;font-size:1.15em;width:1.2em;text-align:center;flex:none}
+#s-sci2 .sci-row.no{color:var(--color-muted)}
+#s-sci2 .sci-row.no .mk{color:#B4453C}
+#s-sci2 .sci-row.no span:last-child{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(180,69,60,.55)}
+#s-sci2 .sci-row.yes{color:var(--color-text)}
+#s-sci2 .sci-row.yes .mk{color:#2F6B4A}
+#s-sci2 .sci-note{margin-top:.55em;padding-top:.45em;border-top:1px dashed var(--color-line);font-size:clamp(1.5rem,1.72vw,1.62rem);color:var(--color-muted)}
 #s-sci1 .lead,#s-sci2 .lead{font-size:clamp(1.6rem,1.85vw,1.75rem)}
 </style>
 <section class="slide" id="s-sci1" style="--jc:center">
   <h2>科學的肯定：素樸的渴望，確實與幸福相關</h2>
   <p class="lead" style="max-width:none;margin-bottom:.2em">當代科學並不否定人們對健康、財富、快樂與關係的渴望——實證研究反而支持它們與幸福感的關聯。</p>
   <ul class="fl">
-    <li><b>健康</b>——世界衛生組織（1948）將健康定義為「<b>身體、心理與社會安適的完整狀態</b>，而不僅是沒有疾病或虛弱」，把健康確立為美好人生的基礎。</li>
+    <li><b>健康</b>——世界衛生組織（1948）定義健康為「<b>身體、心理與社會安適的完整狀態</b>，而不僅是沒有疾病或虛弱」；近年更強調<b>靈性健康是全人健康的核心</b>——WHO 執委會曾提案將 spiritual 納入定義，學界亦以「身、心、社會、靈性」四面向理解全人健康。</li>
     <li><b>財富</b>——Killingsworth、Kahneman 與 Mellers（2023）的「敵對式合作」研究發現：<b>對多數人而言，幸福感確實隨收入持續上升</b>，超過年收入十萬美元仍未見天花板。</li>
     <li><b>關係</b>——哈佛成人發展研究追蹤逾 <b>85 年</b>：最能預測晚年幸福與健康的，不是財富或名聲，而是<b>關係的品質</b>。</li>
     <li><b>快樂</b>——Seligman 的 <b>PERMA</b>（2011）把幸福拆解成可測量的五元素：正向情緒、投入、關係、意義、成就。</li>
@@ -894,19 +904,6 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </section>
 
 <!-- 科學的觀點（二）批判 -->
-<section class="slide" id="s-sci2" style="--jc:center">
-  <h2>科學的批判：這些渴望，承載得了「終極」嗎？</h2>
-  <p class="lead" style="max-width:none;margin-bottom:.2em">同樣是科學研究，卻也指出這些渴望本身的限度——</p>
-  <ul class="fl">
-    <li><b>享樂適應</b>——Brickman 等（1978）比較 <b>22 位樂透大獎得主</b>與對照組：得主<b>並沒有更快樂</b>，反而從日常小事得到的樂趣顯著<b>更少</b>。人會迅速適應，回到原來的基準線。</li>
-    <li><b>追求快樂的悖論</b>——Mauss 等（2011）：<b>越是重視快樂的人，在順境中反而更不快樂</b>；機制是「對自己的感受感到失望」。把快樂當成目標去追，快樂反而逃走。</li>
-    <li><b>快樂 ≠ 幸福</b>——即使在 PERMA 架構裡，正向情緒也只是五元素之一；<b>意義</b>是獨立而不可化約的一項——科學自己也指出：<b>快樂承載不了人生的全部</b>。</li>
-  </ul>
-  <p class="src" style="max-width:none">Brickman, Coates &amp; Janoff-Bulman, <i>JPSP</i> (1978)；Mauss, Tamir, Anderson &amp; Savino, <i>Emotion</i> (2011)；Seligman, <i>Flourish</i> (2011)。</p>
-</section>
-
-<!-- 主流價值 -->
-<!-- 甲(1) 渴望：健康與長壽 -->
 <section class="slide" style="--jc:center">
   <h2>宗教與文化的肯定（一）：健康與長壽</h2>
   <div class="grid2" style="align-items:start;gap:2.4vw">
@@ -962,8 +959,30 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </section>
 
 <!-- 丙(1) 批判反思：佛教 -->
+<!-- 科學的觀點（二）批判：置於宗教文化批判之前 -->
+<section class="slide" id="s-sci2" style="--jc:center">
+  <h2>科學的批判：這些渴望，承載得了「終極」嗎？</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;gap:2.6vw;margin-top:.2em">
+    <div class="sci-card">
+      <div class="sci-q">什麼最能預測晚年的幸福與健康？</div>
+      <div class="sci-row no"><span class="mk">✗</span><span>存款數字</span></div>
+      <div class="sci-row no"><span class="mk">✗</span><span>名聲與事業成就</span></div>
+      <div class="sci-row no"><span class="mk">✗</span><span>膽固醇數值</span></div>
+      <div class="sci-row yes"><span class="mk">✓</span><span><b>關係的品質</b></span></div>
+      <div class="sci-note">哈佛成人發展研究　追蹤逾 <b>85 年</b></div>
+    </div>
+    <ul class="fl">
+      <li><b>財富與成就的限度</b>——哈佛研究直接反駁「有錢、有成就就會幸福」；<b>孤獨對健康的傷害相當於吸菸或酗酒</b>。</li>
+      <li><b>享樂適應</b>——Brickman 等（1978）：<b>22 位樂透大獎得主並沒有更快樂</b>，反而從日常小事得到的樂趣顯著更少。人會迅速適應，回到基準線。</li>
+      <li><b>追求快樂的悖論</b>——Mauss 等（2011）：<b>越是重視快樂的人，在順境中反而更不快樂</b>。</li>
+      <li><b>快樂 ≠ 幸福</b>——PERMA 裡正向情緒只是五元素之一，<b>意義</b>是獨立而不可化約的一項。</li>
+    </ul>
+  </div>
+  <p class="src" style="max-width:none">Harvard Study of Adult Development（Waldinger）；《Taipei Times》2026-02-26、02-27；Brickman 等, <i>JPSP</i> (1978)；Mauss 等, <i>Emotion</i> (2011)；Seligman (2011)。</p>
+</section>
+
 <section class="slide dense" style="--jc:center">
-  <h2>傳統的批判反思（一）：佛教</h2>
+  <h2>佛教的批判反思</h2>
   <div style="display:flex;flex-direction:column;gap:1vh;max-width:52em;margin:.1em auto 0;width:100%">
     <div style="display:grid;grid-template-columns:18vh 1fr;align-items:center;gap:1.8vw">
       <img class="gimg" src="images/gh_fo_crit1.jpg" alt="星雲法師" style="width:100%;max-height:19vh;object-fit:contain;background:#fff;border-radius:10px">
@@ -983,7 +1002,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 丙(2) 批判反思：基督與儒家 -->
 <section class="slide dense" style="--jc:center">
-  <h2>傳統的批判反思（二）：基督信仰</h2>
+  <h2>基督信仰的批判反思</h2>
   <div class="grid2" style="grid-template-columns:1.4fr 1fr;align-items:start;gap:2.2vw">
     <div style="display:flex;flex-direction:column;gap:1.2vh">
       <div style="font-size:clamp(1.6rem,1.75vw,1.68rem);line-height:1.55"><b>健康</b>＝身、心、靈的整體平衡——敬畏神、喜樂、運動、節制、助人，都是聖經所鼓勵的健康生活；信仰更給人內在的平安與盼望。</div>
@@ -1006,7 +1025,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 丙(2b) 基督信仰論財富 -->
 <section class="slide" style="--jc:center">
-  <h2>傳統的批判反思（三）：儒家</h2>
+  <h2>儒家對富貴的批判反思</h2>
   <div style="max-width:48em;margin:0 auto;display:flex;flex-direction:column;gap:.9em">
     <blockquote style="max-width:none;margin:0;font-size:clamp(1.18rem,1.65vw,1.52rem)"><b>孟子</b>：「魚，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍魚而取熊掌者也。生，亦我所欲也；義，亦我所欲也。二者不可得兼，<b>舍生而取義</b>者也。所欲有甚於生者，所惡有甚於死者——非獨賢者有是心也，人皆有之，賢者能勿喪耳。」</blockquote>
     <blockquote style="max-width:none;margin:0;font-size:clamp(1.2rem,1.7vw,1.55rem)"><b>孔子</b>：「飯疏食飲水，曲肱而枕之，樂亦在其中矣。<b>不義而富且貴，於我如浮雲</b>。」（述而）</blockquote>
