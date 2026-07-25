@@ -52,11 +52,19 @@ button.send:active{transform:translateY(1px);opacity:.9}
   var GROUPS={1:{c:'#862633'},2:{c:'#A8782E'},3:{c:'#1E5F74'},4:{c:'#6B5635'},5:{c:'#5C1A23'},6:{c:'#C47830'},7:{c:'#2F6B4A'},8:{c:'#5B4570'}};
   var p=new URLSearchParams(location.search);
   var g=(p.get('g')||'1').replace(/[^1-8]/g,'')||'1';
-  var round=(p.get('r')==='walldoor')?'walldoor':'prologue';
+  var round=(p.get('r')==='walldoor')?'walldoor':(p.get('r')==='mq')?'mq':'prologue';
   var C=GROUPS[g].c;
   document.documentElement.style.setProperty('--c',C);
   document.getElementById('gName').textContent='第 '+g+' 組';
-  if(round==='walldoor'){
+  if(round==='mq'){
+    document.getElementById('gName').textContent='「意義」的意義';
+    document.getElementById('gSub').textContent='小組討論投稿';
+    document.getElementById('introTxt').innerHTML='小組簡短討論後，把你們的想法寫下來，送出後即時出現在投影幕上。';
+    document.getElementById('lblMain').textContent='「意義」一詞有些什麼意義？值得活的人生與有意義的人生有何關係？';
+    document.getElementById('main').placeholder='例：我們認為「意義」可以指……值得活的人生與有意義的人生的關係是……';
+    document.getElementById('blkMain').style.borderTopColor=C;
+    document.title='「意義」的意義 · 投稿';
+  }else if(round==='walldoor'){
     document.getElementById('gSub').textContent='死亡是牆還是門？把組立場打上來';
     document.getElementById('introTxt').innerHTML='你們這一組討論「死亡比較像牆、像門、還是說不清？」，把<b>組立場＋一句理由</b>寫下來，送出後即時出現在投影幕你們這一組的頁面。';
     document.getElementById('lblMain').textContent='② 我們的組立場＋一句理由';

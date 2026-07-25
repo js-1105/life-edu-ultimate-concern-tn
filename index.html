@@ -777,7 +777,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 至善兩層面 -->
 <section class="slide" style="--jc:flex-start;padding-top:5vh">
   <h2>終極關懷與東西方思想</h2>
-  <p class="lead" style="max-width:none">終極關懷要探討整體人生客觀上可能達到的最高理想，東西方思想都用「至善」這個概念去表達這個理想。</p>
+  <p class="lead" style="max-width:none">終極關懷要探討值得活的人生客觀上可能達到的最高理想，東西方思想都用「至善」這個概念去表達這個理想。</p>
   <table class="tbl" style="max-width:54em;margin:.4em auto 0;font-size:clamp(1.16rem,1.65vw,1.62rem)">
     <thead><tr><th>傳統／語言</th><th>表達「至善」的用語</th><th>意涵</th></tr></thead>
     <tbody>
@@ -788,6 +788,31 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     </tbody>
   </table>
   <p style="font-family:var(--font-serif);font-weight:700;font-size:clamp(1.45rem,2.4vw,2.15rem);color:var(--color-text);line-height:1.45;margin-top:.85em;text-align:center">a life of flourishing ＝ Life worth living ＝ a life of eudaimonia</p>
+</section>
+
+<!-- 小組討論：意義的意義（QR＋即時投稿） -->
+<style>
+#s-mq .mqbox{background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.7em .9em;display:flex;flex-direction:column;gap:.55em;overflow:auto;flex:1;min-height:0;margin-top:.55em}
+#s-mq .mqbox .gitem{background:#fff;border-left:5px solid var(--color-primary);border-radius:8px;box-shadow:var(--shadow-soft);padding:.55em .85em;font-size:clamp(1.35rem,1.7vw,1.6rem);line-height:1.45}
+#s-mq .mqbox .empty-hint{margin:auto;font-size:clamp(1.5rem,2vw,1.8rem);color:var(--color-muted);font-style:italic;text-align:center}
+#s-mq .fl li{font-size:clamp(1.9rem,2.5vw,2.35rem);line-height:1.5;padding:.4em 0 .4em 1.5em}
+#s-mq h2{font-size:clamp(2.9rem,4.6vw,4.2rem)}
+</style>
+<section class="slide" id="s-mq" style="--jc:flex-start;padding-top:4vh">
+  <h2>小組討論：「意義」的意義</h2>
+  <div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:stretch;gap:2.6vw;margin-top:.3em;flex:1;min-height:0">
+    <div style="display:flex;flex-direction:column;min-height:0">
+      <ul class="fl">
+        <li>「<b>意義</b>」一詞有些什麼意義？</li>
+        <li><b>值得活的人生</b>與<b>有意義的人生</b>有何關係？</li>
+      </ul>
+      <div class="mqbox" id="mq1"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2vh">
+      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-mq="1" style="width:clamp(240px,21vw,330px);max-width:330px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投稿</div></div>
+      <p class="muted" style="max-width:16em;margin:0;text-align:center;font-size:clamp(1.85rem,2.45vw,2.3rem)">小組簡短討論後，掃碼把你們的想法投上來，投影幕即時更新。</p>
+    </div>
+  </div>
 </section>
 
 <!-- 終極關懷兩層面 -->
@@ -1941,12 +1966,13 @@ window.U2=(function(){
   // 資料容器
   let PRO={1:[],2:[],3:[],4:[],5:[],6:[]};    // 序曲六組
   let WG={1:[],2:[],3:[],4:[],5:[],6:[]};     // 牆門六組
+  let MQ=[];                                   // 意義的意義（單一投稿框）
   let CLOUDS={question:[],dream:[]};          // 兩個文字雲
   let VOTE={wall:0,door:0,unsure:0,total:0};  // 牆門投票
   const LK='u2_'+ROOM;
 
-  function loadLocal(){try{const d=JSON.parse(localStorage.getItem(LK));if(d){PRO=d.PRO||PRO;WG=d.WG||WG;CLOUDS=d.CLOUDS||CLOUDS;}}catch(e){}}
-  function saveLocal(){try{localStorage.setItem(LK,JSON.stringify({PRO,WG,CLOUDS}));}catch(e){}}
+  function loadLocal(){try{const d=JSON.parse(localStorage.getItem(LK));if(d){PRO=d.PRO||PRO;WG=d.WG||WG;CLOUDS=d.CLOUDS||CLOUDS;MQ=d.MQ||MQ;}}catch(e){}}
+  function saveLocal(){try{localStorage.setItem(LK,JSON.stringify({PRO,WG,CLOUDS,MQ}));}catch(e){}}
 
   function initFB(){
     if(!configured()||typeof firebase==='undefined')return false;
@@ -1957,6 +1983,7 @@ window.U2=(function(){
       [1,2,3,4,5,6].forEach(g=>root.child('prologue/g'+g).on('value',s=>{PRO[g]=listify(s.val()||{});renderPro(g);}));
       // 牆門六組
       [1,2,3,4,5,6].forEach(g=>root.child('walldoor/g'+g).on('value',s=>{WG[g]=listify(s.val()||{});renderWG(g);}));
+      root.child('mq/g1').on('value',s=>{MQ=listify(s.val()||{});renderMQ();});
       // 文字雲
       ['question','dream'].forEach(p=>root.child('clouds/'+p).on('value',s=>{CLOUDS[p]=listify(s.val()||{});renderCloud(p);}));
       // 投票
@@ -1969,6 +1996,14 @@ window.U2=(function(){
     const v={wall:0,door:0,unsure:0};
     Object.keys(o).forEach(k=>{const c=o[k]&&o[k].choice;if(c&&v[c]!=null)v[c]++;});
     v.total=v.wall+v.door+v.unsure; VOTE=v;
+  }
+
+  /* ---- 渲染：意義的意義 ---- */
+  function renderMQ(){
+    const box=document.getElementById('mq1'); if(!box)return;
+    const a=MQ||[];
+    box.innerHTML=a.length?a.map(t=>`<div class="gitem">${esc(t)}</div>`).join('')
+      :'<div class="empty-hint">小組討論後掃 QR 投稿，想法會即時出現在這裡。</div>';
   }
 
   /* ---- 渲染：序曲六組 ---- */
@@ -2045,6 +2080,7 @@ window.U2=(function(){
     if(typeof QRCode==='undefined')return;
     document.querySelectorAll('.qr-box[data-pg]').forEach(b=>{const g=b.getAttribute('data-pg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'&r=prologue&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
     document.querySelectorAll('.qr-box[data-wg]').forEach(b=>{const g=b.getAttribute('data-wg');b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'&r=walldoor&g='+g,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
+    document.querySelectorAll('.qr-box[data-mq]').forEach(b=>{b.innerHTML='';try{new QRCode(b,{text:SUBMIT+'&r=mq&g=1',width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
     document.querySelectorAll('.qr-box[data-cloud]').forEach(b=>{const p=b.getAttribute('data-cloud');b.innerHTML='';try{new QRCode(b,{text:ASK+'&p='+p,width:300,height:300,correctLevel:QRCode.CorrectLevel.M});}catch(e){}});
   }
   /* ---- QR 卡片動態依容器實際高度置中（避免固定vh在不同螢幕解析度下溢出/擠向上緣，2026-07-13） ---- */
@@ -2080,6 +2116,8 @@ window.U2=(function(){
     if(canv){const p=canv.id.replace('cloud-','');if(root){root.child('clouds/'+p).remove();}else{CLOUDS[p]=[];saveLocal();renderCloud(p);}showToast('已清空此頁文字雲',1800);return;}
     // 投票頁
     if(active.querySelector('#voteBars')){if(root){root.child('walldoor/vote').remove();}else{VOTE={wall:0,door:0,unsure:0,total:0};renderVote();}showToast('已清空投票',1800);return;}
+    // 意義的意義頁
+    if(active.querySelector('#mq1')){if(root){root.child('mq/g1').remove();}else{MQ=[];saveLocal();renderMQ();}showToast('已清空「意義的意義」投稿',1800);return;}
     // 序曲組頁
     const pg=active.querySelector('.gbox[id^="pg"]');
     if(pg){const g=pg.id.replace('pg','');if(root){root.child('prologue/g'+g).remove();}else{PRO[g]=[];saveLocal();renderPro(g);}showToast('已清空第'+g+'組（序曲）',1800);return;}
@@ -2093,6 +2131,7 @@ window.U2=(function(){
   function downloadCSV(stamp){
     var rows=[['房號','區段','組別/選項','內容']];
     [1,2,3,4,5,6].forEach(g=>(PRO[g]||[]).forEach(t=>rows.push([ROOM,'序曲精華','第'+g+'組',t])));
+    (MQ||[]).forEach(t=>rows.push([ROOM,'意義的意義','全班',t]));
     (CLOUDS.question||[]).forEach(t=>rows.push([ROOM,'人生問題雲','全班',t]));
     (CLOUDS.dream||[]).forEach(t=>rows.push([ROOM,'美好人生想像雲','全班',t]));
     rows.push([ROOM,'牆門投票','牆','人數 '+VOTE.wall]);
@@ -2113,7 +2152,7 @@ window.U2=(function(){
         var val=snap.val(),fin=()=>{root.remove();showToast('已下載 CSV＋雲端封存，並清空本場',3000);};
         if(val){firebase.database().ref('rooms/_archives/'+ROOM+'__'+stamp).set(val).then(fin,fin);}else fin();
       });
-    }else{PRO={1:[],2:[],3:[],4:[],5:[],6:[]};WG={1:[],2:[],3:[],4:[],5:[],6:[]};CLOUDS={question:[],dream:[]};saveLocal();[1,2,3,4,5,6].forEach(g=>{renderPro(g);renderWG(g);});refreshClouds();showToast('已下載 CSV 並清空本場（本機）',3000);}
+    }else{PRO={1:[],2:[],3:[],4:[],5:[],6:[]};WG={1:[],2:[],3:[],4:[],5:[],6:[]};CLOUDS={question:[],dream:[]};MQ=[];saveLocal();[1,2,3,4,5,6].forEach(g=>{renderPro(g);renderWG(g);});renderMQ();refreshClouds();showToast('已下載 CSV 並清空本場（本機）',3000);}
   }
 
   function initAll(){
@@ -2121,6 +2160,7 @@ window.U2=(function(){
     document.addEventListener('keydown',e=>{if(!e.shiftKey)return;if(e.key==='C'||e.key==='c'){e.preventDefault();clearCurrent();}else if(e.key==='E'||e.key==='e'){e.preventDefault();exportAndClear();}});
     if(!initFB())loadLocal();
     [1,2,3,4,5,6].forEach(g=>{renderPro(g);renderWG(g);});
+  renderMQ();
     refreshClouds(); renderVote(); makeQRs(); setStatus();
     requestAnimationFrame(fitQrStages);
   }
