@@ -193,6 +193,13 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 .video-wrap.zoom .vfs{width:2.7em;height:2.7em;font-size:1.35rem;bottom:1em;right:1em}
 .video-wrap.zoom .cc-overlay{bottom:8%}
 .video-wrap.zoom .cc-overlay span{font-size:clamp(1.6rem,2.7vw,2.6rem)}
+/* 調查截圖就地放大（圖內字級小，點右下 ⛶ 放大到近滿版；沿用影片放大同一套機制與圖示） */
+.imgzoom-wrap{position:relative;z-index:60}
+.imgzoom-wrap .vfs{position:absolute;bottom:.4em;right:.4em;z-index:66;width:2.3em;height:2.3em;border:none;border-radius:9px;background:rgba(0,0,0,.55);color:#fff;font-size:1.15rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-family:inherit}
+.imgzoom-wrap .vfs:hover{background:rgba(134,38,51,.95)}
+.imgzoom-wrap.zoom{position:fixed;inset:1.5vh 1.5vw;width:auto!important;height:auto;margin:0!important;z-index:99999;display:flex;align-items:center;justify-content:center;padding:1vh 1vw;border-radius:12px;background:#FAF7F2;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+.imgzoom-wrap.zoom img{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain}
+.imgzoom-wrap.zoom .vfs{width:2.7em;height:2.7em;font-size:1.35rem;bottom:1em;right:1em}
 .cc-overlay{position:absolute;left:3%;right:3%;bottom:16%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
 .cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(1.55rem,1.72vw,1.62rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* 自製精簡控制列（取代原生 controls，跨瀏覽器只有一顆全螢幕鈕；全螢幕放大整個影片框＝字幕一起顯示） */
@@ -570,10 +577,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- ===================== 貳 ===================== -->
 <section class="slide" style="--jc:flex-start;padding-top:4vh">
   <h2>臺大學生的夢想清單　<span style="font-size:.62em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
-  <figure style="margin:.25em 0 0;text-align:center">
-    <img src="images/dreamlist_ntu_students_nobg.png" alt="臺大學生夢想調查" style="width:100%;max-height:52vh;object-fit:contain">
+  <figure class="imgzoom-wrap" style="margin:.1em 0 0;text-align:center">
+    <img src="images/dreamlist_ntu_students_nobg.png" alt="臺大學生夢想調查" style="width:100%;max-height:56vh;object-fit:contain">
   </figure>
-  <div style="margin-top:.6em;display:flex;flex-direction:column;gap:.5em;font-size:clamp(1.42rem,1.9vw,1.72rem)">
+  <div style="margin-top:.35em;display:flex;flex-direction:column;gap:.35em;font-size:clamp(1.42rem,1.9vw,1.72rem)">
     <div style="display:flex;align-items:baseline;gap:.7em">
       <span style="background:var(--color-primary);color:#fff;border-radius:6px;padding:.12em .7em;font-weight:700;white-space:nowrap;min-width:6.5em;text-align:center">人生意義與關係</span>
       <span>找到人生意義與目的、結交知心好友、與家人感情融洽</span>
@@ -588,10 +595,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 從夢想說起（二）臺大教師 -->
 <section class="slide" style="--jc:flex-start;padding-top:4vh">
   <h2>臺大教師的夢想清單　<span style="font-size:.62em;font-weight:400;color:var(--color-muted)">與學生同一份問卷·教師版</span></h2>
-  <figure style="margin:.25em 0 0;text-align:center">
-    <img src="images/dreamlist_teachers_nobg.png" alt="臺大教師夢想調查" style="width:100%;max-height:44vh;object-fit:contain">
+  <figure class="imgzoom-wrap" style="margin:.1em 0 0;text-align:center">
+    <img src="images/dreamlist_teachers_nobg.png" alt="臺大教師夢想調查" style="width:100%;max-height:48vh;object-fit:contain">
   </figure>
-  <div class="taglines" style="margin-top:.6em;font-size:clamp(1.4rem,1.85vw,1.7rem)">
+  <div class="taglines" style="margin-top:.35em;font-size:clamp(1.4rem,1.85vw,1.7rem)">
     <div class="row"><span class="tg">安頓生命</span><span>擁有安頓生命的<b>終極信念或宗教信仰</b></span></div>
     <div class="row"><span class="tg">家庭</span><span>兒女升學就業順利、家庭幸福、陪伴照顧父母安度晚年</span></div>
     <div class="row"><span class="tg">健康善終</span><span>健康快樂的退休與老年、無病無痛在睡夢中壽終正寢</span></div>
@@ -609,7 +616,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <span class="statchip" style="font-size:inherit">專業上獲得肯定 <b>55.5%</b></span>
     <span class="statchip" style="font-size:inherit">發展自己的人生哲學 <b>49.8%</b></span>
   </div>
-  <figure style="margin:.1em 0 0;text-align:center">
+  <figure class="imgzoom-wrap" style="margin:.1em 0 0;text-align:center">
     <img src="images/dreamlist_us_freshman_nobg.png" alt="2019 CIRP Freshman Survey" style="width:100%;max-height:50vh;object-fit:contain">
   </figure>
 </section>
@@ -1905,7 +1912,7 @@ document.getElementById('total').textContent=total;
 slides.forEach(s=>{const fw=document.createElement('div');fw.className='fitwrap';while(s.firstChild)fw.appendChild(s.firstChild);s.appendChild(fw);});
 function fitSlide(s){
   const fw=s.firstElementChild;if(!fw||!fw.classList.contains('fitwrap'))return;
-  if(fw.querySelector('.video-wrap.zoom'))return; // 影片放大中：勿動這頁縮放，以免綁架放大定位
+  if(fw.querySelector('.video-wrap.zoom,.imgzoom-wrap.zoom'))return; // 影片/圖片放大中：勿動這頁縮放，以免綁架放大定位
   fw.style.transform='none';
   const cs=getComputedStyle(s);
   const availW=s.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
@@ -1941,7 +1948,7 @@ fitAll();updateFsIcon();
   });
 })();
 const noClickZoneSlides=[];
-slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('kv-slide')||s.querySelector('iframe,video,.video-wrap,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
+slides.forEach((s,i)=>{if(s.classList.contains('cover')||s.classList.contains('closing')||s.classList.contains('kv-slide')||s.querySelector('iframe,video,.video-wrap,.imgzoom-wrap,.cover-cta,.back-home-btn,.daiuda,.qr-box'))noClickZoneSlides.push(i+1);});
 const CLOUD_SLIDES=[];
 slides.forEach((s,i)=>{if(s.querySelector('.cloud-canvas-wrap canvas'))CLOUD_SLIDES.push(i+1);});
 function showSlide(n){
@@ -3460,7 +3467,7 @@ function ccGratShow(t){
 <script>
 (function(){
   var backdrop=document.getElementById('zoomBackdrop');
-  function zoomed(){return document.querySelector('.video-wrap.zoom');}
+  function zoomed(){return document.querySelector('.video-wrap.zoom,.imgzoom-wrap.zoom');}
   function enter(w){
     var fw=w.closest('.fitwrap'), sl=w.closest('.slide');
     if(fw){fw.dataset.savedT=fw.style.transform||'';fw.style.transform='none';
@@ -3481,8 +3488,17 @@ function ccGratShow(t){
   }
   function toggle(w){if(w.classList.contains('zoom')){exit();}else{var c=zoomed();if(c&&c!==w)exit();enter(w);}}
   window.__exitVideoZoom=exit; window.__videoZoomToggle=toggle;
-  document.querySelectorAll('.video-wrap .vfs').forEach(function(b){
-    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();toggle(b.closest('.video-wrap'));});
+  // 調查截圖：自動補上右下角 ⛶ 鈕（圖內字級小，就地放大到近滿版）
+  document.querySelectorAll('.imgzoom-wrap').forEach(function(w){
+    if(w.querySelector('.vfs'))return;
+    var b=document.createElement('button');b.className='vfs';b.type='button';
+    b.title='放大圖片（不離開簡報全螢幕）';b.innerHTML=window.FS_ICON_EXPAND;
+    w.appendChild(b);
+    var im=w.querySelector('img');   // 圖片本身也可點（這幾頁已關閉點擊翻頁區，不會誤翻頁）
+    if(im){im.style.cursor='zoom-in';im.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();toggle(w);});}
+  });
+  document.querySelectorAll('.video-wrap .vfs,.imgzoom-wrap .vfs').forEach(function(b){
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();toggle(b.closest('.video-wrap,.imgzoom-wrap'));});
   });
   if(backdrop)backdrop.addEventListener('click',function(e){e.stopPropagation();exit();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&zoomed()){e.stopPropagation();exit();}},true);
