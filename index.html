@@ -25,33 +25,33 @@ html{background:var(--color-bg)}
 ::backdrop{background:var(--color-bg)}
 body{font-family:var(--font-sans);font-size:20px;line-height:1.78;color:var(--color-text);background:var(--color-bg);overflow:hidden}
 .deck{position:relative;width:100vw;height:100vh;overflow:hidden}
-.slide{position:absolute;inset:0;width:100%;height:100%;padding:5vh 6vw 10vh;opacity:0;/* 下緣保留 10vh：底部翻頁鈕/⛶/頁碼所在，內容不得壓上去 */visibility:hidden;transform:translateX(40px);transition:opacity .5s ease,transform .5s ease,visibility 0s linear .5s;display:flex;flex-direction:column;justify-content:center;
+.slide{position:absolute;inset:0;width:100%;height:100%;padding:5vh 6vw 12.5vh;opacity:0;/* 下緣保留 12.5vh：底部翻頁鈕/⛶/頁碼所在，內容不得壓上去 */visibility:hidden;transform:translateX(40px);transition:opacity .5s ease,transform .5s ease,visibility 0s linear .5s;display:flex;flex-direction:column;justify-content:center;
   background:var(--color-bg) radial-gradient(circle at 1px 1px,rgba(134,38,51,.05) 1px,transparent 0) 0 0/22px 22px;}
 .slide.active{opacity:1;visibility:visible;transform:translateX(0);transition:opacity .5s ease,transform .5s ease,visibility 0s}
 .slide.prev{transform:translateX(-40px)}
 .slide.roomy{--gap:.55em}
 .slide>*{position:relative;z-index:1}
 .fitwrap{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;justify-content:var(--jc,center);align-items:var(--ai,stretch);gap:var(--gap,0);transform-origin:center center}
-.slide.roomy h1{font-size:clamp(3rem,6.2vw,5.6rem)}
-.slide.roomy h2{font-size:clamp(2.9rem,5.5vw,4.6rem)}
-.slide.roomy p,.slide.roomy .lead{font-size:clamp(1.95rem,3vw,2.7rem)}
+.slide.roomy h1{font-size:clamp(8.59vh,6.2vw,5.6rem)}
+.slide.roomy h2{font-size:clamp(7.62vh,5.5vw,4.6rem)}
+.slide.roomy p,.slide.roomy .lead{font-size:clamp(4.16vh,3vw,2.7rem)}
 /* rmid＝內容較多的 roomy 頁中間級距（密度反比：加大到縮放仍≈1 的最大值） */
-.slide.roomy.rmid h2{font-size:clamp(2.4rem,4.5vw,3.8rem)}
-.slide.roomy.rmid p,.slide.roomy.rmid .lead{font-size:clamp(1.6rem,2.5vw,2.25rem)}
-.slide.roomy.rmid ul.fl li{font-size:clamp(1.4rem,2.05vw,1.8rem);padding:.3em 0 .3em 1.5em}
+.slide.roomy.rmid h2{font-size:clamp(6.24vh,4.5vw,3.8rem)}
+.slide.roomy.rmid p,.slide.roomy.rmid .lead{font-size:clamp(3.46vh,2.5vw,2.25rem)}
+.slide.roomy.rmid ul.fl li{font-size:clamp(2.84vh,2.05vw,1.8rem);padding:.3em 0 .3em 1.5em}
 .slide.roomy.rmid .toc-themes li{padding:.24em .2em;line-height:1.26}
 .slide.roomy.rmid .toc-themes{margin-top:.3em}
-.slide.roomy blockquote{font-size:clamp(1.7rem,2.8vw,2.4rem)}
-.slide.roomy ul.fl li{font-size:clamp(1.5rem,2.3vw,2rem)}
-.slide.roomy .big-q{font-size:clamp(2rem,4vw,3.2rem)}
-h1{font-family:var(--font-serif);font-size:clamp(2.6rem,5.2vw,4.8rem);font-weight:900;letter-spacing:.02em;line-height:1.3;color:var(--color-primary);margin-bottom:.4em}
-h2{font-family:var(--font-serif);font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:700;line-height:1.4;color:var(--color-primary);margin-bottom:.7em;padding-bottom:.35em;border-bottom:3px solid var(--color-accent);display:inline-block}
-h3{font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:600;color:var(--color-text);margin:.8em 0 .4em}
-p{font-size:clamp(1.35rem,2vw,1.85rem);margin-bottom:.7em;max-width:38em}
-.lead{font-size:clamp(1.55rem,2.5vw,2.2rem);color:var(--color-muted);font-weight:300}
+.slide.roomy blockquote{font-size:clamp(3.88vh,2.8vw,2.4rem)}
+.slide.roomy ul.fl li{font-size:clamp(3.19vh,2.3vw,2rem)}
+.slide.roomy .big-q{font-size:clamp(5.54vh,4vw,3.2rem)}
+h1{font-family:var(--font-serif);font-size:clamp(7.21vh,5.2vw,4.8rem);font-weight:900;letter-spacing:.02em;line-height:1.3;color:var(--color-primary);margin-bottom:.4em}
+h2{font-family:var(--font-serif);font-size:clamp(5.82vh,4.2vw,3.6rem);font-weight:700;line-height:1.4;color:var(--color-primary);margin-bottom:.7em;padding-bottom:.35em;border-bottom:3px solid var(--color-accent);display:inline-block}
+h3{font-size:clamp(3.6vh,2.6vw,2.2rem);font-weight:600;color:var(--color-text);margin:.8em 0 .4em}
+p{font-size:clamp(2.77vh,2vw,1.85rem);margin-bottom:.7em;max-width:38em}
+.lead{font-size:clamp(3.46vh,2.5vw,2.2rem);color:var(--color-muted);font-weight:300}
 .muted{color:var(--color-muted)} .accent{color:var(--color-primary);font-weight:700}
 .src{font-size:.95rem;color:var(--color-muted);font-style:italic;margin-top:.4em;max-width:46em}
-blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5rem,2.4vw,2.1rem);border-left:4px solid var(--color-accent);padding:.5em 1.2em;margin:.8em 0;color:#4a3b1e;background:rgba(212,175,55,.08);max-width:36em}
+blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(3.33vh,2.4vw,2.1rem);border-left:4px solid var(--color-accent);padding:.5em 1.2em;margin:.8em 0;color:#4a3b1e;background:rgba(212,175,55,.08);max-width:36em}
 /* 分章節底色 + 細紋 + 金書脊 + 節次浮水印（JS 加 .sec-tint .sec-N） */
 .slide.sec-tint{background-color:var(--color-bg);
   background-image:
@@ -72,10 +72,10 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 /* 章節頁 */
 .section-divider{--ai:flex-start;background:var(--grad-royal);color:#fff;overflow:hidden}
 .section-divider::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 620px at 70% 40%,rgba(212,175,55,.18),transparent 60%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:auto,28px 28px;z-index:0}
-.section-divider .stage{font-size:clamp(1.1rem,2vw,1.5rem);color:var(--color-accent-soft);font-weight:700;letter-spacing:.3em;margin-bottom:.1em}
-.section-divider .num{font-family:var(--font-serif);font-size:clamp(4rem,13vw,10rem);font-weight:900;line-height:1;background:var(--grad-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 4px 30px rgba(212,175,55,.3)}
+.section-divider .stage{font-size:clamp(2.77vh,2vw,1.5rem);color:var(--color-accent-soft);font-weight:700;letter-spacing:.3em;margin-bottom:.1em}
+.section-divider .num{font-family:var(--font-serif);font-size:clamp(18.02vh,13vw,10rem);font-weight:900;line-height:1;background:var(--grad-accent);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 4px 30px rgba(212,175,55,.3)}
 .section-divider h1{margin-top:.05em;color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.25)}
-.section-divider .when{font-size:clamp(1.75rem,2.85vw,2.7rem);line-height:1.5;color:rgba(255,255,255,.88);margin-top:.6em;letter-spacing:.05em;max-width:34em}
+.section-divider .when{font-size:clamp(3.95vh,2.85vw,2.7rem);line-height:1.5;color:rgba(255,255,255,.88);margin-top:.6em;letter-spacing:.05em;max-width:34em}
 /* 🔴 章節分隔頁主題視覺＋進場動畫（教授 2026-07-24 訂：標題頁不可單調無聊） */
 .sec-art{position:absolute;right:3vw;top:4.5vh;height:min(40vh,360px);width:auto;aspect-ratio:1/1;opacity:.19;color:var(--color-accent);pointer-events:none;z-index:0}
 .section-divider .num,.section-divider h1,.section-divider .when,.section-divider .stage{position:relative;z-index:1}
@@ -101,7 +101,7 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .slide.cover{background:var(--grad-royal);color:#fff;text-align:center;--ai:center;overflow:hidden}
 .slide.cover::before{content:"";position:absolute;inset:0;background:radial-gradient(720px 460px at 50% 20%,rgba(212,175,55,.12),transparent 68%),linear-gradient(180deg,rgba(40,8,13,.04),rgba(40,8,13,.28));z-index:1}
 .cover-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;z-index:0}
-.slide.cover h1{color:#fff;font-size:clamp(2.6rem,6vw,5.2rem)} .slide.cover .lead{color:rgba(255,255,255,.9)}
+.slide.cover h1{color:#fff;font-size:clamp(8.32vh,6vw,5.2rem)} .slide.cover .lead{color:rgba(255,255,255,.9)}
 .slide.cover .stage{color:var(--color-accent-soft);letter-spacing:.35em;font-weight:700}
 .slide.cover .ornament{width:90px;height:4px;background:var(--grad-accent);margin:1.1em auto;border-radius:2px}
 .slide.cover .meta{margin-top:2em;font-size:1rem;color:rgba(255,255,255,.74);letter-spacing:.08em}
@@ -132,20 +132,20 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 /* 揭曉的收束＝置中、字夠大、填滿（避免小字＋左對齊＋空盪） */
 /* 各主題標題頁（本日章節總覽） */
 .toc-themes{list-style:none;max-width:none;width:100%;margin:.5em 0 0;padding:0}
-.toc-themes li{display:flex;align-items:baseline;gap:.8em;padding:.46em .2em;border-bottom:1px dashed var(--color-line);font-size:clamp(1.15rem,1.75vw,1.6rem);line-height:1.4}
+.toc-themes li{display:flex;align-items:baseline;gap:.8em;padding:.46em .2em;border-bottom:1px dashed var(--color-line);font-size:clamp(2.43vh,1.75vw,1.6rem);line-height:1.4}
 .toc-themes .tn{font-family:var(--font-serif);font-weight:900;color:var(--color-accent);font-size:1.3em;flex:none;min-width:1.5em;text-align:center}
 .toc-themes b{color:var(--color-primary)}
-.numlist{margin:0;padding-left:1.5em;font-size:clamp(1.55rem,2vw,1.9rem);line-height:1.5}
+.numlist{margin:0;padding-left:1.5em;font-size:clamp(2.77vh,2vw,1.9rem);line-height:1.5}
 .numlist li{padding:.42em 0;border-bottom:1px dashed var(--color-line)}
 .mchips{display:flex;flex-wrap:wrap;gap:.6em;align-content:center}
-.mchip{background:#fff;border:1px solid var(--color-line);border-left:5px solid var(--color-primary);border-radius:10px;padding:.46em .85em;font-size:clamp(1.55rem,2vw,1.85rem);font-weight:700;color:var(--color-text);box-shadow:var(--shadow-soft)}
+.mchip{background:#fff;border:1px solid var(--color-line);border-left:5px solid var(--color-primary);border-radius:10px;padding:.46em .85em;font-size:clamp(2.77vh,2vw,1.85rem);font-weight:700;color:var(--color-text);box-shadow:var(--shadow-soft)}
 .statchips{display:flex;flex-wrap:wrap;gap:.6em}
-.statchip{display:inline-flex;align-items:baseline;gap:.4em;background:#fff;border:1px solid var(--color-line);border-radius:999px;padding:.34em .95em;font-size:clamp(1.02rem,1.4vw,1.38rem);font-weight:500}
+.statchip{display:inline-flex;align-items:baseline;gap:.4em;background:#fff;border:1px solid var(--color-line);border-radius:999px;padding:.34em .95em;font-size:clamp(1.94vh,1.4vw,1.38rem);font-weight:500}
 .statchip b{color:var(--color-primary);font-weight:900}
-.qcap{display:flex;gap:.5em;margin-top:.6em;text-align:left;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.20);border-left:5px solid var(--color-primary);border-radius:8px;padding:.55em .8em;font-size:clamp(1.18rem,1.7vw,1.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
+.qcap{display:flex;gap:.5em;margin-top:.6em;text-align:left;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.20);border-left:5px solid var(--color-primary);border-radius:8px;padding:.55em .8em;font-size:clamp(2.36vh,1.7vw,1.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
 .qcap .qn{color:var(--color-accent);flex:none}
 .qcap .qt{flex:1}
-.taglines{display:flex;flex-direction:column;gap:.42em;font-size:clamp(1.05rem,1.5vw,1.42rem)}
+.taglines{display:flex;flex-direction:column;gap:.42em;font-size:clamp(2.08vh,1.5vw,1.42rem)}
 .taglines .row{display:flex;align-items:baseline;gap:.7em}
 .taglines .tg{background:var(--color-primary);color:#fff;border-radius:6px;padding:.12em .7em;font-weight:700;white-space:nowrap;min-width:6.5em;text-align:center}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.4vw;width:100%}
@@ -153,23 +153,23 @@ blockquote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5re
 .card h3{margin-top:0;color:var(--color-primary)}
 .card.compact p{font-size:1.2rem;margin-bottom:.3em}
 .tag{display:inline-block;background:var(--color-primary);color:#fff;padding:.25em .9em;border-radius:999px;font-size:.85rem;font-weight:600;letter-spacing:.08em;margin-bottom:.6em}
-ul.fl{list-style:none} ul.fl li{position:relative;padding:.5em 0 .5em 1.6em;font-size:clamp(1.25rem,1.9vw,1.7rem);border-bottom:1px dashed var(--color-line)}
+ul.fl{list-style:none} ul.fl li{position:relative;padding:.5em 0 .5em 1.6em;font-size:clamp(2.63vh,1.9vw,1.7rem);border-bottom:1px dashed var(--color-line)}
 ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;height:.7em;background:var(--color-accent);border-radius:50%}
-.slide.dense ul.fl li{font-size:clamp(1.06rem,1.5vw,1.4rem);padding-top:.36em;padding-bottom:.36em;line-height:1.4}
+.slide.dense ul.fl li{font-size:clamp(2.08vh,1.5vw,1.4rem);padding-top:.36em;padding-bottom:.36em;line-height:1.4}
 .slide.dense ul.fl li::before{top:.9em}
-.big-q{font-family:var(--font-serif);font-size:clamp(1.5rem,3.2vw,2.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
+.big-q{font-family:var(--font-serif);font-size:clamp(4.44vh,3.2vw,2.6rem);font-weight:700;color:var(--color-primary);line-height:1.5}
 .references{font-size:.9rem;line-height:1.5;color:var(--color-text);max-width:64em;columns:2;column-gap:3em}
 .references li{margin-bottom:.5em;margin-left:1.2em;break-inside:avoid}
 /* 人物水彩肖像框 */
 .thinker-row{display:flex;align-items:center;gap:4vw;flex:1;width:calc(100% + 7vw);margin-left:-3.5vw}
 .thinker-row>.thinker-text{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:.45em}
-.thinker-text p{font-size:clamp(1.55rem,2.05vw,2.15rem);max-width:none;margin:0}
+.thinker-text p{font-size:clamp(2.84vh,2.05vw,2.15rem);max-width:none;margin:0}
 .thinker-text .fl{margin:0}
-.thinker-text .fl li{font-size:clamp(1.65rem,2.3vw,2.25rem);padding:.72em 0 .72em 1.8em}
-.thinker-text blockquote{font-size:clamp(1.75rem,2.55vw,2.35rem);max-width:none}
-.thinker-text .big-q{font-size:clamp(1.95rem,3vw,2.7rem)}
-.thinker-text .src{font-size:clamp(1rem,1.25vw,1.22rem);max-width:none}
-.thinker-text .lead{font-size:clamp(1.4rem,1.85vw,1.78rem);color:var(--color-muted);font-weight:300;margin:0}
+.thinker-text .fl li{font-size:clamp(3.19vh,2.3vw,2.25rem);padding:.72em 0 .72em 1.8em}
+.thinker-text blockquote{font-size:clamp(3.53vh,2.55vw,2.35rem);max-width:none}
+.thinker-text .big-q{font-size:clamp(4.16vh,3vw,2.7rem)}
+.thinker-text .src{font-size:clamp(1.73vh,1.25vw,1.22rem);max-width:none}
+.thinker-text .lead{font-size:clamp(2.56vh,1.85vw,1.78rem);color:var(--color-muted);font-weight:300;margin:0}
 .wc-with-caption{display:flex;flex-direction:column;align-items:center;flex:none}
 .wc-frame{display:inline-block;padding:11px;border-radius:18px;background:linear-gradient(155deg,var(--wc1,#F3EFE6),var(--wc2,#E7DECB));box-shadow:var(--shadow-strong);border:1px solid rgba(212,175,55,.45)}
 .wc-frame img{display:block;width:100%;height:auto;border-radius:12px}
@@ -179,7 +179,7 @@ ul.fl li::before{content:"";position:absolute;left:0;top:1.05em;width:.7em;heigh
 .wc-aurelius{--wc1:#F6EFDD;--wc2:#EBDDBE}
 .wc-stoic{--wc1:#ECEEF2;--wc2:#D7DCE4}
 .wc-liangkuan{--wc1:#EDF1E8;--wc2:#D9E4CE}
-.wc-cap{margin-top:.6em;font-family:var(--font-serif);font-style:italic;font-size:clamp(1.1rem,1.5vw,1.5rem);color:var(--color-muted);text-align:center;letter-spacing:.03em}
+.wc-cap{margin-top:.6em;font-family:var(--font-serif);font-style:italic;font-size:clamp(2.08vh,1.5vw,1.5rem);color:var(--color-muted);text-align:center;letter-spacing:.03em}
 /* 影片 */
 /* 全螢幕/縮放黑閃第二根因：跨網域iframe追上容器新尺寸前，露出容器自己的背景；原為純黑在淺色deck上極刺眼，改用deck底色 */
 .video-wrap{position:relative;z-index:60;width:100%;max-width:560px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-strong);margin:.3em 0;background:var(--color-bg)}
@@ -192,7 +192,7 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 .video-wrap.zoom{position:fixed;inset:2vh 2vw;width:auto!important;height:auto;aspect-ratio:auto;max-width:none!important;margin:0;z-index:99999;border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.7);background:#000}
 .video-wrap.zoom .vfs{width:2.7em;height:2.7em;font-size:1.35rem;bottom:1em;right:1em}
 .video-wrap.zoom .cc-overlay{bottom:8%}
-.video-wrap.zoom .cc-overlay span{font-size:clamp(1.6rem,2.7vw,2.6rem)}
+.video-wrap.zoom .cc-overlay span{font-size:clamp(3.74vh,2.7vw,2.6rem)}
 /* 調查截圖就地放大（圖內字級小，點右下 ⛶ 放大到近滿版；沿用影片放大同一套機制與圖示） */
 .imgzoom-wrap{position:relative;z-index:60}
 .imgzoom-wrap .vfs{position:absolute;bottom:.4em;right:.4em;z-index:66;width:2.3em;height:2.3em;border:none;border-radius:9px;background:rgba(0,0,0,.55);color:#fff;font-size:1.15rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;font-family:inherit}
@@ -208,7 +208,7 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 #s-sci2 .src{margin-top:.25em}
 /* 夢想清單長條圖：由原始問卷資料直接以 HTML 繪製（不再嵌截圖），字級才能大到投影可讀 */
 .dreamchart{display:flex;flex-direction:column;gap:.45vh;width:100%;margin-top:.2em}
-.drow{display:grid;grid-template-columns:var(--lab,19.5em) 1fr 2.7em;align-items:center;gap:.7em;font-size:clamp(1.68rem,1.98vw,2.05rem);line-height:1.22}
+.drow{display:grid;grid-template-columns:var(--lab,19.5em) 1fr 2.7em;align-items:center;gap:.7em;font-size:clamp(2.74vh,1.98vw,2.05rem);line-height:1.22}
 .drow .dlab{text-align:right;white-space:nowrap}
 .drow .dbar{height:1.1em;background:rgba(134,38,51,.09);border-radius:0 7px 7px 0}
 .drow .dbar i{display:block;height:100%;background:linear-gradient(90deg,var(--color-primary),#A8404F);border-radius:0 7px 7px 0}
@@ -218,19 +218,19 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 /* 右上角小縮圖：點開即為完整 20 項的原始問卷圖表（沿用就地放大機制） */
 .dreamfull{position:absolute;top:-1.1vh;right:0;width:clamp(74px,6vw,94px);margin:0;text-align:center;opacity:.9;line-height:1}
 .dreamfull img{width:100%;height:auto;border:1px solid rgba(134,38,51,.3);border-radius:6px;cursor:zoom-in}
-.dreamfull figcaption{font-size:clamp(.78rem,.85vw,.92rem);color:var(--color-muted);margin-top:.1em;line-height:1.15}
+.dreamfull figcaption{font-size:clamp(1.18vh,0.85vw,.92rem);color:var(--color-muted);margin-top:.1em;line-height:1.15}
 .dreamfull .vfs{display:none}
 .dreamfull.zoom{position:fixed;width:auto;opacity:1}
 .dreamfull.zoom figcaption{display:none}
 .cc-overlay{position:absolute;left:3%;right:3%;bottom:16%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
-.cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(1.55rem,1.72vw,1.62rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(2.38vh,1.72vw,1.62rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* 自製精簡控制列（取代原生 controls，跨瀏覽器只有一顆全螢幕鈕；全螢幕放大整個影片框＝字幕一起顯示） */
 .vctrl{position:absolute;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;gap:.55em;padding:.4em .7em;background:linear-gradient(transparent,rgba(0,0,0,.62));font-family:"Noto Sans TC",sans-serif}
 .vctrl .vc-btn{background:none;border:none;color:#fff;font-size:1.15rem;cursor:pointer;padding:.05em .25em;line-height:1}
 .vctrl .vc-btn:hover{color:var(--color-accent)}
 .vctrl .vc-seek{flex:1;cursor:pointer;height:4px;accent-color:#D4AF37}
 .vctrl .vc-time{color:#fff;font-size:.78rem;min-width:6em;text-align:right;font-variant-numeric:tabular-nums}
-.video-wrap:fullscreen .cc-overlay span,.video-wrap:-webkit-full-screen .cc-overlay span{font-size:clamp(1.5rem,3.2vw,2.7rem)}
+.video-wrap:fullscreen .cc-overlay span,.video-wrap:-webkit-full-screen .cc-overlay span{font-size:clamp(4.44vh,3.2vw,2.7rem)}
 /* 自製字幕影片的「全螢幕（含字幕）」鈕：全螢幕化 .video-wrap，字幕層一起放大顯示（YouTube 原生全螢幕鈕已用 fs:0 關閉，避免蓋掉 HTML 字幕層） */
 /* 簡報已在全螢幕時，影片放大改用 CSS 覆蓋（不動用 Fullscreen API），退出只需移除此 class＝仍留在簡報全螢幕 */
 .video-wrap:fullscreen .vctrl .vc-btn{font-size:1.6rem}
@@ -238,16 +238,16 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 /* 圖片大圖 */
 .gimg{display:block;border-radius:16px;box-shadow:var(--shadow-strong);border:1px solid rgba(212,175,55,.4);object-fit:cover}
 .figbox{display:flex;flex-direction:column;align-items:center;gap:.4em}
-.figbox .fcap{font-family:var(--font-serif);font-style:italic;font-size:clamp(.95rem,1.2vw,1.18rem);color:var(--color-muted);text-align:center;max-width:26em}
+.figbox .fcap{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.66vh,1.2vw,1.18rem);color:var(--color-muted);text-align:center;max-width:26em}
 /* 四欄表（面向／四層次） */
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4vw;width:100%}
 .four-col .card{padding:1.2em 1.2em;border-radius:16px;min-height:17vh;display:flex;flex-direction:column;justify-content:flex-start;border-top-width:6px}
 .four-col .card .num-badge{font-family:var(--font-serif);font-size:1.5rem;font-weight:900;color:var(--color-accent-deep);line-height:1}
-.four-col .card h3{font-size:clamp(1.2rem,1.7vw,1.6rem);margin:.25em 0 .4em;line-height:1.3;color:var(--color-primary)}
-.four-col .card p{font-size:clamp(.98rem,1.25vw,1.18rem);color:var(--color-muted);margin:0;line-height:1.55}
+.four-col .card h3{font-size:clamp(2.36vh,1.7vw,1.6rem);margin:.25em 0 .4em;line-height:1.3;color:var(--color-primary)}
+.four-col .card p{font-size:clamp(1.73vh,1.25vw,1.18rem);color:var(--color-muted);margin:0;line-height:1.55}
 .four-col .card .en{font-family:var(--font-serif);font-style:italic;color:var(--color-accent-deep);font-size:.92em}
 /* 表格（思維四層次／主流價值） */
-table.tbl{width:100%;border-collapse:collapse;font-size:clamp(1.5rem,1.65vw,1.6rem);background:rgba(255,255,255,.7);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft)}
+table.tbl{width:100%;border-collapse:collapse;font-size:clamp(2.29vh,1.65vw,1.6rem);background:rgba(255,255,255,.7);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft)}
 table.tbl th,table.tbl td{padding:.5em .8em;text-align:left;border-bottom:1px solid var(--color-line);line-height:1.42;vertical-align:top}
 table.tbl.nw2 td:nth-child(2),table.tbl.nw2 th:nth-child(2){white-space:nowrap}
 table.tbl thead th{background:var(--color-primary);color:#fff;font-family:var(--font-serif);font-weight:700;border-bottom:none}
@@ -256,33 +256,33 @@ table.tbl .lv{font-family:var(--font-serif);font-weight:700;color:var(--color-pr
 table.tbl tr.hl td{font-weight:700}
 table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stroke:.6px var(--color-primary)}
 .feature-list{list-style:none;counter-reset:li-counter}
-.feature-list li{position:relative;padding:.55em 0 .55em 2.3em;font-size:clamp(1.1rem,1.55vw,1.42rem);border-bottom:1px dashed var(--color-line);line-height:1.6}
+.feature-list li{position:relative;padding:.55em 0 .55em 2.3em;font-size:clamp(2.15vh,1.55vw,1.42rem);border-bottom:1px dashed var(--color-line);line-height:1.6}
 .feature-list li::before{content:counter(li-counter);counter-increment:li-counter;position:absolute;left:0;top:.6em;width:1.6em;height:1.6em;background:var(--color-accent);color:var(--color-primary-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8em}
 /* 文字雲頁（沿用單元一） */
 .cloud-stage{display:grid;grid-template-columns:auto 1fr;gap:2.2vw;align-items:center;flex:1;min-height:0;width:100%;margin-top:.2em}
 .cloud-side{display:flex;flex-direction:column;align-items:center;gap:.7em;width:clamp(190px,18vw,260px)}
-.cloud-side .lead{text-align:center;max-width:none;margin:0;font-size:clamp(1.1rem,1.4vw,1.4rem)}
+.cloud-side .lead{text-align:center;max-width:none;margin:0;font-size:clamp(1.94vh,1.4vw,1.4rem)}
 .cloud-side .src{text-align:center;max-width:none;margin:0}
 .cloud-qr{background:#fff;border-radius:16px;border-top:7px solid var(--color-accent-deep);box-shadow:var(--shadow-strong);padding:.8em .8em .6em;display:flex;flex-direction:column;align-items:center;gap:.4em}
 .cloud-qr .qr-box{width:clamp(130px,11vw,180px)}/* QR 一律正方形：只設 width，高度交給 .qr-box 的 aspect-ratio:1，切勿設 height */
 .cloud-qr .qr-box img,.cloud-qr .qr-box canvas{width:100%!important;height:100%!important;display:block}
-.cloud-qr .qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.1rem,1.3vw,1.35rem)}
+.cloud-qr .qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.8vh,1.3vw,1.35rem)}
 .cloud-canvas-wrap{flex:1 1 auto;position:relative;min-height:60vh;height:100%;border-radius:16px;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.9),transparent 55%),linear-gradient(145deg,#f8f2e8,#efe5d4);box-shadow:var(--shadow-strong);overflow:hidden}
 .cloud-canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%}
-.cloud-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--color-muted);font-style:italic;font-size:clamp(1.1rem,1.4vw,1.4rem);text-align:center;padding:0 1em}
+.cloud-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--color-muted);font-style:italic;font-size:clamp(1.94vh,1.4vw,1.4rem);text-align:center;padding:0 1em}
 /* 六組 QR 頁 */
-.qr-intro{text-align:center;max-width:none;margin:.25em auto .55em;font-size:clamp(1.4rem,2vw,1.95rem);line-height:1.5;color:var(--color-text)}
+.qr-intro{text-align:center;max-width:none;margin:.25em auto .55em;font-size:clamp(2.77vh,2vw,1.95rem);line-height:1.5;color:var(--color-text)}
 .qr-stage{display:grid;grid-template-columns:repeat(4,auto);grid-auto-rows:1fr;justify-content:center;align-content:center;column-gap:3.4vw;row-gap:.5vh;flex:1;min-height:0;width:100%}
 .qr-card{width:255px;max-width:255px;background:#fff;border-radius:14px;border-top:6px solid var(--c,#862633);box-shadow:var(--shadow-strong);padding:.3em .55em .35em;display:flex;flex-direction:column;align-items:center;gap:.2em}
 .qr-box{width:100%;max-width:min(18.5vw,19.5vh);aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center}
 .qr-box img,.qr-box canvas{width:100%!important;height:100%!important;display:block}
-.qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--c,#862633);font-size:clamp(1rem,1.35vw,1.3rem);text-align:center;line-height:1.0}
+.qr-cap{font-family:var(--font-serif);font-weight:900;color:var(--c,#862633);font-size:clamp(1.87vh,1.35vw,1.3rem);text-align:center;line-height:1.0}
 .qr-cap small{display:block;font-family:var(--font-sans);font-weight:700;color:var(--color-text);font-size:.7em;letter-spacing:.02em;margin-top:.15em}
 /* 六組即時頁（gpage，單欄） */
 .gpage h2 .g-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--c);margin-right:.45em;vertical-align:middle}
 .gpage .gbox{flex:1;min-height:0;overflow:auto;background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.8em .9em;display:flex;flex-direction:column;gap:.6em;width:100%;margin-top:.3em}
-.gitem{background:#fff;border-left:5px solid var(--c,#862633);border-radius:8px;box-shadow:var(--shadow-soft);padding:.6em .9em;font-size:clamp(1.1rem,1.45vw,1.45rem);line-height:1.55;white-space:pre-wrap;animation:u2pop .3s ease}
-.gbox .empty-hint{margin:auto;font-size:clamp(1.6rem,2.2vw,2rem);color:var(--color-muted);font-style:italic;text-align:center}
+.gitem{background:#fff;border-left:5px solid var(--c,#862633);border-radius:8px;box-shadow:var(--shadow-soft);padding:.6em .9em;font-size:clamp(2.01vh,1.45vw,1.45rem);line-height:1.55;white-space:pre-wrap;animation:u2pop .3s ease}
+.gbox .empty-hint{margin:auto;font-size:clamp(3.05vh,2.2vw,2rem);color:var(--color-muted);font-style:italic;text-align:center}
 @keyframes u2pop{from{opacity:0;transform:scale(.85)}to{opacity:1}}
 .daiuda{display:none}  /* 教授2026-07-24：投稿頁畫面拿掉「無網路時·老師代打」列；功能保留，要恢復改回 display:flex;gap:.5em;align-items:center;margin-top:.6em;flex-wrap:wrap */
 .daiuda .tag{font-size:.78rem;color:var(--color-muted);background:rgba(0,0,0,.05);padding:.28em .8em;border-radius:999px;white-space:nowrap;margin:0}
@@ -292,34 +292,34 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 /* 牆門投票長條圖 */
 .vote-stage{display:grid;grid-template-columns:auto 1fr;gap:2.4vw;align-items:center;flex:1;min-height:0;width:100%;margin-top:.2em}
 .vote-side{display:flex;flex-direction:column;align-items:center;gap:.7em;width:clamp(190px,18vw,260px)}
-.vote-side .lead{text-align:center;max-width:none;margin:0;font-size:clamp(1.1rem,1.4vw,1.4rem)}
+.vote-side .lead{text-align:center;max-width:none;margin:0;font-size:clamp(1.94vh,1.4vw,1.4rem)}
 .vote-bars{display:flex;align-items:flex-end;justify-content:center;gap:5vw;flex:1;min-height:0;height:100%;padding:1em 1em 0}
 .vbar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;flex:1;max-width:230px}
-.vbar .vcount{font-family:var(--font-serif);font-weight:900;font-size:clamp(2rem,3.4vw,3.4rem);color:var(--c);line-height:1;margin-bottom:.12em}
+.vbar .vcount{font-family:var(--font-serif);font-weight:900;font-size:clamp(4.71vh,3.4vw,3.4rem);color:var(--c);line-height:1;margin-bottom:.12em}
 .vbar .vfill{width:78%;background:linear-gradient(180deg,var(--c),color-mix(in srgb,var(--c) 70%,#000));border-radius:14px 14px 0 0;box-shadow:var(--shadow-strong);height:0;transition:height .7s cubic-bezier(.2,.8,.2,1);min-height:12px}
 .vbar::before{content:"";position:absolute;bottom:2.6em;left:50%;transform:translateX(-50%);width:78%;height:62%;background:rgba(94,26,35,.06);border-radius:14px 14px 0 0;z-index:0}
 .vbar{position:relative}.vbar .vfill,.vbar .vcount,.vbar .vpct,.vbar .vlabel,.vbar .vsub{position:relative;z-index:1}
-.vbar .vlabel{margin-top:.45em;font-family:var(--font-serif);font-weight:700;font-size:clamp(1.2rem,1.7vw,1.7rem);color:var(--color-text)}
-.vbar .vsub{font-size:clamp(1.3rem,1.6vw,1.5rem);color:var(--color-muted)}
-.vbar .vpct{font-size:clamp(1rem,1.3vw,1.25rem);color:var(--c);font-weight:700}
+.vbar .vlabel{margin-top:.45em;font-family:var(--font-serif);font-weight:700;font-size:clamp(2.36vh,1.7vw,1.7rem);color:var(--color-text)}
+.vbar .vsub{font-size:clamp(2.22vh,1.6vw,1.5rem);color:var(--color-muted)}
+.vbar .vpct{font-size:clamp(1.8vh,1.3vw,1.25rem);color:var(--c);font-weight:700}
 /* 兩欄對比卡（門/牆） */
 .contrast2{display:grid;grid-template-columns:1fr 1fr;gap:4vw;width:100%;margin-top:.4em}
-.contrast2 .card h3{font-size:clamp(1.4rem,2vw,1.95rem)}
-.contrast2 .card p{font-size:clamp(1.02rem,1.35vw,1.3rem);line-height:1.6}
+.contrast2 .card h3{font-size:clamp(2.77vh,2vw,1.95rem)}
+.contrast2 .card p{font-size:clamp(1.87vh,1.35vw,1.3rem);line-height:1.6}
 .wall-card{border-top-color:#6B6B6B!important;background:linear-gradient(135deg,#fff,#f0eeec)}
 .door-card{border-top-color:var(--color-accent)!important;background:linear-gradient(135deg,#fffaf0,#fbf3e0)}
 /* CO 學者卡 */
 .co-card{background:#fff;border-radius:14px;box-shadow:var(--shadow-soft);border-left:6px solid var(--color-primary);padding:.68em .95em;margin-bottom:.45em}
-.co-card .who{font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(1.15rem,1.5vw,1.5rem)}
-.co-card .claim{font-size:clamp(1rem,1.3vw,1.25rem);margin:.2em 0 .35em;line-height:1.55}
-.co-card .co{font-size:clamp(1.5rem,1.7vw,1.62rem);color:#4a3b1e;background:rgba(212,175,55,.12);border-radius:8px;padding:.36em .65em;line-height:1.42}
+.co-card .who{font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(2.08vh,1.5vw,1.5rem)}
+.co-card .claim{font-size:clamp(1.8vh,1.3vw,1.25rem);margin:.2em 0 .35em;line-height:1.55}
+.co-card .co{font-size:clamp(2.36vh,1.7vw,1.62rem);color:#4a3b1e;background:rgba(212,175,55,.12);border-radius:8px;padding:.36em .65em;line-height:1.42}
 .co-card .co b{color:var(--color-primary)}
 /* 影片＋孫老師回應（co-card）頁：lead 預設行高 1.78 太鬆，長文會撐高整頁；收緊行高並微降字級以換取縮放達標 */
-.slide:has(.co-card) .lead{line-height:1.46;font-size:clamp(1.5rem,2.02vw,1.88rem)}
+.slide:has(.co-card) .lead{line-height:1.46;font-size:clamp(2.8vh,2.02vw,1.88rem)}
 .slide:has(.co-card) .lead+.co-card{margin-top:.35em}
 /* 主題曲頁 */
-.lyrics{font-family:var(--font-serif);font-size:clamp(.98rem,1.5vw,1.22rem);line-height:1.85;color:#4a3b1e;column-count:2;column-gap:3em;max-width:60em}
-.lyrics p{font-size:clamp(.98rem,1.5vw,1.22rem);break-inside:avoid;margin-bottom:.7em;max-width:none}
+.lyrics{font-family:var(--font-serif);font-size:clamp(2.08vh,1.5vw,1.22rem);line-height:1.85;color:#4a3b1e;column-count:2;column-gap:3em;max-width:60em}
+.lyrics p{font-size:clamp(2.08vh,1.5vw,1.22rem);break-inside:avoid;margin-bottom:.7em;max-width:none}
 .lyrics .h{color:var(--color-primary);font-weight:700;font-style:normal;letter-spacing:.05em}
 /* 結語/彩蛋 */
 .slide.eggsong{background:var(--grad-royal) !important}
@@ -340,10 +340,10 @@ table.tbl tr.hl .lv{color:var(--color-primary);font-weight:900;-webkit-text-stro
 .eggsong .egg-deco-bl{bottom:10vh;left:4.5vw;width:clamp(75px,7.5vw,120px)}
 .closing{text-align:center;background:var(--grad-royal);color:#fff;--ai:center;overflow:hidden}
 .closing::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 480px at 50% 30%,rgba(212,175,55,.18),transparent 62%);z-index:0}
-.closing .ending-line{font-family:var(--font-serif);font-weight:700;color:#fff;font-size:clamp(2.8rem,7vw,5.6rem);letter-spacing:.12em;text-shadow:0 2px 30px rgba(0,0,0,.3);position:relative;z-index:2}
-.closing .ending-sub{position:relative;z-index:2;color:rgba(255,255,255,.88);font-size:clamp(1.3rem,2vw,1.8rem);max-width:30em;margin:.6em auto 0;line-height:1.7}
+.closing .ending-line{font-family:var(--font-serif);font-weight:700;color:#fff;font-size:clamp(9.7vh,7vw,5.6rem);letter-spacing:.12em;text-shadow:0 2px 30px rgba(0,0,0,.3);position:relative;z-index:2}
+.closing .ending-sub{position:relative;z-index:2;color:rgba(255,255,255,.88);font-size:clamp(2.77vh,2vw,1.8rem);max-width:30em;margin:.6em auto 0;line-height:1.7}
 .closing .ending-ornament{width:clamp(90px,14vw,200px);height:3px;margin:.9em auto;background:var(--grad-accent);border-radius:999px;box-shadow:0 0 18px rgba(212,175,55,.55);position:relative;z-index:2}
-.closing .signature{font-family:var(--font-serif);font-size:clamp(1.2rem,2vw,1.7rem);letter-spacing:.2em;color:var(--color-accent-soft);position:relative;z-index:2;margin-top:.5em}
+.closing .signature{font-family:var(--font-serif);font-size:clamp(2.77vh,2vw,1.7rem);letter-spacing:.2em;color:var(--color-accent-soft);position:relative;z-index:2;margin-top:.5em}
 .closing .back-home-btn{position:relative;z-index:2}
 /* 導覽 */
 .progress-bar{position:fixed;bottom:0;left:0;height:4px;background:var(--color-accent);width:0;transition:width .4s;z-index:100}
@@ -472,7 +472,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide roomy" style="--jc:center">
   <h2>先回顧，再往下走</h2>
   <p class="lead" style="max-width:none">昨天，你已在小組裡分享了自己覺得最重要的 15 件事，也一起討論了彼此的「人生 X 問」。</p>
-  <p class="muted" style="margin-top:.8em;font-size:clamp(1.75rem,2.7vw,2.4rem)">接下來，我們來看看：不同的人，對「美好人生」有著怎樣的想像？</p>
+  <p class="muted" style="margin-top:.8em;font-size:clamp(3.74vh,2.7vw,2.4rem)">接下來，我們來看看：不同的人，對「美好人生」有著怎樣的想像？</p>
 </section>
 
 <!-- 從夢想說起（一）臺大學生 -->
@@ -480,10 +480,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>一般人對美好人生的想像：健康・快樂・長壽・財富自由</h2>
   <p class="lead" style="max-width:none">這四項，是現代人很普遍的人生理想。</p>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3.4vw;margin-top:1em">
-    <figure style="margin:0;text-align:center"><img src="images/goodlife_health.jpg" alt="健康" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">健康</figcaption></figure>
-    <figure style="margin:0;text-align:center"><img src="images/goodlife_happy.jpg" alt="快樂" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">快樂</figcaption></figure>
-    <figure style="margin:0;text-align:center"><img src="images/goodlife_longevity.jpg" alt="長壽" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">長壽</figcaption></figure>
-    <figure style="margin:0;text-align:center"><img src="images/goodlife_wealth.jpg" alt="財富自由" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">財富自由</figcaption></figure>
+    <figure style="margin:0;text-align:center"><img src="images/goodlife_health.jpg" alt="健康" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(2.08vh,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">健康</figcaption></figure>
+    <figure style="margin:0;text-align:center"><img src="images/goodlife_happy.jpg" alt="快樂" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(2.08vh,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">快樂</figcaption></figure>
+    <figure style="margin:0;text-align:center"><img src="images/goodlife_longevity.jpg" alt="長壽" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(2.08vh,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">長壽</figcaption></figure>
+    <figure style="margin:0;text-align:center"><img src="images/goodlife_wealth.jpg" alt="財富自由" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(2.08vh,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">財富自由</figcaption></figure>
   </div>
 </section>
 
@@ -527,12 +527,12 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <style>
 </style>
 <section class="slide" id="s42" style="--jc:center">
-  <h2 style="font-size:clamp(2.9rem,4.7vw,4.3rem)">人性的渴望（二）：財富自由</h2>
+  <h2 style="font-size:clamp(6.51vh,4.7vw,4.3rem)">人性的渴望（二）：財富自由</h2>
   <div class="grid2" style="grid-template-columns:1.3fr 1fr;align-items:center;gap:3.4vw;width:100%;margin-top:.3em">
     <div>
-      <blockquote style="max-width:none;margin:0;font-size:clamp(2.3rem,3vw,2.9rem);line-height:1.45">「年輕時，我以為錢是人生最重要的；現在我老了，我懂了——確實如此！」</blockquote>
-      <p class="src" style="margin-top:.35em;font-size:clamp(1.3rem,1.6vw,1.5rem)">Oscar Wilde：When I was young I thought that money was the most important thing in life; now that I am old I know that it is.</p>
-      <p style="margin-top:.6em;font-family:var(--font-serif);font-style:italic;font-size:clamp(2.3rem,3vw,2.9rem);color:#4a3b1e">金錢雖非萬能，沒有錢卻萬萬不能。</p>
+      <blockquote style="max-width:none;margin:0;font-size:clamp(4.16vh,3vw,2.9rem);line-height:1.45">「年輕時，我以為錢是人生最重要的；現在我老了，我懂了——確實如此！」</blockquote>
+      <p class="src" style="margin-top:.35em;font-size:clamp(2.22vh,1.6vw,1.5rem)">Oscar Wilde：When I was young I thought that money was the most important thing in life; now that I am old I know that it is.</p>
+      <p style="margin-top:.6em;font-family:var(--font-serif);font-style:italic;font-size:clamp(4.16vh,3vw,2.9rem);color:#4a3b1e">金錢雖非萬能，沒有錢卻萬萬不能。</p>
     </div>
     <figure style="margin:0;text-align:center">
       <img class="gimg" src="images/gh_wealth1.jpg" alt="王爾德" style="max-width:100%;max-height:56vh;object-fit:contain;background:#fff;border-radius:10px;box-shadow:var(--shadow-soft)">
@@ -598,7 +598,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- ===================== 貳 ===================== -->
 <section class="slide" style="--jc:flex-start;padding-top:1.6vh">
-  <h2 style="font-size:clamp(1.75rem,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大學生的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
+  <h2 style="font-size:clamp(3.74vh,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大學生的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
   <figure class="imgzoom-wrap dreamfull"><img src="images/dreamlist_ntu_students_nobg.png" alt="臺大學生夢想調查完整圖表"><figcaption>完整 20 項</figcaption></figure>
   <div class="dreamchart" style="--lab:20.5em">
     <div class="drow top"><span class="dlab">找到人生的意義、目的、價值</span><span class="dbar"><i style="width:100%"></i></span><span class="dval">112</span></div>
@@ -614,7 +614,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div class="drow"><span class="dlab">獲得「臺大神課任你選」通行證1張</span><span class="dbar"><i style="width:25.9%"></i></span><span class="dval">29</span></div>
   </div>
   <p class="src" style="margin:.18em 0 0">2024 臺大新生講座問卷（共 20 項），此處為得票前十名，第十名並列兩項。</p>
-  <div style="margin-top:.18em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em 1.1em;font-size:clamp(1.6rem,1.78vw,1.8rem)">
+  <div style="margin-top:.18em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em 1.1em;font-size:clamp(2.47vh,1.78vw,1.8rem)">
     <span style="display:inline-flex;align-items:baseline;gap:.55em"><span style="background:var(--color-primary);color:#fff;border-radius:6px;padding:.1em .6em;font-weight:700;white-space:nowrap">人生意義與關係</span>找到人生意義與目的、結交知心好友、與家人感情融洽</span>
     <span style="display:inline-flex;align-items:baseline;gap:.55em"><span style="background:var(--color-primary);color:#fff;border-radius:6px;padding:.1em .6em;font-weight:700;white-space:nowrap">學業與職涯</span>國外交換、起薪百萬</span>
   </div>
@@ -622,7 +622,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 從夢想說起（二）臺大教師 -->
 <section class="slide" style="--jc:flex-start;padding-top:1.6vh">
-  <h2 style="font-size:clamp(1.75rem,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大教師的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">與學生同一份問卷·教師版</span></h2>
+  <h2 style="font-size:clamp(3.74vh,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大教師的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">與學生同一份問卷·教師版</span></h2>
   <figure class="imgzoom-wrap dreamfull"><img src="images/dreamlist_teachers_nobg.png" alt="臺大教師夢想調查完整圖表"><figcaption>完整 20 項</figcaption></figure>
   <div class="dreamchart" style="--lab:20.5em">
     <div class="drow top"><span class="dlab">享有快樂無憂的退休生活與健康老年</span><span class="dbar"><i style="width:100%"></i></span><span class="dval">33</span></div>
@@ -637,7 +637,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div class="drow"><span class="dlab">培養學術專業以外的斜槓力，發展第二人生</span><span class="dbar"><i style="width:51.5%"></i></span><span class="dval">17</span></div>
   </div>
   <p class="src" style="margin:.18em 0 0">與學生同一份問卷之教師版（共 20 項），此處為得票前十名。</p>
-  <div class="taglines" style="margin-top:.18em;gap:.16em;font-size:clamp(1.6rem,1.78vw,1.8rem)">
+  <div class="taglines" style="margin-top:.18em;gap:.16em;font-size:clamp(2.47vh,1.78vw,1.8rem)">
     <div class="row"><span class="tg">安頓生命</span><span>擁有安頓生命的<b>終極信念或宗教信仰</b></span></div>
     <div class="row"><span class="tg">家庭</span><span>兒女升學就業順利、家庭幸福、陪伴照顧父母安度晚年</span></div>
     <div class="row"><span class="tg">健康善終</span><span>健康快樂的退休與老年、無病無痛在睡夢中壽終正寢</span></div>
@@ -647,7 +647,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 從夢想說起（三）美國新鮮人 -->
 <section class="slide" style="--jc:flex-start;padding-top:4vh">
   <h2>美國新鮮人的夢想清單　<span style="font-size:.6em;font-weight:400;color:var(--color-muted)">2019 CIRP Freshman Survey</span></h2>
-  <div class="statchips" style="margin:.5em 0 .55em;font-size:clamp(1.4rem,1.85vw,1.68rem)">
+  <div class="statchips" style="margin:.5em 0 .55em;font-size:clamp(2.56vh,1.85vw,1.68rem)">
     <span class="statchip" style="font-size:inherit">有錢 <b>84.3%</b></span>
     <span class="statchip" style="font-size:inherit">幫助困難中的人 <b>80%</b></span>
     <span class="statchip" style="font-size:inherit">成立家庭 <b>71%</b></span>
@@ -665,7 +665,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>人生夢想清單：同與異</h2>
   <div class="grid2" style="margin-top:.5em;align-items:start;gap:3.4vw">
     <div>
-      <div style="background:#2E9BD6;color:#fff;font-family:var(--font-serif);font-weight:900;font-size:clamp(1.5rem,2.3vw,2rem);text-align:center;padding:.18em 0;border-radius:8px;margin-bottom:.5em">學生版</div>
+      <div style="background:#2E9BD6;color:#fff;font-family:var(--font-serif);font-weight:900;font-size:clamp(3.19vh,2.3vw,2rem);text-align:center;padding:.18em 0;border-radius:8px;margin-bottom:.5em">學生版</div>
       <ol class="numlist">
         <li>找到人生的意義、目的、價值</li>
         <li>結交五位終身的知心好友</li>
@@ -676,7 +676,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       </ol>
     </div>
     <div>
-      <div style="background:#E8920F;color:#fff;font-family:var(--font-serif);font-weight:900;font-size:clamp(1.5rem,2.3vw,2rem);text-align:center;padding:.18em 0;border-radius:8px;margin-bottom:.5em">教師版</div>
+      <div style="background:#E8920F;color:#fff;font-family:var(--font-serif);font-weight:900;font-size:clamp(3.19vh,2.3vw,2rem);text-align:center;padding:.18em 0;border-radius:8px;margin-bottom:.5em">教師版</div>
       <ol class="numlist">
         <li>享有健康快樂無憂的退休生活與健康老年</li>
         <li>兒女升學順利、就業穩定、家庭幸福</li>
@@ -691,9 +691,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <section class="slide roomy rmid" style="--jc:center">
   <h2>美好人生的想像，透露了什麼？</h2>
-  <p class="lead" style="max-width:none;font-size:clamp(1.75rem,2.6vw,2.4rem)">三份清單同看：不論臺灣或美國、學生或教師，都重視<b>家庭與真摯的友誼</b>、都有不少人把<b>人生的意義</b>列為重要，也都關心<b>幫助他人與利他</b>。</p>
-  <p class="lead" style="max-width:none;margin-top:.55em;font-size:clamp(1.75rem,2.6vw,2.4rem)">臺大學生把「<b>找到人生的意義、目的、價值</b>」放在第一（<b>112 票</b>遙遙領先）；臺大教師更寫下「<b>擁有安頓生命的宗教信仰或終極信念</b>」。</p>
-  <p class="muted" style="margin-top:.6em;font-size:clamp(1.78rem,2.6vw,2.35rem)">從事業、感情、財富、健康，往<b>意義與生命安頓</b>深化的方向，已悄悄浮現。</p>
+  <p class="lead" style="max-width:none;font-size:clamp(3.6vh,2.6vw,2.4rem)">三份清單同看：不論臺灣或美國、學生或教師，都重視<b>家庭與真摯的友誼</b>、都有不少人把<b>人生的意義</b>列為重要，也都關心<b>幫助他人與利他</b>。</p>
+  <p class="lead" style="max-width:none;margin-top:.55em;font-size:clamp(3.6vh,2.6vw,2.4rem)">臺大學生把「<b>找到人生的意義、目的、價值</b>」放在第一（<b>112 票</b>遙遙領先）；臺大教師更寫下「<b>擁有安頓生命的宗教信仰或終極信念</b>」。</p>
+  <p class="muted" style="margin-top:.6em;font-size:clamp(3.6vh,2.6vw,2.35rem)">從事業、感情、財富、健康，往<b>意義與生命安頓</b>深化的方向，已悄悄浮現。</p>
 </section>
 
 <!-- 人生夢想清單：臺大學生 vs 臺大教師（列表） -->
@@ -725,10 +725,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       </div>
     </div>
     <div>
-      <p style="font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(1.5rem,1.75vw,1.68rem);margin-bottom:.4em">電影《一路玩到掛 The Bucket List》（2007）</p>
+      <p style="font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(2.43vh,1.75vw,1.68rem);margin-bottom:.4em">電影《一路玩到掛 The Bucket List》（2007）</p>
       <blockquote style="line-height:1.6">「當我長眠在有著一扇門的一堵牆外面時，我希望他能擔保我，讓我看見門裡面的風光。」</blockquote>
       <p class="muted">電影最後這組「門」與「牆」的意象，正是今天要陪大家一路問到底的終極問題。</p>
-      <p style="margin-top:.6em;font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(1.5rem,1.75vw,1.68rem)">這部電影，直面了死亡與虛無這兩道人生最難的課題。</p>
+      <p style="margin-top:.6em;font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(2.43vh,1.75vw,1.68rem)">這部電影，直面了死亡與虛無這兩道人生最難的課題。</p>
     </div>
   </div>
 </section>
@@ -737,7 +737,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide">
   <h2>掃你那一組的 QR，把全組精華打上來</h2>
   <p class="lead qr-intro">《一路玩到掛》觀後心得已於課前繳交——先在小組裡聽取彼此最被觸動的地方，<br>再由各組派<b>一位同學</b>掃描你們那一組的碼，寫下「<b>全組最有啟發的地方</b>」（＋為什麼），投影幕即時更新。</p>
-  <p class="src" style="text-align:center;max-width:none;font-size:clamp(1.3rem,1.8vw,1.6rem);font-style:normal">分組：現場隨機分成六組。</p>
+  <p class="src" style="text-align:center;max-width:none;font-size:clamp(2.49vh,1.8vw,1.6rem);font-style:normal">分組：現場隨機分成六組。</p>
   <div class="qr-stage">
     <div class="qr-card" style="--c:#862633"><div class="qr-box" data-pg="1"></div><div class="qr-cap">第1組</div></div>
     <div class="qr-card" style="--c:#A8782E"><div class="qr-box" data-pg="2"></div><div class="qr-cap">第2組</div></div>
@@ -783,7 +783,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:flex-start;padding-top:4.5vh">
   <h2>從不思不考到終極反思的四個層次</h2>
   <p class="lead" style="max-width:none;margin-bottom:.4em">反思才能開啟追本溯源的後設思考，從不假思索的表層向內探索，直達自我超越的終極關懷層，以進行人生第一問的探問。</p>
-  <table class="tbl nw2" style="max-width:92%;margin:.2em auto 0;font-size:clamp(1.5rem,1.65vw,1.6rem)">
+  <table class="tbl nw2" style="max-width:92%;margin:.2em auto 0;font-size:clamp(2.29vh,1.65vw,1.6rem)">
     <thead><tr><th>層次</th><th>意識狀態</th><th>它在問什麼</th><th>對應人生問題</th></tr></thead>
     <tbody>
       <tr><td class="lv">不假思索</td><td>出於習慣</td><td>照平常那樣做就好</td><td>慣性與習氣</td></tr>
@@ -802,8 +802,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <img src="images/q1_question_head.jpg" alt="人生大哉問" style="width:100%;max-height:58vh;object-fit:contain;border-radius:10px;box-shadow:var(--shadow-soft)">
     </figure>
     <div>
-      <p style="font-size:clamp(1.4rem,2.1vw,1.95rem);line-height:1.7">終極關懷要問的，不是<b>個別階段</b>的目標，而是<b>整個人生</b>的目標；</p>
-      <p style="font-size:clamp(1.4rem,2.1vw,1.95rem);line-height:1.7;margin-top:.7em">也不是整個人生我<b>「想要」</b>追求的目標，而是整個人生我<b>「應該」</b>追求的目標——<b style="color:var(--color-primary)">什麼是真正值得追求的美好人生？</b></p>
+      <p style="font-size:clamp(2.91vh,2.1vw,1.95rem);line-height:1.7">終極關懷要問的，不是<b>個別階段</b>的目標，而是<b>整個人生</b>的目標；</p>
+      <p style="font-size:clamp(2.91vh,2.1vw,1.95rem);line-height:1.7;margin-top:.7em">也不是整個人生我<b>「想要」</b>追求的目標，而是整個人生我<b>「應該」</b>追求的目標——<b style="color:var(--color-primary)">什麼是真正值得追求的美好人生？</b></p>
     </div>
   </div>
 </section>
@@ -821,7 +821,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     </div>
     <figure style="margin:0;text-align:center">
       <img src="images/q1_ladder.jpg" alt="梯子靠錯牆" style="width:100%;max-height:46vh;object-fit:contain;border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.55em;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.2);border-left:5px solid var(--color-primary);border-radius:8px;padding:.5em .75em;text-align:left;font-size:clamp(1.25rem,1.7vw,1.62rem);font-weight:700;color:var(--color-primary);line-height:1.48">很多人終其一生沿著梯子向上爬，到頂時才發現——梯子靠錯了牆。</figcaption>
+      <figcaption style="margin-top:.55em;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.2);border-left:5px solid var(--color-primary);border-radius:8px;padding:.5em .75em;text-align:left;font-size:clamp(2.36vh,1.7vw,1.62rem);font-weight:700;color:var(--color-primary);line-height:1.48">很多人終其一生沿著梯子向上爬，到頂時才發現——梯子靠錯了牆。</figcaption>
     </figure>
   </div>
 </section>
@@ -830,7 +830,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:flex-start;padding-top:5vh">
   <h2>終極關懷與東西方思想</h2>
   <p class="lead" style="max-width:none">終極關懷要探討值得活的人生客觀上可能達到的最高理想，東西方思想都用「至善」這個概念去表達這個理想。</p>
-  <table class="tbl" style="max-width:54em;margin:.4em auto 0;font-size:clamp(1.16rem,1.65vw,1.62rem)">
+  <table class="tbl" style="max-width:54em;margin:.4em auto 0;font-size:clamp(2.29vh,1.65vw,1.62rem)">
     <thead><tr><th>傳統／語言</th><th>表達「至善」的用語</th><th>意涵</th></tr></thead>
     <tbody>
       <tr><td class="lv">中國哲學中的《大學》</td><td>止於至善</td><td>至善概念的中文源頭</td></tr>
@@ -839,16 +839,16 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <tr><td class="lv">當代英文</td><td>flourishing</td><td>傳遞「至善」的當代義蘊</td></tr>
     </tbody>
   </table>
-  <p style="font-family:var(--font-serif);font-weight:700;font-size:clamp(1.45rem,2.4vw,2.15rem);color:var(--color-text);line-height:1.45;margin-top:.85em;text-align:center">a life of flourishing ＝ Life worth living ＝ a life of eudaimonia</p>
+  <p style="font-family:var(--font-serif);font-weight:700;font-size:clamp(3.33vh,2.4vw,2.15rem);color:var(--color-text);line-height:1.45;margin-top:.85em;text-align:center">a life of flourishing ＝ Life worth living ＝ a life of eudaimonia</p>
 </section>
 
 <!-- 小組討論：意義的意義（QR＋即時投稿） -->
 <style>
 #s-mq .mqbox{background:rgba(255,255,255,.85);border:2px solid var(--color-line);border-radius:14px;padding:.7em .9em;display:flex;flex-direction:column;gap:.55em;overflow:auto;height:60vh}
-#s-mq .mqbox .gitem{background:#fff;border-left:5px solid var(--color-primary);border-radius:8px;box-shadow:var(--shadow-soft);padding:.55em .85em;font-size:clamp(1.35rem,1.7vw,1.6rem);line-height:1.45}
-#s-mq .mqbox .empty-hint{margin:auto;font-size:clamp(1.5rem,2vw,1.8rem);color:var(--color-muted);font-style:italic;text-align:center}
-#s-mq .fl li{font-size:clamp(1.9rem,2.5vw,2.35rem);line-height:1.5;padding:.4em 0 .4em 1.5em}
-#s-mq h2{font-size:clamp(2.9rem,4.6vw,4.2rem)}
+#s-mq .mqbox .gitem{background:#fff;border-left:5px solid var(--color-primary);border-radius:8px;box-shadow:var(--shadow-soft);padding:.55em .85em;font-size:clamp(2.36vh,1.7vw,1.6rem);line-height:1.45}
+#s-mq .mqbox .empty-hint{margin:auto;font-size:clamp(2.77vh,2vw,1.8rem);color:var(--color-muted);font-style:italic;text-align:center}
+#s-mq .fl li{font-size:clamp(3.46vh,2.5vw,2.35rem);line-height:1.5;padding:.4em 0 .4em 1.5em}
+#s-mq h2{font-size:clamp(6.38vh,4.6vw,4.2rem)}
 </style>
 <section class="slide" id="s-mq" style="--jc:flex-start;padding-top:4vh">
   <h2>小組討論：「意義」的意義</h2>
@@ -858,7 +858,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
         <li>「<b>意義</b>」一詞有些什麼意義？</li>
         <li><b>值得活的人生</b>與<b>有意義的人生</b>有何關係？</li>
       </ul>
-      <div class="cloud-qr" style="padding:.9em 1em .7em"><div class="qr-box" data-mq="1" style="width:clamp(190px,16vw,250px);max-width:250px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">小組討論後，掃碼投稿</div></div>
+      <div class="cloud-qr" style="padding:.9em 1em .7em"><div class="qr-box" data-mq="1" style="width:clamp(190px,16vw,250px);max-width:250px"></div><div class="qr-cap" style="font-size:clamp(2.22vh,1.6vw,1.75rem)">小組討論後，掃碼投稿</div></div>
     </div>
     <div class="mqbox" id="mq1"></div>
   </div>
@@ -867,11 +867,11 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 終極關懷兩層面 -->
 <style>
 #s33 .card{padding:1.25em 1.5em}
-#s33 h3{font-size:clamp(1.55rem,2vw,1.9rem);margin-bottom:.35em}
-#s33 .en1{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.32rem,1.8vw,1.62rem);color:var(--color-text);line-height:1.3;margin:0 0 .38em}
-#s33 .en2{font-family:var(--font-serif);font-size:clamp(1.32rem,1.8vw,1.62rem);color:var(--color-text);line-height:1.3;margin:.38em 0}
-#s33 .q1{font-size:clamp(1.32rem,1.75vw,1.58rem);line-height:1.38;margin:.38em 0}
-#s33 .sub{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.32rem,1.8vw,1.62rem);margin:.55em 0 .3em}
+#s33 h3{font-size:clamp(2.77vh,2vw,1.9rem);margin-bottom:.35em}
+#s33 .en1{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.49vh,1.8vw,1.62rem);color:var(--color-text);line-height:1.3;margin:0 0 .38em}
+#s33 .en2{font-family:var(--font-serif);font-size:clamp(2.49vh,1.8vw,1.62rem);color:var(--color-text);line-height:1.3;margin:.38em 0}
+#s33 .q1{font-size:clamp(2.43vh,1.75vw,1.58rem);line-height:1.38;margin:.38em 0}
+#s33 .sub{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(2.49vh,1.8vw,1.62rem);margin:.55em 0 .3em}
 #s33 .sub:first-of-type{margin-top:0}
 </style>
 <section class="slide" id="s33" style="--jc:center">
@@ -930,25 +930,25 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 科學的觀點（一）肯定 -->
 <style>
-#s-sci1 .fl li{font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.52;padding:.42em 0 .42em 1.5em}
-#s-sci2 .fl li{font-size:clamp(1.52rem,1.8vw,1.7rem);line-height:1.48;padding:.34em 0 .34em 1.45em}
+#s-sci1 .fl li{font-size:clamp(2.56vh,1.85vw,1.75rem);line-height:1.52;padding:.42em 0 .42em 1.5em}
+#s-sci2 .fl li{font-size:clamp(2.49vh,1.8vw,1.7rem);line-height:1.48;padding:.34em 0 .34em 1.45em}
 #s-sci2 .sci-card{background:rgba(255,255,255,.9);border:2px solid var(--color-line);border-left:8px solid var(--color-primary);border-radius:14px;padding:.8em 1.05em;box-shadow:var(--shadow-soft)}
-#s-sci2 .sci-q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.55rem,1.85vw,1.75rem);line-height:1.38;margin-bottom:.5em}
-#s-sci2 .sci-row{display:flex;align-items:center;gap:.55em;font-size:clamp(1.5rem,1.72vw,1.62rem);padding:.16em 0;line-height:1.3}
+#s-sci2 .sci-q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(2.56vh,1.85vw,1.75rem);line-height:1.38;margin-bottom:.5em}
+#s-sci2 .sci-row{display:flex;align-items:center;gap:.55em;font-size:clamp(2.38vh,1.72vw,1.62rem);padding:.16em 0;line-height:1.3}
 #s-sci2 .sci-row .mk{font-weight:900;font-size:1.15em;width:1.2em;text-align:center;flex:none}
 #s-sci2 .sci-row.no{color:var(--color-muted)}
 #s-sci2 .sci-row.no .mk{color:#B4453C}
 #s-sci2 .sci-row.no span:last-child{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(180,69,60,.55)}
 #s-sci2 .sci-row.yes{color:var(--color-text)}
 #s-sci2 .sci-row.yes .mk{color:#2F6B4A}
-#s-sci2 .sci-note{margin-top:.4em;padding-top:.35em;border-top:1px dashed var(--color-line);font-size:clamp(1.5rem,1.68vw,1.56rem);color:var(--color-muted)}
-#s-sci1 .lead,#s-sci2 .lead{font-size:clamp(1.6rem,1.85vw,1.75rem)}
+#s-sci2 .sci-note{margin-top:.4em;padding-top:.35em;border-top:1px dashed var(--color-line);font-size:clamp(2.33vh,1.68vw,1.56rem);color:var(--color-muted)}
+#s-sci1 .lead,#s-sci2 .lead{font-size:clamp(2.56vh,1.85vw,1.75rem)}
 /* S45：新增第四段「關係」後版面吃緊（2026-07-25 教授加段）。
    量測閘視窗實高僅 806px（--window-size 1512x893 有約 87px 被瀏覽器佔用），可用高只有 725px。
    對策＝清單字級維持 38px 不縮（大器優先），改收標題字級與列距換取空間。 */
 #s53 ul.fl li{padding-top:.28em;padding-bottom:.28em}
 #s53 ul.fl li::before{top:.82em}
-#s53 h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin-bottom:.25em}
+#s53 h2{font-size:clamp(4.71vh,3.4vw,2.5rem);margin-bottom:.25em}
 </style>
 <section class="slide" id="s-sci1" style="--jc:center">
   <h2>科學的肯定：素樸的渴望，確實與幸福相關</h2>
@@ -969,15 +969,15 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <div style="display:flex;flex-direction:column;gap:1vh">
       <figure style="margin:0;display:grid;grid-template-columns:16vh 1fr;align-items:center;gap:1.4vw;text-align:center">
         <img class="gimg" src="images/gh_fo_health.jpg" alt="文珠法師" style="width:100%;max-height:20vh;object-fit:contain;background:#fff;border-radius:10px">
-        <figcaption style="font-size:clamp(1.5rem,1.62vw,1.58rem);line-height:1.5;text-align:left"><b>佛教·文珠法師</b>：健康簡直不可或缺——欠佳則無法完成學業、建立事業、享受人生；佛教徒更無法修行辦道、弘法利生。</figcaption>
+        <figcaption style="font-size:clamp(2.25vh,1.62vw,1.58rem);line-height:1.5;text-align:left"><b>佛教·文珠法師</b>：健康簡直不可或缺——欠佳則無法完成學業、建立事業、享受人生；佛教徒更無法修行辦道、弘法利生。</figcaption>
       </figure>
       <figure style="margin:0;display:grid;grid-template-columns:16vh 1fr;align-items:center;gap:1.4vw;text-align:center">
         <img class="gimg" src="images/gh_jesus.jpg" alt="耶穌的醫治神蹟" style="width:100%;max-height:20vh;object-fit:contain;background:#fff;border-radius:10px">
-        <figcaption style="font-size:clamp(1.5rem,1.62vw,1.58rem);line-height:1.5;text-align:left"><b>基督信仰</b>：耶穌行醫治神蹟（治將死的王臣之子·若 4:50；治三十八年癱子·若 5:8），並差遣門徒「醫治病人、宣講天國」（路 10:9）。耶穌了解疾病的治癒與健康是人們的渴望。</figcaption>
+        <figcaption style="font-size:clamp(2.25vh,1.62vw,1.58rem);line-height:1.5;text-align:left"><b>基督信仰</b>：耶穌行醫治神蹟（治將死的王臣之子·若 4:50；治三十八年癱子·若 5:8），並差遣門徒「醫治病人、宣講天國」（路 10:9）。耶穌了解疾病的治癒與健康是人們的渴望。</figcaption>
       </figure>
     </div>
     <div>
-      <p class="lead" style="max-width:none;margin-bottom:.35em;font-size:clamp(1.5rem,1.7vw,1.65rem)">宗教信仰雖不直接延長壽命，卻透過減壓、社會支持、健康行為與心理調適，間接提升健康，從而可能有助長壽。</p>
+      <p class="lead" style="max-width:none;margin-bottom:.35em;font-size:clamp(2.36vh,1.7vw,1.65rem)">宗教信仰雖不直接延長壽命，卻透過減壓、社會支持、健康行為與心理調適，間接提升健康，從而可能有助長壽。</p>
       <ul class="fl">
         <li><b>杜克大學</b>：常參加宗教活動者，平均壽命長 <b>7 年</b>。</li>
         <li><b>哈佛公衛</b>：每週參加宗教聚會的女性，死亡風險降 <b>33%</b>。</li>
@@ -993,15 +993,15 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid3" style="margin-top:.5em;align-items:start;gap:3.4vw">
     <figure style="margin:0;text-align:center">
       <img class="gimg" src="images/gh_fo_wealth.jpg" alt="佛教論財富" style="width:100%;height:34vh;object-fit:contain;background:rgba(255,255,255,.55);border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.55em;font-size:clamp(1.55rem,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>佛教</b>（印順、星雲）：財富是人人所希求的、一般人共同的願望，也是<b>弘法修道的資糧</b>。</figcaption>
+      <figcaption style="margin-top:.55em;font-size:clamp(2.47vh,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>佛教</b>（印順、星雲）：財富是人人所希求的、一般人共同的願望，也是<b>弘法修道的資糧</b>。</figcaption>
     </figure>
     <figure style="margin:0;text-align:center">
       <img class="gimg" src="images/gh_christ_wealth.jpg" alt="基督信仰論財富" style="width:100%;height:34vh;object-fit:contain;background:rgba(255,255,255,.55);border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.55em;font-size:clamp(1.55rem,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>基督</b>：「你們的父知道你們需要吃喝」（路 12:30）——不否定人的基本所需。</figcaption>
+      <figcaption style="margin-top:.55em;font-size:clamp(2.47vh,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>基督</b>：「你們的父知道你們需要吃喝」（路 12:30）——不否定人的基本所需。</figcaption>
     </figure>
     <figure style="margin:0;text-align:center">
       <img class="gimg" src="images/gh_ru_wealth.jpg" alt="孔子《先師孔子行教像》（儒家）" style="width:100%;height:34vh;object-fit:contain;background:rgba(255,255,255,.55);border-radius:10px;box-shadow:var(--shadow-soft)">
-      <figcaption style="margin-top:.55em;font-size:clamp(1.55rem,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>儒家</b>：「富與貴，是人之所欲也」（論語·里仁）；孟子：「有恒產者有恒心」，穩定的財富能維持良好道德；韓劇《我的大叔》：「過得好的人，比較容易成為好人」。</figcaption>
+      <figcaption style="margin-top:.55em;font-size:clamp(2.47vh,1.78vw,1.7rem);line-height:1.5;text-align:left"><b>儒家</b>：「富與貴，是人之所欲也」（論語·里仁）；孟子：「有恒產者有恒心」，穩定的財富能維持良好道德；韓劇《我的大叔》：「過得好的人，比較容易成為好人」。</figcaption>
     </figure>
   </div>
 </section>
@@ -1010,9 +1010,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:center">
   <h2>宗教與文化的肯定（三）：快樂</h2>
   <div class="card" style="max-width:56em;margin:0 auto;padding:1.05em 1.5em">
-    <p style="font-size:clamp(1.32rem,1.95vw,1.86rem);line-height:1.6">一位母親來懺悔：女兒問她「該不該擔任學校運動社團經理？」她答——「怎麼做能讓你的<b>大學入學申請書</b>看起來最漂亮？」女兒失望地離開，轉而去問輔導老師；輔導老師卻問：「怎麼做能讓你<b>最快樂</b>？」</p>
-    <p style="font-size:clamp(1.22rem,1.7vw,1.64rem);line-height:1.55;margin-top:.5em">母親說：「我當了一輩子基督徒，女兒來尋求有智慧的忠告時，我的忠告卻一點智慧也沒有。」</p>
-    <p style="font-size:clamp(1.22rem,1.7vw,1.64rem);line-height:1.6;margin-top:.5em">輔導老師的「智慧」似乎來自一個對美善人生更深、更完整的願景，而且不是隨隨便便的一個美善人生願景，而是<b>現今社會最受歡迎的願景</b>。與追求成功、唯物主義以及成名的渴望這些俗氣的願望相比之下，這個願景顯得有深度、不虛假而且觸及人性。</p>
+    <p style="font-size:clamp(2.7vh,1.95vw,1.86rem);line-height:1.6">一位母親來懺悔：女兒問她「該不該擔任學校運動社團經理？」她答——「怎麼做能讓你的<b>大學入學申請書</b>看起來最漂亮？」女兒失望地離開，轉而去問輔導老師；輔導老師卻問：「怎麼做能讓你<b>最快樂</b>？」</p>
+    <p style="font-size:clamp(2.36vh,1.7vw,1.64rem);line-height:1.55;margin-top:.5em">母親說：「我當了一輩子基督徒，女兒來尋求有智慧的忠告時，我的忠告卻一點智慧也沒有。」</p>
+    <p style="font-size:clamp(2.36vh,1.7vw,1.64rem);line-height:1.6;margin-top:.5em">輔導老師的「智慧」似乎來自一個對美善人生更深、更完整的願景，而且不是隨隨便便的一個美善人生願景，而是<b>現今社會最受歡迎的願景</b>。與追求成功、唯物主義以及成名的渴望這些俗氣的願望相比之下，這個願景顯得有深度、不虛假而且觸及人性。</p>
     <p class="src" style="margin-top:.35em">耶魯大學的人生思辨課，p.60–61。</p>
   </div>
 </section>
@@ -1020,7 +1020,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 丙(1) 批判反思：佛教 -->
 <!-- 科學的觀點（二）批判：置於宗教文化批判之前 -->
 <section class="slide" id="s-sci2" style="--jc:center">
-  <h2 style="font-size:clamp(1.9rem,3.35vw,2.9rem)">科學的批判：這些渴望，承載得了「終極」嗎？</h2>
+  <h2 style="font-size:clamp(4.64vh,3.35vw,2.9rem)">科學的批判：這些渴望，承載得了「終極」嗎？</h2>
   <div class="grid2" style="grid-template-columns:1fr 1.15fr;align-items:center;gap:3.4vw;margin-top:.3em">
     <div class="sci-card">
       <div class="sci-q">7 天快樂挑戰</div>
@@ -1047,17 +1047,17 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div style="display:flex;flex-direction:column;gap:1vh;max-width:52em;margin:.1em auto 0;width:100%">
     <div style="display:grid;grid-template-columns:18vh 1fr;align-items:center;gap:1.8vw">
       <img class="gimg" src="images/gh_fo_crit1.jpg" alt="星雲法師" style="width:100%;max-height:19vh;object-fit:contain;background:#fff;border-radius:10px">
-      <div style="font-size:clamp(1.5rem,1.62vw,1.58rem);line-height:1.55">健康與疾病非絕對善惡——<b>病是入道的因緣，有病才知道要發道心</b>；一般人希望長命百歲，但<b>世間的長壽不究竟，並非該追求的目標</b>。<span style="color:var(--color-primary)">（星雲法師·佛教的福壽觀）</span></div>
+      <div style="font-size:clamp(2.25vh,1.62vw,1.58rem);line-height:1.55">健康與疾病非絕對善惡——<b>病是入道的因緣，有病才知道要發道心</b>；一般人希望長命百歲，但<b>世間的長壽不究竟，並非該追求的目標</b>。<span style="color:var(--color-primary)">（星雲法師·佛教的福壽觀）</span></div>
     </div>
     <div style="display:grid;grid-template-columns:18vh 1fr;align-items:center;gap:1.8vw">
       <img class="gimg" src="images/gh_liangkuan.jpg" alt="良寬禪師" style="width:100%;max-height:19vh;object-fit:contain;background:#fff;border-radius:10px">
-      <div style="font-size:clamp(1.5rem,1.62vw,1.58rem);line-height:1.55">「父死、子死、孫死」是吉祥話，還是不吉祥的話？誦經增壽，增多少都不夠，也逃不過生死無常。<b>人生當求無量的壽命——與真理融和一體、永恆不死的無限生命</b>。<span style="color:var(--color-primary)">（良寬禪師）</span></div>
+      <div style="font-size:clamp(2.25vh,1.62vw,1.58rem);line-height:1.55">「父死、子死、孫死」是吉祥話，還是不吉祥的話？誦經增壽，增多少都不夠，也逃不過生死無常。<b>人生當求無量的壽命——與真理融和一體、永恆不死的無限生命</b>。<span style="color:var(--color-primary)">（良寬禪師）</span></div>
     </div>
     <div style="display:grid;grid-template-columns:18vh 1fr;align-items:center;gap:1.8vw">
       <img class="gimg" src="images/gh_yinshun.jpg" alt="印順法師" style="width:100%;max-height:19vh;object-fit:contain;background:#fff;border-radius:10px">
-      <div style="font-size:clamp(1.5rem,1.62vw,1.58rem);line-height:1.55"><b>財富非善非惡，可以是毒蛇，也可以是資糧。</b><span style="color:var(--color-primary)">（印順法師、星雲法師）</span></div>
+      <div style="font-size:clamp(2.25vh,1.62vw,1.58rem);line-height:1.55"><b>財富非善非惡，可以是毒蛇，也可以是資糧。</b><span style="color:var(--color-primary)">（印順法師、星雲法師）</span></div>
     </div>
-    <div style="background:rgba(134,38,51,.08);border-left:6px solid var(--color-primary);border-radius:8px;padding:.5em 1em;font-size:clamp(1.5rem,1.6vw,1.55rem);line-height:1.5"><b>對「離苦得樂」的反思：</b>人雖然有趨樂避苦的本性，但須擁抱痛苦——<b>苦難是化了妝的祝福</b>；佛教的「樂」非世俗短暫之樂，而是內在解脫的清淨究竟之樂，且含<b>願一切有情離苦得樂的慈悲</b>。</div>
+    <div style="background:rgba(134,38,51,.08);border-left:6px solid var(--color-primary);border-radius:8px;padding:.5em 1em;font-size:clamp(2.22vh,1.6vw,1.55rem);line-height:1.5"><b>對「離苦得樂」的反思：</b>人雖然有趨樂避苦的本性，但須擁抱痛苦——<b>苦難是化了妝的祝福</b>；佛教的「樂」非世俗短暫之樂，而是內在解脫的清淨究竟之樂，且含<b>願一切有情離苦得樂的慈悲</b>。</div>
   </div>
 </section>
 
@@ -1066,16 +1066,16 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>基督信仰的批判反思</h2>
   <div class="grid2" style="grid-template-columns:1.4fr 1fr;align-items:start;gap:3.4vw">
     <div style="display:flex;flex-direction:column;gap:1.2vh">
-      <div style="font-size:clamp(1.6rem,1.75vw,1.68rem);line-height:1.55"><b>健康</b>＝身、心、靈的整體平衡——敬畏神、喜樂、運動、節制、助人，都是聖經所鼓勵的健康生活；信仰更給人內在的平安與盼望。</div>
-      <div style="font-size:clamp(1.6rem,1.75vw,1.68rem);line-height:1.55"><b>長壽並非終極</b>：耶穌自己只活了 <b>33 歲</b>，且遭構陷而橫死（路 12:4–5）。歷來無數基督徒不怕為信仰捨身——庚子教難、西班牙內戰約 <b>7000</b> 名神職人員被殺。</div>
+      <div style="font-size:clamp(2.43vh,1.75vw,1.68rem);line-height:1.55"><b>健康</b>＝身、心、靈的整體平衡——敬畏神、喜樂、運動、節制、助人，都是聖經所鼓勵的健康生活；信仰更給人內在的平安與盼望。</div>
+      <div style="font-size:clamp(2.43vh,1.75vw,1.68rem);line-height:1.55"><b>長壽並非終極</b>：耶穌自己只活了 <b>33 歲</b>，且遭構陷而橫死（路 12:4–5）。歷來無數基督徒不怕為信仰捨身——庚子教難、西班牙內戰約 <b>7000</b> 名神職人員被殺。</div>
       <figure style="margin:0;text-align:center">
-        <img class="gimg" src="images/gh_christ_crit2.jpg" alt="庚子教難中華殉道聖人" style="height:34vh;max-width:100%;width:auto;object-fit:contain;background:#fff;border-radius:8px;display:block;margin:0 auto">
-        <figcaption style="font-size:clamp(1.5rem,1.6vw,1.55rem);color:var(--color-muted);margin-top:.4em">庚子教難·中華殉道聖人（1900）</figcaption>
+        <img class="gimg" src="images/gh_christ_crit2.jpg" alt="庚子教難中華殉道聖人" style="height:30vh;max-width:100%;width:auto;object-fit:contain;background:#fff;border-radius:8px;display:block;margin:0 auto">
+        <figcaption style="font-size:clamp(2.22vh,1.6vw,1.55rem);color:var(--color-muted);margin-top:.4em">庚子教難·中華殉道聖人（1900）</figcaption>
       </figure>
     </div>
     <div style="background:rgba(212,175,55,.10);border-left:6px solid var(--color-accent);border-radius:8px;padding:.6em .9em">
-      <div style="font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(1.5rem,1.7vw,1.62rem);margin-bottom:.35em">財富觀（路加福音 12:15, 20–21 節錄）</div>
-      <div style="font-size:clamp(1.5rem,1.6vw,1.55rem);line-height:1.55">
+      <div style="font-family:var(--font-serif);font-weight:700;color:var(--color-primary);font-size:clamp(2.36vh,1.7vw,1.62rem);margin-bottom:.35em">財富觀（路加福音 12:15, 20–21 節錄）</div>
+      <div style="font-size:clamp(2.22vh,1.6vw,1.55rem);line-height:1.55">
         <p style="margin:0 0 .5em"><b>15</b>「你們要謹慎，躲避一切貪婪，因為一個人縱然富裕，他的生命並不在於他的資產。」</p>
         <p style="margin:0 0 .5em"><b>20</b>「糊塗人哪！今夜就要索回你的靈魂，你所備置的，將歸誰呢？</p>
         <p style="margin:0"><b>21</b> 那為自己厚積財產而不在天主前致富的，也是如此。」</p>
@@ -1088,20 +1088,20 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:center">
   <h2>儒家對富貴的批判反思</h2>
   <div style="max-width:48em;margin:0 auto;display:flex;flex-direction:column;gap:.9em">
-    <blockquote style="max-width:none;margin:0;font-size:clamp(1.18rem,1.65vw,1.52rem)"><b>孟子</b>：「魚，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍魚而取熊掌者也。生，亦我所欲也；義，亦我所欲也。二者不可得兼，<b>舍生而取義</b>者也。所欲有甚於生者，所惡有甚於死者——非獨賢者有是心也，人皆有之，賢者能勿喪耳。」</blockquote>
-    <blockquote style="max-width:none;margin:0;font-size:clamp(1.2rem,1.7vw,1.55rem)"><b>孔子</b>：「飯疏食飲水，曲肱而枕之，樂亦在其中矣。<b>不義而富且貴，於我如浮雲</b>。」（述而）</blockquote>
-    <blockquote style="max-width:none;margin:0;font-size:clamp(1.2rem,1.7vw,1.55rem)"><b>顏回</b>：「一簞食，一瓢飲，在陋巷，人不堪其憂，<b>回也不改其樂</b>。」</blockquote>
+    <blockquote style="max-width:none;margin:0;font-size:clamp(2.29vh,1.65vw,1.52rem)"><b>孟子</b>：「魚，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍魚而取熊掌者也。生，亦我所欲也；義，亦我所欲也。二者不可得兼，<b>舍生而取義</b>者也。所欲有甚於生者，所惡有甚於死者——非獨賢者有是心也，人皆有之，賢者能勿喪耳。」</blockquote>
+    <blockquote style="max-width:none;margin:0;font-size:clamp(2.36vh,1.7vw,1.55rem)"><b>孔子</b>：「飯疏食飲水，曲肱而枕之，樂亦在其中矣。<b>不義而富且貴，於我如浮雲</b>。」（述而）</blockquote>
+    <blockquote style="max-width:none;margin:0;font-size:clamp(2.36vh,1.7vw,1.55rem)"><b>顏回</b>：「一簞食，一瓢飲，在陋巷，人不堪其憂，<b>回也不改其樂</b>。」</blockquote>
   </div>
   <p class="muted" style="text-align:center;margin:.9em auto 0;max-width:42em">生命與道義，重於富貴——富貴並非「值得活的人生」之必要條件。</p>
 </section>
 
 <!-- 小結：主流價值的限度 -->
 <style>
-#s53 h2{font-size:clamp(2.9rem,4.7vw,4.3rem)}
+#s53 h2{font-size:clamp(6.51vh,4.7vw,4.3rem)}
 #s53 .grid2{grid-template-columns:1.7fr 1fr!important}
-#s53 .fl li{font-size:clamp(2rem,2.55vw,2.4rem);line-height:1.3;padding:.28em 0 .28em 1.5em}
+#s53 .fl li{font-size:clamp(3.53vh,2.55vw,2.4rem);line-height:1.3;padding:.28em 0 .28em 1.5em}
 #s53 .fl li::before{top:.5em}
-#s53 blockquote{font-size:clamp(2.1rem,2.9vw,2.7rem);line-height:1.36}
+#s53 blockquote{font-size:clamp(4.02vh,2.9vw,2.7rem);line-height:1.36}
 </style>
 <section class="slide" id="s53" style="--jc:center">
   <h2>美好人生與主流價值的限度</h2>
@@ -1130,13 +1130,13 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 橋接頁：從「我要什麼」到「什麼值得要」 -->
 <style>
-#s-bridge table.tbl{max-width:97%;margin:.35em auto 0;font-size:clamp(1.68rem,1.9vw,1.82rem)}
+#s-bridge table.tbl{max-width:97%;margin:.35em auto 0;font-size:clamp(2.63vh,1.9vw,1.82rem)}
 #s-bridge table.tbl th,#s-bridge table.tbl td{padding:.46em .8em;line-height:1.38}
 #s-bridge table.tbl thead th{font-size:1.02em}
 #s-bridge .want{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);white-space:nowrap}
 #s-bridge .deep{font-weight:700}
 #s-bridge .dim{color:var(--color-muted);white-space:nowrap}
-#s-bridge .kicker{font-size:clamp(1.72rem,2.05vw,1.95rem);line-height:1.46;text-align:center;max-width:44em;margin:.6em auto 0;color:var(--color-text)}
+#s-bridge .kicker{font-size:clamp(2.84vh,2.05vw,1.95rem);line-height:1.46;text-align:center;max-width:44em;margin:.6em auto 0;color:var(--color-text)}
 </style>
 <section class="slide" id="s-bridge" style="--jc:center">
   <h2>從「我要什麼」到「什麼值得要」：渴望的深化</h2>
@@ -1170,7 +1170,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:flex-start;padding-top:4.5vh">
   <h2>面向一：自我覺察、自我實現與自我超越</h2>
   <p class="lead" style="max-width:none;margin-bottom:.3em">值得活的人生是<b>反思的人生</b>，因此人要在可能範圍內，不斷地向內、向深處<b>覺察</b>，並且進一步<b>自我超越</b>——這正回扣前面「反思的四個層次」。</p>
-  <table class="tbl" style="max-width:90%;margin:.3em auto 0;font-size:clamp(1.08rem,1.6vw,1.6rem)">
+  <table class="tbl" style="max-width:90%;margin:.3em auto 0;font-size:clamp(2.22vh,1.6vw,1.6rem)">
     <thead><tr><th>靈性／覺性</th><th>意識層次</th><th>行動範疇</th><th>探索主題</th></tr></thead>
     <tbody>
       <tr><td class="lv">無明／直覺</td><td>不假思索</td><td>習慣</td><td>出於直覺或慣性做事</td></tr>
@@ -1186,9 +1186,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>面向二：與萬物及他者的連結</h2>
   <div class="grid2" style="grid-template-columns:1.9fr 1fr;align-items:center;gap:3.4vw">
     <div style="display:flex;flex-direction:column;gap:1.1vh">
-      <p style="font-size:clamp(1.48rem,1.98vw,1.74rem);line-height:1.55"><b>《我們只有10%是人類》一書指出：</b>人體只有 10% 是人類細胞、90% 是微生物（細菌比人類細胞多 10 倍）。</p>
-      <p style="font-size:clamp(1.48rem,1.98vw,1.74rem);line-height:1.55"><b>2016 最新研究修正：</b>以 70 公斤成年男性為例，約 <b>38 兆個細菌</b> vs <b>30 兆個人類細胞</b>——比例其實接近 <b>1:1</b>。</p>
-      <blockquote style="max-width:none;font-size:clamp(1.44rem,1.9vw,1.66rem)">數字被修正，結論反而更深刻：「我」從細胞層次起，就是一場與數十兆生命的共生——<b>人，是與萬物交織、相互依存的共同體。</b></blockquote>
+      <p style="font-size:clamp(2.74vh,1.98vw,1.74rem);line-height:1.55"><b>《我們只有10%是人類》一書指出：</b>人體只有 10% 是人類細胞、90% 是微生物（細菌比人類細胞多 10 倍）。</p>
+      <p style="font-size:clamp(2.74vh,1.98vw,1.74rem);line-height:1.55"><b>2016 最新研究修正：</b>以 70 公斤成年男性為例，約 <b>38 兆個細菌</b> vs <b>30 兆個人類細胞</b>——比例其實接近 <b>1:1</b>。</p>
+      <blockquote style="max-width:none;font-size:clamp(2.63vh,1.9vw,1.66rem)">數字被修正，結論反而更深刻：「我」從細胞層次起，就是一場與數十兆生命的共生——<b>人，是與萬物交織、相互依存的共同體。</b></blockquote>
       <p class="src">Alanna Collen (2015)；Sender, Fuchs &amp; Milo (2016), PLOS Biology。</p>
     </div>
     <figure style="margin:0;text-align:center">
@@ -1205,8 +1205,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <img class="gimg" src="images/gh_wangyangming.jpg" alt="王陽明《傳習錄及大學問》" style="width:100%;max-height:56vh;object-fit:contain;background:#fff">
     </figure>
     <div>
-      <blockquote style="max-width:none;font-size:clamp(1.46rem,1.95vw,1.66rem);line-height:1.62">「<b>大人者，以天地萬物為一體者也。</b>其視天下猶一家，中國猶一人焉……見孺子之入井，而必有怵惕惻隱之心焉，是其仁之與孺子而為一體也；見鳥獸之哀鳴觳觫，而必有不忍之心焉……見草木之摧折而必有憫恤之心焉……見瓦石之毀壞而必有顧惜之心焉——<b>是其仁之與瓦石而為一體也。</b>」</blockquote>
-      <p class="muted" style="margin-top:.5em;font-size:clamp(1.4rem,1.85vw,1.6rem)">仁心本與萬物相連為一體；所謂「自我中心」，只是把自己看小了。</p>
+      <blockquote style="max-width:none;font-size:clamp(2.7vh,1.95vw,1.66rem);line-height:1.62">「<b>大人者，以天地萬物為一體者也。</b>其視天下猶一家，中國猶一人焉……見孺子之入井，而必有怵惕惻隱之心焉，是其仁之與孺子而為一體也；見鳥獸之哀鳴觳觫，而必有不忍之心焉……見草木之摧折而必有憫恤之心焉……見瓦石之毀壞而必有顧惜之心焉——<b>是其仁之與瓦石而為一體也。</b>」</blockquote>
+      <p class="muted" style="margin-top:.5em;font-size:clamp(2.56vh,1.85vw,1.6rem)">仁心本與萬物相連為一體；所謂「自我中心」，只是把自己看小了。</p>
     </div>
   </div>
 </section>
@@ -1220,22 +1220,22 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     <figure style="margin:0;text-align:center">
       <img class="gimg" src="images/harvard_waldinger_ted.jpg" alt="Robert Waldinger 在 TED：哈佛成人發展研究" style="width:100%;max-height:36vh;object-fit:contain;background:#fff;border-radius:10px">
       <figcaption class="src" style="text-align:center;max-width:none">哈佛成人發展研究主持人 Robert Waldinger（TED）</figcaption>
-      <blockquote style="max-width:none;margin:.5em 0 0;text-align:left;font-size:clamp(1.5rem,1.7vw,1.62rem)">「好的關係，讓我們更快樂、也更健康。」<br><span style="font-style:normal;font-size:.95em;color:var(--color-muted)">Good relationships keep us happier and healthier.</span></blockquote>
+      <blockquote style="max-width:none;margin:.5em 0 0;text-align:left;font-size:clamp(2.36vh,1.7vw,1.62rem)">「好的關係，讓我們更快樂、也更健康。」<br><span style="font-style:normal;font-size:.95em;color:var(--color-muted)">Good relationships keep us happier and healthier.</span></blockquote>
     </figure>
     <div>
       <ul class="fl">
         <li>哈佛成人發展研究追蹤逾 <b>80 年</b>、724 人——最能預測晚年幸福健康的，<b>不是財富、名聲或成就，而是「關係的品質」</b>；重點是品質不是數量。</li>
         <li>值得活的人生不應是自我中心的，而應包含與他者的連結——<b>哈佛、耶魯、柏克萊</b>的幸福學研究殊途同歸：<b>值得的人生，必須是愛與慈悲的人生</b>。</li>
       </ul>
-      <p style="font-size:clamp(1.5rem,1.7vw,1.62rem);margin:.5em 0 .35em">而美好的關係，需要這些質素——</p>
+      <p style="font-size:clamp(2.36vh,1.7vw,1.62rem);margin:.5em 0 .35em">而美好的關係，需要這些質素——</p>
       <div style="display:flex;flex-wrap:wrap;gap:.5em;margin-bottom:.5em">
-        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(1.5rem,1.7vw,1.62rem)">同理</span>
-        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(1.5rem,1.7vw,1.62rem)">付出</span>
-        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(1.5rem,1.7vw,1.62rem)">信任</span>
-        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(1.5rem,1.7vw,1.62rem)">寬容</span>
-        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(1.5rem,1.7vw,1.62rem)">感恩</span>
+        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(2.36vh,1.7vw,1.62rem)">同理</span>
+        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(2.36vh,1.7vw,1.62rem)">付出</span>
+        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(2.36vh,1.7vw,1.62rem)">信任</span>
+        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(2.36vh,1.7vw,1.62rem)">寬容</span>
+        <span style="display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.55);color:#8a6a12;font-weight:700;padding:.28em .9em;border-radius:28px;font-size:clamp(2.36vh,1.7vw,1.62rem)">感恩</span>
       </div>
-      <p class="muted" style="max-width:none;margin:0;font-size:clamp(1.5rem,1.7vw,1.62rem)">活得最好的人，是願意<b>傾身投入家庭、朋友與社群</b>的人。</p>
+      <p class="muted" style="max-width:none;margin:0;font-size:clamp(2.36vh,1.7vw,1.62rem)">活得最好的人，是願意<b>傾身投入家庭、朋友與社群</b>的人。</p>
     </div>
   </div>
   <p class="src" style="text-align:center;max-width:none">Harvard Study of Adult Development（Waldinger）；Holt-Lunstad 2010（社會連結強者存活率高 50%）；U.S. Surgeon General 2023。</p>
@@ -1247,8 +1247,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid2" style="grid-template-columns:1.65fr 1fr;align-items:center;gap:3.4vw">
     <div class="video-wrap" style="width:100%;max-width:100%"><iframe src="https://www.youtube-nocookie.com/embed/p8ky_CnUii0?rel=0&modestbranding=1&fs=0" title="怎樣才算是真愛 Rabbi Dr. Abraham Twerski" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe><button class="vfs" title="放大影片（不離開簡報全螢幕）" aria-label="放大影片"><svg viewBox="0 0 24 24" width="1.05em" height="1.05em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/></svg></button></div>
     <div>
-      <blockquote style="max-width:none;font-size:clamp(1.5rem,1.95vw,1.72rem);line-height:1.55">「你愛魚，所以你把魚抓起來吃掉了——這不是愛魚，這是愛你自己。」</blockquote>
-      <p style="font-size:clamp(1.46rem,1.9vw,1.66rem);line-height:1.5">真正的愛，是為了對方的好而付出，不是把對方當成滿足自己的手段。<b>愛賦予意義，愛就是天堂。</b></p>
+      <blockquote style="max-width:none;font-size:clamp(2.7vh,1.95vw,1.72rem);line-height:1.55">「你愛魚，所以你把魚抓起來吃掉了——這不是愛魚，這是愛你自己。」</blockquote>
+      <p style="font-size:clamp(2.63vh,1.9vw,1.66rem);line-height:1.5">真正的愛，是為了對方的好而付出，不是把對方當成滿足自己的手段。<b>愛賦予意義，愛就是天堂。</b></p>
       <p class="src">影片：True Love ≠ Fish Love（Rabbi Dr. Abraham Twerski）。</p>
     </div>
   </div>
@@ -1278,9 +1278,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 面向三：經得起無常與死亡（破題） -->
 <section class="slide" style="--jc:center">
-  <h2 style="font-size:clamp(2.9rem,4.7vw,4.3rem)">面向三：經得起無常與死亡的挑戰</h2>
-  <p class="lead" style="max-width:32em;text-align:center;margin:.2em auto .55em;font-size:clamp(1.95rem,2.6vw,2.5rem);line-height:1.55">值得活的人生願景，若忽略「人終將一死」這個事實，就<b>不算完整</b>——無論我們多麼努力地活過。</p>
-  <blockquote style="max-width:30em;margin:.25em auto;font-size:clamp(1.9rem,2.5vw,2.35rem);line-height:1.5">死亡，逼我們把人生當「整體」來看：當時間有限，<b>以死亡為參照，反而照亮了「何為值得」</b>。</blockquote>
+  <h2 style="font-size:clamp(6.51vh,4.7vw,4.3rem)">面向三：經得起無常與死亡的挑戰</h2>
+  <p class="lead" style="max-width:32em;text-align:center;margin:.2em auto .55em;font-size:clamp(3.6vh,2.6vw,2.5rem);line-height:1.55">值得活的人生願景，若忽略「人終將一死」這個事實，就<b>不算完整</b>——無論我們多麼努力地活過。</p>
+  <blockquote style="max-width:30em;margin:.25em auto;font-size:clamp(3.46vh,2.5vw,2.35rem);line-height:1.5">死亡，逼我們把人生當「整體」來看：當時間有限，<b>以死亡為參照，反而照亮了「何為值得」</b>。</blockquote>
   <p class="src" style="text-align:center;max-width:none">參酌《耶魯大學的人生思辨課》，頁 238。</p>
 </section>
 
@@ -1290,8 +1290,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid2" style="align-items:center;gap:3.4vw">
     <div class="video-wrap" style="width:100%;max-width:100%"><iframe src="https://www.youtube-nocookie.com/embed/Ba5uOSwH6vk?rel=0&modestbranding=1&fs=0" title="Elon Musk 論生命意義" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe><button class="vfs" title="放大影片（不離開簡報全螢幕）" aria-label="放大影片"><svg viewBox="0 0 24 24" width="1.05em" height="1.05em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/></svg></button></div>
     <div>
-      <p style="font-size:clamp(1.46rem,1.9vw,1.66rem);line-height:1.5">馬斯克的答覆：<b>永續的未來、多星球物種、走向星際</b>，以及隨之而來的冒險感——讓人對未來充滿興奮與期待，"makes life exciting and worth living"。</p>
-      <p style="font-size:clamp(1.46rem,1.9vw,1.66rem);line-height:1.5">這是一種動人的自我超越。但<b>它涉及了「死亡之限」與「生命本身的終極意義」嗎？</b></p>
+      <p style="font-size:clamp(2.63vh,1.9vw,1.66rem);line-height:1.5">馬斯克的答覆：<b>永續的未來、多星球物種、走向星際</b>，以及隨之而來的冒險感——讓人對未來充滿興奮與期待，"makes life exciting and worth living"。</p>
+      <p style="font-size:clamp(2.63vh,1.9vw,1.66rem);line-height:1.5">這是一種動人的自我超越。但<b>它涉及了「死亡之限」與「生命本身的終極意義」嗎？</b></p>
       <p class="muted">對許多人而言，這個夢想既遙遠，也並未處理「我終將死去」這件事——願景再壯闊，仍須<b>經得起無常與死亡的考驗</b>。</p>
       <p class="src">影片：Elon Musk 論生命意義。</p>
     </div>
@@ -1303,7 +1303,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>賈伯斯的最後省思：當生命即將逝去</h2>
   <div class="grid2" style="align-items:center;gap:3.4vw">
     <div class="video-wrap" style="width:100%;max-width:100%"><iframe src="https://www.youtube-nocookie.com/embed/kITsXjbpy5g?rel=0&modestbranding=1&fs=0" title="Steve Jobs 最後一段話" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"></iframe><button class="vfs" title="放大影片（不離開簡報全螢幕）" aria-label="放大影片"><svg viewBox="0 0 24 24" width="1.05em" height="1.05em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/></svg></button></div>
-    <div style="display:flex;flex-direction:column;gap:.78em;font-size:clamp(1.14rem,1.5vw,1.46rem);line-height:1.66">
+    <div style="display:flex;flex-direction:column;gap:.78em;font-size:clamp(2.08vh,1.5vw,1.46rem);line-height:1.66">
       <p style="margin:0">躺上病床，他一生引以為傲的財富與名聲，此刻都已黯淡——再昂貴的病床換不回健康，積攢一生的財富也帶不走。</p>
       <p style="margin:0">以死亡為參照，他看清：一味追逐錢財其實很愚蠢，<b>真正值得珍惜的，是健康、愛與關係</b>。</p>
       <p style="margin:0;padding-top:.66em;border-top:2px solid rgba(212,175,55,.45)">但這仍停在「弄清楚什麼最重要」，<b>尚未碰觸「生命本身究竟有沒有意義」</b>——那，是下一個面向要問的。</p>
@@ -1314,11 +1314,11 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 面向四：能答覆人生意義 -->
 <style>
-#s-f4 blockquote{max-width:44em;margin:.2em auto .45em;font-size:clamp(1.5rem,1.75vw,1.68rem);line-height:1.55}
-#s-f4 .body{max-width:46em;margin:0 auto;text-align:center;font-size:clamp(1.6rem,1.9vw,1.82rem);line-height:1.55}
+#s-f4 blockquote{max-width:44em;margin:.2em auto .45em;font-size:clamp(2.43vh,1.75vw,1.68rem);line-height:1.55}
+#s-f4 .body{max-width:46em;margin:0 auto;text-align:center;font-size:clamp(2.63vh,1.9vw,1.82rem);line-height:1.55}
 #s-f4 .turn{max-width:47em;margin:.75em auto 0;background:rgba(134,38,51,.09);border:1px solid rgba(134,38,51,.22);border-left:8px solid var(--color-primary);border-radius:12px;padding:.75em 1.1em;text-align:center}
-#s-f4 .turn .q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(1.72rem,2.05vw,1.95rem);line-height:1.45;margin:0}
-#s-f4 .turn .a{font-size:clamp(1.55rem,1.8vw,1.72rem);line-height:1.5;margin:.45em 0 0}
+#s-f4 .turn .q{font-family:var(--font-serif);font-weight:900;color:var(--color-primary);font-size:clamp(2.84vh,2.05vw,1.95rem);line-height:1.45;margin:0}
+#s-f4 .turn .a{font-size:clamp(2.49vh,1.8vw,1.72rem);line-height:1.5;margin:.45em 0 0}
 </style>
 <section class="slide" id="s-f4" style="--jc:center">
   <h2>面向四：能答覆人生意義的問題</h2>
@@ -1334,8 +1334,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <style>
 #s68four .four-col{gap:3.6vw}
 #s68four .four-col .card{padding:1em 1.05em;min-height:0}
-#s68four .four-col .card h3{font-size:clamp(1.42rem,1.9vw,1.72rem)}
-#s68four .four-col .card p{font-size:clamp(1.5rem,1.62vw,1.55rem);line-height:1.44}
+#s68four .four-col .card h3{font-size:clamp(2.63vh,1.9vw,1.72rem)}
+#s68four .four-col .card p{font-size:clamp(2.25vh,1.62vw,1.55rem);line-height:1.44}
 #s68four .four-col .card .en{font-size:.98em}
 </style>
 <section class="slide" id="s68four" style="--jc:center">
@@ -1394,9 +1394,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <img src="images/health_priceless_door.jpg" alt="健康無價門聯" style="max-width:100%;max-height:54vh;border-radius:10px;box-shadow:var(--shadow-soft)">
     </figure>
     <div class="kv-text">
-      <p class="lead" style="max-width:none;font-size:clamp(1.85rem,2.5vw,2.35rem)">大病後，人常驚覺「健康無價」。</p>
-      <p class="muted" style="margin-top:.75em;font-size:clamp(1.7rem,2.25vw,2.1rem);line-height:1.5">但，健康一定能維持嗎？生老病死可以避免嗎？</p>
-      <p class="muted" style="margin-top:.75em;font-size:clamp(1.7rem,2.25vw,2.1rem);line-height:1.5"><b>以健康長壽為終極目標的人生，就圓滿了嗎？</b></p>
+      <p class="lead" style="max-width:none;font-size:clamp(3.46vh,2.5vw,2.35rem)">大病後，人常驚覺「健康無價」。</p>
+      <p class="muted" style="margin-top:.75em;font-size:clamp(3.12vh,2.25vw,2.1rem);line-height:1.5">但，健康一定能維持嗎？生老病死可以避免嗎？</p>
+      <p class="muted" style="margin-top:.75em;font-size:clamp(3.12vh,2.25vw,2.1rem);line-height:1.5"><b>以健康長壽為終極目標的人生，就圓滿了嗎？</b></p>
     </div>
   </div>
   <p class="kv-hint reveal-hint muted" style="text-align:center;margin-top:.6em">（按 → 或空白鍵）</p>
@@ -1420,7 +1420,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <section class="slide roomy" style="--jc:center">
   <h2>Gorrell 的「人行道時刻」</h2>
-  <blockquote style="max-width:44em;margin:.6em auto 0;line-height:1.72;font-size:clamp(1.5rem,2.15vw,1.95rem)">
+  <blockquote style="max-width:44em;margin:.6em auto 0;line-height:1.72;font-size:clamp(2.98vh,2.15vw,1.95rem)">
     我打開車子的右前門，從腳墊上撿起我的手機。<br>
     我驚訝地發現，有七通未接來電，是媽媽打來的，還有一封她發的簡訊。<br>
     簡訊的內容是：「<b>達斯汀自殺了。</b>」……<br>
@@ -1434,7 +1434,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <section class="slide roomy rmid" style="--jc:center">
   <h2>人生風暴與終極願景</h2>
-  <div style="max-width:44em;margin:.3em auto 0;text-align:left;line-height:1.52;font-size:clamp(1.5rem,2vw,1.8rem)">
+  <div style="max-width:44em;margin:.3em auto 0;text-align:left;line-height:1.52;font-size:clamp(2.77vh,2vw,1.8rem)">
     <p style="margin:0;color:var(--color-muted)">在最後一堂課，安琪拉說完故事後看著所有學生，教室陷入肅穆的沉默。她深吸了一口氣，對他們說：</p>
     <blockquote style="margin:.5em 0;max-width:none">「我希望你們能有一種<b>人生願景</b>，能夠支持你撐過那個<b>人行道時刻</b>。將來可能會有那麼一天，世界停止轉動了，你的心碎了。那時，你需要一個值得你用此生追求的人生願景，幫助你度過那個人生風暴。當然，你的願景會因為那些人行道時刻變得更有深度、得到轉化、變得更清晰；但我希望你現在的願景，已經有可以為你指引方向的<b>羅盤</b>，或是可以使你穩穩定住的<b>船錨</b>。」</blockquote>
     <span class="src" style="display:block;font-style:normal;margin-top:.55em">——《耶魯大學的人生思辨課》p.234–235</span>
@@ -1443,7 +1443,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <section class="slide roomy" style="--jc:center">
   <h2>人生風暴與終極願景</h2>
-  <div style="max-width:42em;margin:.5em auto 0;text-align:left;line-height:1.8;font-size:clamp(1.7rem,2.4vw,2.1rem)">
+  <div style="max-width:42em;margin:.5em auto 0;text-align:left;line-height:1.8;font-size:clamp(3.33vh,2.4vw,2.1rem)">
     <p style="margin:0">那天，所有人離開教室時都覺得：我們的繁盛人生願景，受到了人生中「人行道時刻」的考驗，變得更精煉了。要挺過人生的風暴，你需要的不只是對於「值得活的人生」的憧憬，而是如同安琪拉所說的，<b>你需要一種能夠將你穩穩定住的船錨，一種將你的心安住的終極信念。</b></p>
     <span class="src" style="display:block;font-style:normal;margin-top:.55em">——《耶魯大學的人生思辨課》p.234–235</span>
   </div>
@@ -1487,7 +1487,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <figcaption class="src" style="margin-top:.5em">馬王堆帛書《老子》，西漢，湖南省博物館藏</figcaption>
     </figure>
     <div>
-      <blockquote style="max-width:none;line-height:1.9;font-size:clamp(1.2rem,1.8vw,1.65rem)">
+      <blockquote style="max-width:none;line-height:1.9;font-size:clamp(2.49vh,1.8vw,1.65rem)">
         「上士聞道，勤而行之；<br>中士聞道，若存若亡；<br>下士聞道，大笑之。<br><b>不笑，不足以為道。</b>」
         <span class="src" style="display:block;font-style:normal;margin-top:.6em">——《道德經》第四十一章</span>
       </blockquote>
@@ -1501,9 +1501,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <h2>死，對你而言比較像一堵牆還是一扇門？</h2>
   <div class="grid2" style="grid-template-columns:.85fr 1.15fr;align-items:stretch;gap:3.4vw;flex:1;min-height:0;margin-top:.4em">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8vh;text-align:center">
-      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-cloud="vote" style="width:clamp(250px,24vw,360px);max-width:360px"></div><div class="qr-cap" style="font-size:clamp(1.3rem,1.6vw,1.75rem)">掃我，投票</div></div>
-      <p class="lead" style="max-width:20em;margin:0;font-size:clamp(1.5rem,1.6vw,1.55rem)">先<b>每人投一票</b>，理由留到小組討論。</p>
-      <p class="src" style="margin:0;font-size:clamp(1rem,1.2vw,1.2rem)">已投 <b><span id="vote-total">0</span></b> 票</p>
+      <div class="cloud-qr" style="padding:1em 1.1em .8em"><div class="qr-box" data-cloud="vote" style="width:clamp(250px,24vw,360px);max-width:360px"></div><div class="qr-cap" style="font-size:clamp(2.22vh,1.6vw,1.75rem)">掃我，投票</div></div>
+      <p class="lead" style="max-width:20em;margin:0;font-size:clamp(2.22vh,1.6vw,1.55rem)">先<b>每人投一票</b>，理由留到小組討論。</p>
+      <p class="src" style="margin:0;font-size:clamp(1.66vh,1.2vw,1.2rem)">已投 <b><span id="vote-total">0</span></b> 票</p>
     </div>
     <div class="vote-bars" id="voteBars" style="height:100%;padding-top:0">
         <div class="vbar" style="--c:#6B6B6B"><div class="vcount" id="vc-wall">0</div><div class="vpct" id="vp-wall">0%</div><div class="vfill" id="vf-wall"></div><div class="vlabel">牆</div><div class="vsub">走到盡頭即虛無</div></div>
@@ -1540,7 +1540,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div style="display:flex;flex-direction:column;gap:2.4vh;margin-top:.4em">
     <!-- 超人類主義 ↔ Istvan -->
     <div class="grid2" style="grid-template-columns:clamp(140px,14vw,190px) 1fr;align-items:center;gap:3.4vw">
-      <div class="wc-with-caption"><div class="wc-frame"><img src="images/zoltan_wc.jpg" alt="Zoltan Istvan"></div><div class="wc-cap" style="font-size:clamp(.82rem,1vw,1.02rem)">Zoltan Istvan</div></div>
+      <div class="wc-with-caption"><div class="wc-frame"><img src="images/zoltan_wc.jpg" alt="Zoltan Istvan"></div><div class="wc-cap" style="font-size:clamp(1.39vh,1vw,1.02rem)">Zoltan Istvan</div></div>
       <div>
         <p class="lead" style="max-width:none;margin-bottom:.15em"><b>超人類主義</b>（Transhumanism）</p>
         <p style="max-width:none">Zoltan Istvan 與超人類主義黨：寄望以超級人工智慧與科技增強人的精神、體力與資質，克服殘疾、疾病、痛苦、老化與死亡，<b>讓人達到永恆不死</b>。</p>
@@ -1548,7 +1548,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
     </div>
     <!-- 一行禪師 ↔ 其照片 -->
     <div class="grid2" style="grid-template-columns:clamp(140px,14vw,190px) 1fr;align-items:center;gap:3.4vw">
-      <div class="wc-with-caption"><div class="wc-frame wc-yixing"><img src="images/yixing_wc.jpg" alt="一行禪師"></div><div class="wc-cap" style="font-size:clamp(.82rem,1vw,1.02rem)">一行禪師</div></div>
+      <div class="wc-with-caption"><div class="wc-frame wc-yixing"><img src="images/yixing_wc.jpg" alt="一行禪師"></div><div class="wc-cap" style="font-size:clamp(1.39vh,1vw,1.02rem)">一行禪師</div></div>
       <div>
         <p class="lead" style="max-width:none;margin-bottom:.15em"><b>一行禪師</b>《無死，無懼》（<i>No Death, No Fear</i>）</p>
         <p style="max-width:none">沒有生、也沒有死，真正的死亡並不存在，故人不必害怕死亡。</p>
@@ -1589,8 +1589,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
       <blockquote style="max-width:none"><b>斯多葛學派</b>：死亡未到之前，不必懼怕；死亡若已到來，也無可畏懼。</blockquote>
     </div>
     <div class="grid2" style="gap:3.4vw">
-      <div class="wc-with-caption"><div class="wc-frame wc-aurelius"><img src="images/aurelius_wc.jpg" alt="奧理略"></div><div class="wc-cap" style="font-size:clamp(.9rem,1.1vw,1.1rem)">奧理略<br>《沉思錄》</div></div>
-      <div class="wc-with-caption"><div class="wc-frame wc-stoic"><img src="images/stoic_wc.jpg" alt="斯多葛學派創始人"></div><div class="wc-cap" style="font-size:clamp(.9rem,1.1vw,1.1rem)">斯多葛學派<br>創始人</div></div>
+      <div class="wc-with-caption"><div class="wc-frame wc-aurelius"><img src="images/aurelius_wc.jpg" alt="奧理略"></div><div class="wc-cap" style="font-size:clamp(1.52vh,1.1vw,1.1rem)">奧理略<br>《沉思錄》</div></div>
+      <div class="wc-with-caption"><div class="wc-frame wc-stoic"><img src="images/stoic_wc.jpg" alt="斯多葛學派創始人"></div><div class="wc-cap" style="font-size:clamp(1.52vh,1.1vw,1.1rem)">斯多葛學派<br>創始人</div></div>
     </div>
   </div>
 </section>
@@ -1598,7 +1598,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 超越死亡的嘗試④ 皆有限度 -->
 <section class="slide" style="--jc:center">
   <h2>這些嘗試，皆有其限度</h2>
-  <ul class="fl" style="max-width:48em;margin:.3em auto;font-size:clamp(1.12rem,1.5vw,1.5rem)">
+  <ul class="fl" style="max-width:48em;margin:.3em auto;font-size:clamp(2.08vh,1.5vw,1.5rem)">
     <li><b>死亡無法完全否定</b>——超人類主義仍不現實。</li>
     <li>一行禪師「無死、無懼」失之<b>極端</b>——他背後的「<b>絕對無我</b>」立場本身就<b>比較極端</b>——畢竟連<b>惠敏法師</b>也承認，人仍有「<b>相對的我</b>」（並非真的無我）。</li>
     <li>遺忘死亡與死亡禁忌，<b>像鴕鳥把頭埋進沙堆</b>——以為看不見，危險就不存在。</li>
@@ -1610,7 +1610,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 人有理由怕死：好青年哲學讀本 -->
 <section class="slide" style="--jc:center">
   <h2>而人，本來就有理由怕死</h2>
-  <blockquote style="max-width:40em;margin:.4em auto;font-size:clamp(1.16rem,1.7vw,1.6rem);line-height:1.9">「活下去，我可以呷著馥郁的奶茶靜靜地讀一個上午小說，可以聽著淅瀝的雨聲默默地發一個下午呆……我可以與愛人相顧無言——<br>直到死亡來臨，我的意識消失，這一切『可以』都不再可以。<br><b>想到有一天這本書仍在，風仍在吹，河仍在流，但我卻歸於無有，我就打從心底裡寒出來。</b>」<span class="src" style="display:block;font-style:normal;margin-top:.55em">——《好青年哲學讀本》</span></blockquote>
+  <blockquote style="max-width:40em;margin:.4em auto;font-size:clamp(2.36vh,1.7vw,1.6rem);line-height:1.9">「活下去，我可以呷著馥郁的奶茶靜靜地讀一個上午小說，可以聽著淅瀝的雨聲默默地發一個下午呆……我可以與愛人相顧無言——<br>直到死亡來臨，我的意識消失，這一切『可以』都不再可以。<br><b>想到有一天這本書仍在，風仍在吹，河仍在流，但我卻歸於無有，我就打從心底裡寒出來。</b>」<span class="src" style="display:block;font-style:normal;margin-top:.55em">——《好青年哲學讀本》</span></blockquote>
   <p class="muted" style="text-align:center;max-width:42em;margin:.5em auto 0">死亡是所有經驗的終止。前面種種「超越死亡」的嘗試，最終都繞不過這道理性無法透視的界限——於是，人只剩下兩條路。</p>
 </section>
 
@@ -1620,7 +1620,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid2" style="align-items:center">
     <div class="figbox">
       <img class="gimg" src="images/death_door_or_wall.jpg" alt="死亡：一堵牆與一扇門的意象" style="width:100%;max-height:54vh">
-      <div class="fcap" style="font-size:clamp(1.42rem,1.6vw,1.56rem);max-width:none">左半實牆盡頭幽暗、右半微啟之門透暖光——同一道界限，兩種理解。</div>
+      <div class="fcap" style="font-size:clamp(2.22vh,1.6vw,1.56rem);max-width:none">左半實牆盡頭幽暗、右半微啟之門透暖光——同一道界限，兩種理解。</div>
     </div>
     <div>
       <p class="lead" style="max-width:none">死，是一扇門，還是一堵牆？</p>
@@ -1633,18 +1633,18 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 兩條路 -->
 <style>
-#s86two h2{font-size:clamp(2.9rem,4.7vw,4.3rem)}
+#s86two h2{font-size:clamp(6.51vh,4.7vw,4.3rem)}
 /* 密度反比：內容少的頁把字推到版面容得下的最大值（2026-07-28 量測閘揪出 S64/S80 偏小） */
-#s-gorrell h2{font-size:clamp(2.5rem,4.4vw,4.1rem)}
-#s-gorrell .lead{font-size:clamp(2.3rem,2.75vw,2.55rem);line-height:1.6}
-#s-gorrell .muted{font-size:clamp(2.2rem,2.6vw,2.42rem)!important;line-height:1.58}
-#s-nofear h2{font-size:clamp(2.6rem,4.5vw,4.15rem)}
-#s-nofear blockquote{font-size:clamp(2.2rem,2.62vw,2.42rem);line-height:1.55}
+#s-gorrell h2{font-size:clamp(6.1vh,4.4vw,4.1rem)}
+#s-gorrell .lead{font-size:clamp(3.81vh,2.75vw,2.55rem);line-height:1.6}
+#s-gorrell .muted{font-size:clamp(3.6vh,2.6vw,2.42rem)!important;line-height:1.58}
+#s-nofear h2{font-size:clamp(6.24vh,4.5vw,4.15rem)}
+#s-nofear blockquote{font-size:clamp(3.63vh,2.62vw,2.42rem);line-height:1.55}
 #s86two .contrast2{gap:4vw;margin-top:.6em}
 #s86two .card{padding:1.3em 1.55em;border-radius:18px}
-#s86two .contrast2 .card h3{font-size:clamp(2rem,3vw,2.7rem);margin-bottom:.4em}
-#s86two .contrast2 .card p{font-size:clamp(1.95rem,2.55vw,2.4rem);line-height:1.52;margin:.45em 0}
-#s86two .contrast2 .card p.muted{font-size:clamp(1.9rem,2.5vw,2.32rem);margin-top:.55em}
+#s86two .contrast2 .card h3{font-size:clamp(4.16vh,3vw,2.7rem);margin-bottom:.4em}
+#s86two .contrast2 .card p{font-size:clamp(3.53vh,2.55vw,2.4rem);line-height:1.52;margin:.45em 0}
+#s86two .contrast2 .card p.muted{font-size:clamp(3.46vh,2.5vw,2.32rem);margin-top:.55em}
 </style>
 <section class="slide" id="s86two" style="--jc:center">
   <h2>終極信念，只有兩種可能性</h2>
@@ -1681,10 +1681,10 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 托爾斯泰（二）：懺悔錄的危機 與 確立信念的五法 -->
 <style>
 #s96 .wc-with-caption{max-width:158px!important;margin-bottom:.35em!important}
-#s96 blockquote{font-size:clamp(1.5rem,1.62vw,1.56rem)!important;line-height:1.34;margin:.3em 0;padding:.35em .85em}
-#s96 .muted{font-size:clamp(1.5rem,1.62vw,1.56rem);line-height:1.34}
-#s96 .lead{line-height:1.35;margin-bottom:.25em;font-size:clamp(1.55rem,2vw,1.85rem)}
-#s96 .feature-list li{padding:.24em 0 .24em 2em;line-height:1.32;font-size:clamp(1.5rem,1.62vw,1.56rem)}
+#s96 blockquote{font-size:clamp(2.25vh,1.62vw,1.56rem)!important;line-height:1.34;margin:.3em 0;padding:.35em .85em}
+#s96 .muted{font-size:clamp(2.25vh,1.62vw,1.56rem);line-height:1.34}
+#s96 .lead{line-height:1.35;margin-bottom:.25em;font-size:clamp(2.77vh,2vw,1.85rem)}
+#s96 .feature-list li{padding:.24em 0 .24em 2em;line-height:1.32;font-size:clamp(2.25vh,1.62vw,1.56rem)}
 #s96 .feature-list li::before{top:.36em}
 </style>
 <section class="slide">
@@ -1704,7 +1704,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
   <div class="grid2" style="grid-template-columns:1fr 1.12fr;align-items:center;gap:3.4vw">
     <div>
       <div class="wc-with-caption" style="max-width:225px;margin:0 auto .55em"><div class="wc-frame"><img src="images/tolstoy_oil.jpg" alt="托爾斯泰油畫像"></div><div class="wc-cap">托爾斯泰（1828–1910）</div></div>
-      <blockquote style="max-width:none;font-size:clamp(1.05rem,1.38vw,1.4rem)">51 歲寫《懺悔錄》時自承：「我食有佳肴，住有高樓，美女做伴，高朋滿座，名滿天下。」</blockquote>
+      <blockquote style="max-width:none;font-size:clamp(1.91vh,1.38vw,1.4rem)">51 歲寫《懺悔錄》時自承：「我食有佳肴，住有高樓，美女做伴，高朋滿座，名滿天下。」</blockquote>
       <p class="muted" style="max-width:none">擁有一切，卻被胞兄之死擊垮——「他智慧、善良、認真，年紀輕輕染病、痛苦一年餘而逝；<b>沒有任何理論能回答：他為何活過、又為何非死不可</b>。」</p>
     </div>
     <div>
@@ -1716,14 +1716,14 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
         <li><b>服務利他</b>——在付出與愛中，意義自然顯現。</li>
         <li><b>齊克果式信仰跳躍</b>——在理性的盡頭，做出抉擇。</li>
       </ul>
-      <blockquote style="font-size:clamp(1.08rem,1.42vw,1.45rem);max-width:none">「人要潛水到生命真理的終極深處，再從那裡浮出水面，回到人間。」</blockquote>
+      <blockquote style="font-size:clamp(1.97vh,1.42vw,1.45rem);max-width:none">「人要潛水到生命真理的終極深處，再從那裡浮出水面，回到人間。」</blockquote>
     </div>
   </div>
 </section>
 
 <!-- 托爾斯泰（三）：延伸影片＋摘要 -->
 <style>
-#s97 .fl li{padding:.3em 0 .3em 1.6em;line-height:1.42;font-size:clamp(1.5rem,1.85vw,1.66rem)}
+#s97 .fl li{padding:.3em 0 .3em 1.6em;line-height:1.42;font-size:clamp(2.56vh,1.85vw,1.66rem)}
 #s97 .fl li::before{top:.62em}
 </style>
 <section class="slide" id="s-belief-spectrum" style="--jc:center">
@@ -1785,7 +1785,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 彩蛋·主題曲（末頁，比照單元一）-->
 <style>
 #s103eg h2{margin-bottom:.3em}
-#s103eg .lyrics{font-size:clamp(1.4rem,1.72vw,1.56rem);line-height:1.42;column-gap:2.8em}
+#s103eg .lyrics{font-size:clamp(2.38vh,1.72vw,1.56rem);line-height:1.42;column-gap:2.8em}
 #s103eg .lyrics p{font-size:inherit;line-height:1.42;margin-bottom:.35em}
 #s103eg .egg-player{margin-top:.7em}
 </style>
@@ -1819,9 +1819,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 備片區分隔 -->
 <section class="slide roomy" id="s-spare" style="--jc:center">
-  <h2 style="font-size:clamp(3.2rem,5.8vw,4.9rem);display:block;text-align:center;border-bottom:none">以下為備用資料</h2>
+  <h2 style="font-size:clamp(8.04vh,5.8vw,4.9rem);display:block;text-align:center;border-bottom:none">以下為備用資料</h2>
   <div style="width:min(30rem,58%);height:5px;margin:.15em auto .7em;border-radius:5px;background:linear-gradient(90deg,transparent,var(--color-accent),#c8902a,var(--color-accent),transparent)"></div>
-  <p class="lead" style="max-width:none;text-align:center;font-size:clamp(2.05rem,3vw,2.75rem)">課堂視需要取用。</p>
+  <p class="lead" style="max-width:none;text-align:center;font-size:clamp(4.16vh,3vw,2.75rem)">課堂視需要取用。</p>
 </section>
 
 <section class="slide">
@@ -1837,7 +1837,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 否定面（一）Vervaeke -->
 <style>
-#s83 .lead{font-size:clamp(1.5rem,1.75vw,1.62rem)!important;line-height:1.4!important}
+#s83 .lead{font-size:clamp(2.43vh,1.75vw,1.62rem)!important;line-height:1.4!important}
 #s83 .co-card{margin-bottom:0}
 #s83 .grid2{gap:2.2vw}
 </style>
@@ -1854,7 +1854,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 否定面（二）Sean Kelly -->
 <style>
-#s84 .lead{font-size:clamp(1.5rem,1.72vw,1.58rem)!important;line-height:1.36!important;margin-bottom:.4em}
+#s84 .lead{font-size:clamp(2.38vh,1.72vw,1.58rem)!important;line-height:1.36!important;margin-bottom:.4em}
 #s84 .co-card{margin-bottom:0;padding:.55em .85em}
 #s84 .co{line-height:1.34!important}
 #s84 .grid2{gap:2vw}
@@ -1872,9 +1872,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 否定面收束：Fingarette 直面死亡 -->
 <style>
-#s85 .lead{line-height:1.48;font-size:clamp(1.52rem,2.05vw,1.9rem)}
+#s85 .lead{line-height:1.48;font-size:clamp(2.84vh,2.05vw,1.9rem)}
 #s85 > .grid2 > div > p{line-height:1.5;margin-bottom:.5em}
-#s85 > .grid2 > div > p:not(.lead){font-size:clamp(1.46rem,1.9vw,1.68rem)}
+#s85 > .grid2 > div > p:not(.lead){font-size:clamp(2.63vh,1.9vw,1.68rem)}
 </style>
 <section class="slide" id="s85">
   <h2>連最清醒的理性，也難肯定生命本身的意義</h2>
@@ -1905,8 +1905,8 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <style>
 #s95 .lead{line-height:1.5}
 #s95 .four-col .card{padding:1em 1.05em;min-height:0;justify-content:center}
-#s95 .four-col .card p{font-size:clamp(1.5rem,1.78vw,1.72rem);line-height:1.4;margin:.2em 0 0}
-#s95 > p:not(.lead):not(.src){font-size:clamp(1.46rem,1.9vw,1.68rem)}
+#s95 .four-col .card p{font-size:clamp(2.47vh,1.78vw,1.72rem);line-height:1.4;margin:.2em 0 0}
+#s95 > p:not(.lead):not(.src){font-size:clamp(2.63vh,1.9vw,1.68rem)}
 </style>
 <section class="slide" id="s97">
   <h2>延伸影片：托爾斯泰如何走出意義危機</h2>
@@ -1925,9 +1925,9 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 終極信念光譜：虛無主義 ↔ 多元宗教信仰 -->
 <style>
-#s-belief-spectrum .contrast2 .card h3{font-size:clamp(2.05rem,2.85vw,2.7rem);margin-bottom:.35em}
-#s-belief-spectrum .contrast2 .card .fl li{font-size:clamp(1.75rem,1.95vw,1.88rem);line-height:1.6;padding-top:.42em;padding-bottom:.42em}
-#s-belief-spectrum .contrast2 .card .sub{font-size:clamp(1.72rem,1.9vw,1.82rem);color:var(--color-muted);margin:.2em 0 .55em}
+#s-belief-spectrum .contrast2 .card h3{font-size:clamp(3.95vh,2.85vw,2.7rem);margin-bottom:.35em}
+#s-belief-spectrum .contrast2 .card .fl li{font-size:clamp(2.7vh,1.95vw,1.88rem);line-height:1.6;padding-top:.42em;padding-bottom:.42em}
+#s-belief-spectrum .contrast2 .card .sub{font-size:clamp(2.63vh,1.9vw,1.82rem);color:var(--color-muted);margin:.2em 0 .55em}
 </style>
 
 
