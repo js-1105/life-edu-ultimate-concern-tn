@@ -479,7 +479,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <section class="slide" style="--jc:flex-start;padding-top:5.5vh">
   <h2>一般人對美好人生的想像：健康・快樂・長壽・財富自由</h2>
   <p class="lead" style="max-width:none">這四項，是現代人很普遍的人生理想。</p>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.4vw;margin-top:1em">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3.4vw;margin-top:1em">
     <figure style="margin:0;text-align:center"><img src="images/goodlife_health.jpg" alt="健康" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">健康</figcaption></figure>
     <figure style="margin:0;text-align:center"><img src="images/goodlife_happy.jpg" alt="快樂" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">快樂</figcaption></figure>
     <figure style="margin:0;text-align:center"><img src="images/goodlife_longevity.jpg" alt="長壽" style="width:100%;height:30vh;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-soft)"><figcaption style="margin-top:.4em;font-size:clamp(1.1rem,1.5vw,1.45rem);font-weight:700;color:var(--color-primary)">長壽</figcaption></figure>
@@ -1332,7 +1332,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 第六節總覽：終極理想四面向（收束） -->
 <style>
-#s68four .four-col{gap:2.8vw}
+#s68four .four-col{gap:3.6vw}
 #s68four .four-col .card{padding:1em 1.05em;min-height:0}
 #s68four .four-col .card h3{font-size:clamp(1.42rem,1.9vw,1.72rem)}
 #s68four .four-col .card p{font-size:clamp(1.5rem,1.62vw,1.55rem);line-height:1.44}
@@ -1403,7 +1403,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </section>
 
 
-<section class="slide" style="--jc:flex-start;padding-top:4.5vh">
+<section class="slide" id="s-gorrell" style="--jc:flex-start;padding-top:4.5vh">
   <h2>耶魯大學的人生思辨課與 Angela Williams Gorrell</h2>
   <div class="grid2" style="margin-top:.7em;align-items:center;gap:3.4vw">
     <figure style="margin:0;text-align:center">
@@ -1581,7 +1581,7 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </section>
 
 <!-- 超越死亡的嘗試③ 不懼死亡 -->
-<section class="slide">
+<section class="slide" id="s-nofear">
   <h2>超越死亡的嘗試（三）：不懼死亡</h2>
   <div class="grid2" style="align-items:center;gap:3.4vw">
     <div>
@@ -1634,7 +1634,13 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 <!-- 兩條路 -->
 <style>
 #s86two h2{font-size:clamp(2.9rem,4.7vw,4.3rem)}
-#s86two .contrast2{gap:2.8vw;margin-top:.6em}
+/* 密度反比：內容少的頁把字推到版面容得下的最大值（2026-07-28 量測閘揪出 S64/S80 偏小） */
+#s-gorrell h2{font-size:clamp(2.5rem,4.4vw,4.1rem)}
+#s-gorrell .lead{font-size:clamp(2.3rem,2.75vw,2.55rem);line-height:1.6}
+#s-gorrell .muted{font-size:clamp(2.2rem,2.6vw,2.42rem)!important;line-height:1.58}
+#s-nofear h2{font-size:clamp(2.6rem,4.5vw,4.15rem)}
+#s-nofear blockquote{font-size:clamp(2.2rem,2.62vw,2.42rem);line-height:1.55}
+#s86two .contrast2{gap:4vw;margin-top:.6em}
 #s86two .card{padding:1.3em 1.55em;border-radius:18px}
 #s86two .contrast2 .card h3{font-size:clamp(2rem,3vw,2.7rem);margin-bottom:.4em}
 #s86two .contrast2 .card p{font-size:clamp(1.95rem,2.55vw,2.4rem);line-height:1.52;margin:.45em 0}
