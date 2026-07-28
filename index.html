@@ -200,6 +200,22 @@ body.has-zoom #zoomBackdrop{opacity:1;visibility:visible}
 .imgzoom-wrap.zoom{position:fixed;inset:1.5vh 1.5vw;width:auto!important;height:auto;margin:0!important;z-index:99999;display:flex;align-items:center;justify-content:center;padding:1vh 1vw;border-radius:12px;background:#FAF7F2;box-shadow:0 30px 90px rgba(0,0,0,.7)}
 .imgzoom-wrap.zoom img{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain}
 .imgzoom-wrap.zoom .vfs{width:2.7em;height:2.7em;font-size:1.35rem;bottom:1em;right:1em}
+/* 夢想清單長條圖：由原始問卷資料直接以 HTML 繪製（不再嵌截圖），字級才能大到投影可讀 */
+.dreamchart{display:flex;flex-direction:column;gap:.45vh;width:100%;margin-top:.2em}
+.drow{display:grid;grid-template-columns:var(--lab,19.5em) 1fr 2.7em;align-items:center;gap:.7em;font-size:clamp(1.68rem,1.98vw,2.05rem);line-height:1.22}
+.drow .dlab{text-align:right;white-space:nowrap}
+.drow .dbar{height:1.1em;background:rgba(134,38,51,.09);border-radius:0 7px 7px 0}
+.drow .dbar i{display:block;height:100%;background:linear-gradient(90deg,var(--color-primary),#A8404F);border-radius:0 7px 7px 0}
+.drow .dval{font-weight:700;color:var(--color-primary);font-variant-numeric:tabular-nums}
+.drow.top .dlab{font-weight:700;color:var(--color-primary)}
+.drow.top .dbar i{background:linear-gradient(90deg,#6E1F2B,var(--color-primary))}
+/* 右上角小縮圖：點開即為完整 20 項的原始問卷圖表（沿用就地放大機制） */
+.dreamfull{position:absolute;top:-1.1vh;right:0;width:clamp(74px,6vw,94px);margin:0;text-align:center;opacity:.9;line-height:1}
+.dreamfull img{width:100%;height:auto;border:1px solid rgba(134,38,51,.3);border-radius:6px;cursor:zoom-in}
+.dreamfull figcaption{font-size:clamp(.78rem,.85vw,.92rem);color:var(--color-muted);margin-top:.1em;line-height:1.15}
+.dreamfull .vfs{display:none}
+.dreamfull.zoom{position:fixed;width:auto;opacity:1}
+.dreamfull.zoom figcaption{display:none}
 .cc-overlay{position:absolute;left:3%;right:3%;bottom:16%;z-index:65;text-align:center;pointer-events:none;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:700;line-height:1.45}
 .cc-overlay span{display:inline;background:rgba(0,0,0,.62);color:#fff;font-size:clamp(1.55rem,1.72vw,1.62rem);padding:.12em .5em;border-radius:6px;text-shadow:0 2px 5px rgba(0,0,0,.92);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* 自製精簡控制列（取代原生 controls，跨瀏覽器只有一顆全螢幕鈕；全螢幕放大整個影片框＝字幕一起顯示） */
@@ -576,11 +592,23 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- ===================== 貳 ===================== -->
 <section class="slide" style="--jc:flex-start;padding-top:1.6vh">
-  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.2em;padding-bottom:.18em">臺大學生的夢想清單　<span style="font-size:.62em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
-  <figure class="imgzoom-wrap" style="margin:0;text-align:center">
-    <img src="images/dreamlist_ntu_students_nobg.png" alt="臺大學生夢想調查" style="width:100%;max-height:70vh;object-fit:contain">
-  </figure>
-  <div style="margin-top:.25em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.25em 1.1em;font-size:clamp(1.5rem,1.68vw,1.6rem)">
+  <h2 style="font-size:clamp(1.75rem,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大學生的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">以 2024 臺大新生講座為例</span></h2>
+  <figure class="imgzoom-wrap dreamfull"><img src="images/dreamlist_ntu_students_nobg.png" alt="臺大學生夢想調查完整圖表"><figcaption>完整 20 項</figcaption></figure>
+  <div class="dreamchart" style="--lab:20.5em">
+    <div class="drow top"><span class="dlab">找到人生的意義、目的、價值</span><span class="dbar"><i style="width:100%"></i></span><span class="dval">112</span></div>
+    <div class="drow top"><span class="dlab">結交5位終身的知心好友</span><span class="dbar"><i style="width:95.5%"></i></span><span class="dval">107</span></div>
+    <div class="drow"><span class="dlab">畢業後能進入起薪百萬的跨國企業工作</span><span class="dbar"><i style="width:67%"></i></span><span class="dval">75</span></div>
+    <div class="drow"><span class="dlab">與家人感情融洽，無話不談</span><span class="dbar"><i style="width:57.1%"></i></span><span class="dval">64</span></div>
+    <div class="drow"><span class="dlab">成功申請交換學生計畫，至國外留學生活1年</span><span class="dbar"><i style="width:53.6%"></i></span><span class="dval">60</span></div>
+    <div class="drow"><span class="dlab">獲得4年期免費環遊世界機票1張</span><span class="dbar"><i style="width:50%"></i></span><span class="dval">56</span></div>
+    <div class="drow"><span class="dlab">遇到天菜，與他/她有一段穩定的感情發展</span><span class="dbar"><i style="width:37.5%"></i></span><span class="dval">42</span></div>
+    <div class="drow"><span class="dlab">遇見心靈導師，指引未來人生方向</span><span class="dbar"><i style="width:33%"></i></span><span class="dval">37</span></div>
+    <div class="drow"><span class="dlab">大學期間學雜費、生活費、零用金全額贊助</span><span class="dbar"><i style="width:28.6%"></i></span><span class="dval">32</span></div>
+    <div class="drow"><span class="dlab">獲全額獎學金赴常春藤盟校繼續攻讀研究所</span><span class="dbar"><i style="width:25.9%"></i></span><span class="dval">29</span></div>
+    <div class="drow"><span class="dlab">獲得「臺大神課任你選」通行證1張</span><span class="dbar"><i style="width:25.9%"></i></span><span class="dval">29</span></div>
+  </div>
+  <p class="src" style="margin:.18em 0 0">2024 臺大新生講座問卷（共 20 項），此處為得票前十名，第十名並列兩項。</p>
+  <div style="margin-top:.18em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em 1.1em;font-size:clamp(1.6rem,1.78vw,1.8rem)">
     <span style="display:inline-flex;align-items:baseline;gap:.55em"><span style="background:var(--color-primary);color:#fff;border-radius:6px;padding:.1em .6em;font-weight:700;white-space:nowrap">人生意義與關係</span>找到人生意義與目的、結交知心好友、與家人感情融洽</span>
     <span style="display:inline-flex;align-items:baseline;gap:.55em"><span style="background:var(--color-primary);color:#fff;border-radius:6px;padding:.1em .6em;font-weight:700;white-space:nowrap">學業與職涯</span>國外交換、起薪百萬</span>
   </div>
@@ -588,11 +616,22 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 
 <!-- 從夢想說起（二）臺大教師 -->
 <section class="slide" style="--jc:flex-start;padding-top:1.6vh">
-  <h2 style="font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.2em;padding-bottom:.18em">臺大教師的夢想清單　<span style="font-size:.62em;font-weight:400;color:var(--color-muted)">與學生同一份問卷·教師版</span></h2>
-  <figure class="imgzoom-wrap" style="margin:0;text-align:center">
-    <img src="images/dreamlist_teachers_nobg.png" alt="臺大教師夢想調查" style="width:100%;max-height:54vh;object-fit:contain">
-  </figure>
-  <div class="taglines" style="margin-top:.25em;gap:.22em;font-size:clamp(1.5rem,1.68vw,1.6rem)">
+  <h2 style="font-size:clamp(1.75rem,2.7vw,2.45rem);margin-bottom:.15em;padding-bottom:.14em">臺大教師的夢想清單　<span style="font-size:.74em;font-weight:400;color:var(--color-muted)">與學生同一份問卷·教師版</span></h2>
+  <figure class="imgzoom-wrap dreamfull"><img src="images/dreamlist_teachers_nobg.png" alt="臺大教師夢想調查完整圖表"><figcaption>完整 20 項</figcaption></figure>
+  <div class="dreamchart" style="--lab:20.5em">
+    <div class="drow top"><span class="dlab">享有快樂無憂的退休生活與健康老年</span><span class="dbar"><i style="width:100%"></i></span><span class="dval">33</span></div>
+    <div class="drow top"><span class="dlab">兒女升學順利、就業穩定、家庭幸福</span><span class="dbar"><i style="width:93.9%"></i></span><span class="dval">31</span></div>
+    <div class="drow"><span class="dlab">無病無痛，在睡夢中壽終正寢</span><span class="dbar"><i style="width:78.8%"></i></span><span class="dval">26</span></div>
+    <div class="drow"><span class="dlab">擁有安頓生命的終極信念或宗教信仰</span><span class="dbar"><i style="width:78.8%"></i></span><span class="dval">26</span></div>
+    <div class="drow"><span class="dlab">以學術專業，帶動社會進步，發揮影響力</span><span class="dbar"><i style="width:66.7%"></i></span><span class="dval">22</span></div>
+    <div class="drow"><span class="dlab">能陪伴照顧父母安度晚年</span><span class="dbar"><i style="width:66.7%"></i></span><span class="dval">22</span></div>
+    <div class="drow"><span class="dlab">有足夠的金錢與體力環遊世界</span><span class="dbar"><i style="width:63.6%"></i></span><span class="dval">21</span></div>
+    <div class="drow"><span class="dlab">與兒女關係良好、無話不談</span><span class="dbar"><i style="width:54.5%"></i></span><span class="dval">18</span></div>
+    <div class="drow"><span class="dlab">成為學生信任的心靈導師</span><span class="dbar"><i style="width:54.5%"></i></span><span class="dval">18</span></div>
+    <div class="drow"><span class="dlab">培養學術專業以外的斜槓力，發展第二人生</span><span class="dbar"><i style="width:51.5%"></i></span><span class="dval">17</span></div>
+  </div>
+  <p class="src" style="margin:.18em 0 0">與學生同一份問卷之教師版（共 20 項），此處為得票前十名。</p>
+  <div class="taglines" style="margin-top:.18em;gap:.16em;font-size:clamp(1.6rem,1.78vw,1.8rem)">
     <div class="row"><span class="tg">安頓生命</span><span>擁有安頓生命的<b>終極信念或宗教信仰</b></span></div>
     <div class="row"><span class="tg">家庭</span><span>兒女升學就業順利、家庭幸福、陪伴照顧父母安度晚年</span></div>
     <div class="row"><span class="tg">健康善終</span><span>健康快樂的退休與老年、無病無痛在睡夢中壽終正寢</span></div>
