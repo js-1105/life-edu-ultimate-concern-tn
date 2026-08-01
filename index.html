@@ -1812,12 +1812,16 @@ function showConfirm({title='確認',message='',okText='確定',cancelText='取�
 </section>
 
 <section class="slide">
-  <h2>活出值得活的人生：為自己的生命賦予意義</h2>
-  <div class="grid2" style="grid-template-columns:1.25fr 1fr;align-items:center;gap:3.4vw">
-    <div class="video-wrap" style="width:100%;max-width:100%"><div id="yt-frankl"></div><div class="cc-overlay" id="cc-frankl"></div></div>
+  <h2>生命的意義不能發明，只能發現</h2>
+  <div class="grid2" style="grid-template-columns:1fr 1.28fr;align-items:center;gap:4vw">
     <div>
-      <p class="lead" style="max-width:none"><b>Viktor Frankl</b>（《活出意義來》）：「<b>生命的意義，就在於為生命賦予意義。</b>」與其問「生命有什麼意義」，不如把自己當成<b>被生命提問的人</b>——在愛、創造、與承擔苦難中，以負責任的行動親手活出答案。</p>
-      <div class="co-card"><div class="co"><b>孫老師的回應：</b>這是「<b>終極理想</b>」層次的有力回答——人能在人生「<b>之中</b>」開創意義（meanings <i>in</i> life）。但它仍未觸及更底層的一問：<b>生命本身</b>究竟有沒有意義？——這正是前面「終極信念，只有兩種可能性」所要面對的課題。</div></div>
+      <div class="video-wrap" style="width:100%;max-width:100%"><div id="yt-frankl"></div><div class="cc-overlay" id="cc-frankl"></div></div>
+      <p class="src" style="margin:.45em 0 0">引文出自 Viktor Frankl《活出意義來》（Man's Search for Meaning）。影片：Einzelgänger〈Viktor Frankl 的哲學〉（2021）。</p>
+    </div>
+    <div>
+      <p class="lead" style="max-width:none;margin-bottom:.35em"><b>Frankl</b>：「我們存在的意義<b>不是自己發明出來的，而是被發現的</b>。」</p>
+      <p class="lead" style="max-width:none;margin-bottom:.35em">所以不要問「生命有什麼意義」，而要認識到——<b>是生命在問我</b>。人在三個方向上發現它：<b>創造與工作、經歷與愛、面對苦難時所採取的態度</b>。</p>
+      <div class="co-card"><div class="co"><b>孫老師的回應：</b>這正好印證<b>終極信念</b>與<b>終極理想</b>的分野——<b>生命本身的意義</b>（meaning <i>of</i> life）不是人所能開創的，只能去<b>發現</b>、去<b>相信</b>；<b>人生之中的意義</b>（meanings <i>in</i> life），才有人開創與建構的空間。Frankl 的三個方向都落在後者；至於生命本身有沒有意義，正是「終極信念，只有兩種可能性」的課題。</div></div>
     </div>
   </div>
 </section>
@@ -3037,8 +3041,7 @@ function ccGratShow(t){
 [1013.3,"以及等待。"],
 [1023.3,"等待著，直到我不得不說再見。"],
     ]},
-    'yt-frankl':{vid:'JX-8-IYhQKk',off:0,el:'cc-frankl',cues:[
-[0.2,"生命的意義，在於為生命賦予意義。"],
+    'yt-frankl':{vid:'JX-8-IYhQKk',st:5,off:0,el:'cc-frankl',cues:[
 [5.3,"是什麼支撐著一個人活下去？"],
 [8.1,"對這個問題最純粹的答案，或許就藏在最糟糕的地方。"],
 [13.2,"奧地利精神醫學家、哲學家暨作家 Viktor Frankl，"],
@@ -3480,7 +3483,7 @@ function ccGratShow(t){
       var cfg=YT_SUBS[id];
       cfg._p=new YT.Player(id,{videoId:cfg.vid,width:'100%',height:'100%',
         host:'https://www.youtube-nocookie.com',
-        playerVars:{rel:0,modestbranding:1,playsinline:1,fs:0},
+        playerVars:Object.assign({rel:0,modestbranding:1,playsinline:1,fs:0},cfg.st?{start:cfg.st}:{}),
         events:{onReady:function(){
           try{var __ifr=document.getElementById(id);var __vw=__ifr&&__ifr.closest?__ifr.closest('.video-wrap,.vframe'):null;if(__vw)__vw._ytPlayer=cfg._p;}catch(_){}
           setInterval(function(){show(id);},250);
